@@ -1,0 +1,94 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
+public class PlayerMovement : MonoBehaviour
+{
+    
+    [SerializeField] private Transform spawn;
+
+    [Header("Movement")]
+    private Rigidbody _rigidbody;
+    [SerializeField] private float moveSpeed = 1f;
+    public PlayerInput inputActions;
+    
+    [Header("Camera")]
+    [SerializeField] private Transform cameraLookAt;
+    
+    private float runSoundTimer;
+    [SerializeField] private AudioClip[] steps;
+    private AudioSource stepsSource;
+    private bool stepped;
+    [SerializeField] float drag;
+    
+   
+    void Awake()
+    {
+        stepped = false;
+        runSoundTimer = 0;
+        stepsSource = GetComponent<AudioSource>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        _rigidbody = GetComponent<Rigidbody>();
+        _rigidbody.freezeRotation = true;
+        
+        inputActions = new PlayerInput();
+        inputActions.Moving.Enable();
+        inputActions.UI.Enable();
+        inputActions.RestartGame.Enable();
+        transform.position = spawn.position;
+    }
+
+    void FixedUpdate()
+    {
+        Vector2 moveInput = inputActions.Moving.Move.ReadValue<Vector2>();
+        Move(moveInput);
+    }
+
+    private void Update()
+    {
+        SpeedLimit();
+        _rigidbody.drag = drag;
+        if (stepped)
+        {
+            runSoundTimer += Time.deltaTime;
+            if (runSoundTimer >= 0.5)
+            {
+                runSoundTimer = 0;
+                stepped = false;
+            }
+        }
+        if (inputActions.RestartGame.RestartGame.triggered)
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
+    private void Move(Vector2 input)
+    {
+        if (!stepped && input != new Vector2(0,0) && _rigidbody.velocity.magnitude > 0.1f) { 
+            stepped = true;
+            stepsSource.PlayOneShot(steps[UnityEngine.Random.Range(0, steps.Length)]);
+        }
+        Vector3 dir = new Vector3(cameraLookAt.forward.x, 0, cameraLookAt.forward.z).normalized * input.y + cameraLookAt.right.normalized * input.x;
+
+        _rigidbody.AddForce(dir * moveSpeed * 10f, ForceMode.Force);
+    }
+    
+    private void SpeedLimit()
+    {
+        Vector3 vel = new Vector3(_rigidbody.velocity.x, 0f, _rigidbody.velocity.z);
+        
+        if(vel.magnitude > moveSpeed)
+        {
+            Vector3 lim = vel.normalized * moveSpeed;
+            _rigidbody.velocity = new Vector3(lim.x, _rigidbody.velocity.y, lim.z);
+        }
+    }
+    
+    
+}
