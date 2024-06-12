@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         if (input != new Vector2(0,0) && _rigidbody.velocity.magnitude > 0.1f) { 
             if (time > rate)
             {
-                RuntimeManager.PlayOneShotAttached(steps, gameObject);
+                AudioManager.Instance.PlayOneShotAttached(steps, gameObject);
                 time = 0;
             }
         }

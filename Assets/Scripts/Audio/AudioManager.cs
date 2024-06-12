@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.PlayOneShot(sound);
     }
     
-    public void PlayOneShotAttached(string sound, GameObject obj)
+    public void PlayOneShotAttached(EventReference sound, GameObject obj)
     {
         RuntimeManager.PlayOneShotAttached(sound, obj);
     }
