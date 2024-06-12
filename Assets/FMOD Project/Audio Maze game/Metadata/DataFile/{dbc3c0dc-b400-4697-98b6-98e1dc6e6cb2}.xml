@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{dbc3c0dc-b400-4697-98b6-98e1dc6e6cb2}">
+		<property name="assetPath">
+			<value>Piano Tones/11Note.wav.meta</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1747fd9a-e66d-45ac-b809-10fe0afd0e9e}</destination>
+		</relationship>
+	</object>
+</objects>

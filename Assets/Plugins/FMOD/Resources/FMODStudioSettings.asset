@@ -453,11 +453,11 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../FMOD Studio/Audio Maze game/Audio Maze game.fspro
-  sourceBankPath: ../../FMOD Studio/Audio Maze game/Build
+  sourceProjectPath: Assets/FMOD Project/Audio Maze game/Audio Maze game.fspro
+  sourceBankPath: Assets/FMOD Project/Audio Maze game/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
-  ShowBankRefreshWindow: 1
+  ShowBankRefreshWindow: 0
   AutomaticEventLoading: 1
   BankLoadType: 0
   AutomaticSampleLoading: 0

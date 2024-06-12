@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{e9a45bc5-0e0f-422f-af6c-9ecd1df8af18}">
+		<property name="assetPath">
+			<value>Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Run.meta</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1747fd9a-e66d-45ac-b809-10fe0afd0e9e}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{1c5ad302-b3e5-462e-9a57-fb469ed33d7a}">
+		<property name="assetPath">
+			<value>Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Walk/Footsteps_MetalV2_Walk_12.wav.meta</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1747fd9a-e66d-45ac-b809-10fe0afd0e9e}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{165177ff-3d02-40bf-a798-dcc67e866ce3}">
+		<property name="assetPath">
+			<value>Footsteps - Essentials/Footsteps_Mud/Footsteps_Mud_Run/Footsteps_Mud_Run_02.wav.meta</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1747fd9a-e66d-45ac-b809-10fe0afd0e9e}</destination>
+		</relationship>
+	</object>
+</objects>
