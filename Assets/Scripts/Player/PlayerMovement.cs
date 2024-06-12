@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -14,22 +15,20 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody _rigidbody;
     [SerializeField] private float moveSpeed = 1f;
     public PlayerInput inputActions;
+    [SerializeField] float drag;
+
     
     [Header("Camera")]
     [SerializeField] private Transform cameraLookAt;
     
-    private float runSoundTimer;
-    [SerializeField] private AudioClip[] steps;
-    private AudioSource stepsSource;
-    private bool stepped;
-    [SerializeField] float drag;
-    
+    [Header("Sound")]
+    [SerializeField] private EventReference steps;
+
+    [SerializeField] private float rate;
+    private float time;
    
     void Awake()
     {
-        stepped = false;
-        runSoundTimer = 0;
-        stepsSource = GetComponent<AudioSource>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -53,15 +52,7 @@ public class PlayerMovement : MonoBehaviour
     {
         SpeedLimit();
         _rigidbody.drag = drag;
-        if (stepped)
-        {
-            runSoundTimer += Time.deltaTime;
-            if (runSoundTimer >= 0.5)
-            {
-                runSoundTimer = 0;
-                stepped = false;
-            }
-        }
+        time += Time.deltaTime;
         if (inputActions.RestartGame.RestartGame.triggered)
         {
             SceneManager.LoadScene(0);
@@ -70,9 +61,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move(Vector2 input)
     {
-        if (!stepped && input != new Vector2(0,0) && _rigidbody.velocity.magnitude > 0.1f) { 
-            stepped = true;
-            stepsSource.PlayOneShot(steps[UnityEngine.Random.Range(0, steps.Length)]);
+        if (input != new Vector2(0,0) && _rigidbody.velocity.magnitude > 0.1f) { 
+            if (time > rate)
+            {
+                RuntimeManager.PlayOneShotAttached(steps, gameObject);
+                time = 0;
+            }
         }
         Vector3 dir = new Vector3(cameraLookAt.forward.x, 0, cameraLookAt.forward.z).normalized * input.y + cameraLookAt.right.normalized * input.x;
 
