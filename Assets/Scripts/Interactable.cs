@@ -14,8 +14,8 @@ public class Interactable : MonoBehaviour
     private float rotationTurnSpeed;
     
     private PlayerInput inputActions;
-    private bool isMoving;
-    private bool objIsActive;
+    [HideInInspector] public bool isMoving;
+    [HideInInspector] public bool objIsActive;
     private void Start()
     {
         cam = GameObject.Find("Main Camera").transform;
@@ -45,6 +45,9 @@ public class Interactable : MonoBehaviour
         cameraOriginalPosition.localScale = cam.localScale;
       
         inputActions.Moving.Disable();
+        Piano piano = GameObject.Find("Piano").GetComponent<Piano>();
+        piano.playSequence = true;
+        piano.currentSequenceIndex = 0;
         GameObject.Find("Main Camera").GetComponent<Interaction>().inInteraction = true;
 
         cameraMoveScript.enabled = false;
@@ -58,7 +61,6 @@ public class Interactable : MonoBehaviour
          isMoving = false;
          Debug.Log("Obj started");
          objIsActive = true;
-         inputActions.Piano.Enable();
       }
       
       if (isMoving && objIsActive && Vector3.Distance(cam.transform.position, cameraOriginalPosition.position) < 0.005f)

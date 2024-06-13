@@ -43,7 +43,6 @@ public class PianoKey : MonoBehaviour
       if (isMoving && pressed && Vector3.Distance(transform.position, pressedPosition) < 0.005f)
       {
          pressed = false;
-         Debug.Log("Key pressed");
       }
       
       if (isMoving && pressed)
