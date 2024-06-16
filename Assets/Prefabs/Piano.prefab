@@ -1178,6 +1178,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraInteractablePosition: {fileID: 5818491967164651802}
+  isMoving: 0
+  objIsActive: 0
 --- !u!1 &4658385803935291744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,6 +1408,13 @@ MonoBehaviour:
   - {fileID: 5446032225382089354}
   positionTurnSpeed: 10
   rotationTurnSpeed: 10
+  interactable: {fileID: 1599918023560719516}
+  sequenceAmount: 2
+  sequenceLength: 2
+  toneRate: 0.5
+  currentSequenceIndex: 0
+  playSequence: 0
+  pianoMiniGameCompleted: 0
 --- !u!1 &5098930292336551170
 GameObject:
   m_ObjectHideFlags: 0

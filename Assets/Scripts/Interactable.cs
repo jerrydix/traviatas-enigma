@@ -33,12 +33,15 @@ public class Interactable : MonoBehaviour
         switch (gameObject.name)
         {
             case "Piano_1":
-                CameraZoomInteract();
+                CameraZoomInteractPiano();
+                break;
+            case "Drum_1":
+                CameraZoomInteractDrum();
                 break;
         }
     }
 
-    private void CameraZoomInteract()
+    private void CameraZoomInteractPiano()
     {
         cameraOriginalPosition.position = cam.position;
         cameraOriginalPosition.rotation = cam.rotation;
@@ -48,6 +51,21 @@ public class Interactable : MonoBehaviour
         Piano piano = GameObject.Find("Piano").GetComponent<Piano>();
         piano.playSequence = true;
         piano.currentSequenceIndex = 0;
+        GameObject.Find("Main Camera").GetComponent<Interaction>().inInteraction = true;
+
+        cameraMoveScript.enabled = false;
+        isMoving = true;
+    }
+
+    private void CameraZoomInteractDrum()
+    {
+        cameraOriginalPosition.position = cam.position;
+        cameraOriginalPosition.rotation = cam.rotation;
+        cameraOriginalPosition.localScale = cam.localScale;
+
+        inputActions.Moving.Disable();
+        Drum drum = GameObject.Find("Drum").GetComponent<Drum>();
+        //todo start stuff here
         GameObject.Find("Main Camera").GetComponent<Interaction>().inInteraction = true;
 
         cameraMoveScript.enabled = false;
@@ -74,12 +92,6 @@ public class Interactable : MonoBehaviour
          cameraMoveScript.enabled = true;
          GameObject.Find("Main Camera").GetComponent<Interaction>().inInteraction = false;
          inputActions.Moving.Enable();
-      }
-      
-      if (inputActions.Piano.Cancel.triggered && objIsActive)
-      {
-         isMoving = true;
-         inputActions.Piano.Disable();
       }
 
       if (isMoving && !objIsActive)

@@ -1039,6 +1039,45 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""Drum"",
+            ""id"": ""e8eb4883-6df1-4ec9-955a-8378e57bfcd5"",
+            ""actions"": [
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""64606237-d3ee-4793-aff3-00547bbabcf3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""77f76d7e-b430-48cc-ac61-5d82caee5d40"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d25680f4-103d-4029-8d22-5e7636e76c90"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Phone"",
             ""id"": ""63fff13f-8608-4a44-aca3-15599b6783a9"",
             ""actions"": [
@@ -1332,6 +1371,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Piano_Key9 = m_Piano.FindAction("Key9", throwIfNotFound: true);
         m_Piano_Key10 = m_Piano.FindAction("Key10", throwIfNotFound: true);
         m_Piano_Key11 = m_Piano.FindAction("Key11", throwIfNotFound: true);
+        // Drum
+        m_Drum = asset.FindActionMap("Drum", throwIfNotFound: true);
+        m_Drum_Cancel = m_Drum.FindAction("Cancel", throwIfNotFound: true);
         // Phone
         m_Phone = asset.FindActionMap("Phone", throwIfNotFound: true);
         m_Phone_HangUp = m_Phone.FindAction("HangUp", throwIfNotFound: true);
@@ -1733,6 +1775,52 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     }
     public PianoActions @Piano => new PianoActions(this);
 
+    // Drum
+    private readonly InputActionMap m_Drum;
+    private List<IDrumActions> m_DrumActionsCallbackInterfaces = new List<IDrumActions>();
+    private readonly InputAction m_Drum_Cancel;
+    public struct DrumActions
+    {
+        private @PlayerInput m_Wrapper;
+        public DrumActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Cancel => m_Wrapper.m_Drum_Cancel;
+        public InputActionMap Get() { return m_Wrapper.m_Drum; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DrumActions set) { return set.Get(); }
+        public void AddCallbacks(IDrumActions instance)
+        {
+            if (instance == null || m_Wrapper.m_DrumActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_DrumActionsCallbackInterfaces.Add(instance);
+            @Cancel.started += instance.OnCancel;
+            @Cancel.performed += instance.OnCancel;
+            @Cancel.canceled += instance.OnCancel;
+        }
+
+        private void UnregisterCallbacks(IDrumActions instance)
+        {
+            @Cancel.started -= instance.OnCancel;
+            @Cancel.performed -= instance.OnCancel;
+            @Cancel.canceled -= instance.OnCancel;
+        }
+
+        public void RemoveCallbacks(IDrumActions instance)
+        {
+            if (m_Wrapper.m_DrumActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IDrumActions instance)
+        {
+            foreach (var item in m_Wrapper.m_DrumActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_DrumActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public DrumActions @Drum => new DrumActions(this);
+
     // Phone
     private readonly InputActionMap m_Phone;
     private List<IPhoneActions> m_PhoneActionsCallbackInterfaces = new List<IPhoneActions>();
@@ -1955,6 +2043,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnKey9(InputAction.CallbackContext context);
         void OnKey10(InputAction.CallbackContext context);
         void OnKey11(InputAction.CallbackContext context);
+    }
+    public interface IDrumActions
+    {
+        void OnCancel(InputAction.CallbackContext context);
     }
     public interface IPhoneActions
     {
