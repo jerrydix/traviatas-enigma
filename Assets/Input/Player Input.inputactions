@@ -1017,6 +1017,45 @@
             ]
         },
         {
+            "name": "Drum",
+            "id": "e8eb4883-6df1-4ec9-955a-8378e57bfcd5",
+            "actions": [
+                {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "64606237-d3ee-4793-aff3-00547bbabcf3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "77f76d7e-b430-48cc-ac61-5d82caee5d40",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d25680f4-103d-4029-8d22-5e7636e76c90",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Phone",
             "id": "63fff13f-8608-4a44-aca3-15599b6783a9",
             "actions": [

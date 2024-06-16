@@ -18,7 +18,7 @@ public class Piano : MonoBehaviour
     [SerializeField] Interactable interactable;
 
     [SerializeField] private int sequenceAmount;
-    [SerializeField] private int sequenceLength; // 0 = easy, 1 = medium, 2 = hard
+    [SerializeField] private int sequenceLength;
     [SerializeField] private float toneRate;
     //todo add special sequence with theme
     private List<List<int>> sequences;
@@ -69,6 +69,12 @@ public class Piano : MonoBehaviour
         } else if (interactable.objIsActive && !interactable.isMoving && pianoMiniGameCompleted)
         {
             inputActions.Piano.Enable();
+        }
+        
+        if (inputActions.Piano.Cancel.triggered && interactable.objIsActive)
+        {
+            interactable.isMoving = true;
+            inputActions.Piano.Disable();
         }
         
     }
