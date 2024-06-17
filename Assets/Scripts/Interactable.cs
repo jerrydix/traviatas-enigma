@@ -65,7 +65,8 @@ public class Interactable : MonoBehaviour
 
         inputActions.Moving.Disable();
         Drum drum = GameObject.Find("Drum").GetComponent<Drum>();
-        //todo start stuff here
+        drum.playRhythm = true;
+        drum.currentRhythmIndex = 0;
         GameObject.Find("Main Camera").GetComponent<Interaction>().inInteraction = true;
 
         cameraMoveScript.enabled = false;

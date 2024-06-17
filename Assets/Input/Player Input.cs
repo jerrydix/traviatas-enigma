@@ -1050,6 +1050,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BeatDrum"",
+                    ""type"": ""Button"",
+                    ""id"": ""415babde-0568-488c-b284-71feb7e80d10"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1072,6 +1081,28 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5cc1ec63-98d1-456a-ae80-a730ab71b763"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BeatDrum"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4a2f079a-25c1-407c-954c-7162746e35e5"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BeatDrum"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1374,6 +1405,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         // Drum
         m_Drum = asset.FindActionMap("Drum", throwIfNotFound: true);
         m_Drum_Cancel = m_Drum.FindAction("Cancel", throwIfNotFound: true);
+        m_Drum_BeatDrum = m_Drum.FindAction("BeatDrum", throwIfNotFound: true);
         // Phone
         m_Phone = asset.FindActionMap("Phone", throwIfNotFound: true);
         m_Phone_HangUp = m_Phone.FindAction("HangUp", throwIfNotFound: true);
@@ -1779,11 +1811,13 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Drum;
     private List<IDrumActions> m_DrumActionsCallbackInterfaces = new List<IDrumActions>();
     private readonly InputAction m_Drum_Cancel;
+    private readonly InputAction m_Drum_BeatDrum;
     public struct DrumActions
     {
         private @PlayerInput m_Wrapper;
         public DrumActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Cancel => m_Wrapper.m_Drum_Cancel;
+        public InputAction @BeatDrum => m_Wrapper.m_Drum_BeatDrum;
         public InputActionMap Get() { return m_Wrapper.m_Drum; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1796,6 +1830,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Cancel.started += instance.OnCancel;
             @Cancel.performed += instance.OnCancel;
             @Cancel.canceled += instance.OnCancel;
+            @BeatDrum.started += instance.OnBeatDrum;
+            @BeatDrum.performed += instance.OnBeatDrum;
+            @BeatDrum.canceled += instance.OnBeatDrum;
         }
 
         private void UnregisterCallbacks(IDrumActions instance)
@@ -1803,6 +1840,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Cancel.started -= instance.OnCancel;
             @Cancel.performed -= instance.OnCancel;
             @Cancel.canceled -= instance.OnCancel;
+            @BeatDrum.started -= instance.OnBeatDrum;
+            @BeatDrum.performed -= instance.OnBeatDrum;
+            @BeatDrum.canceled -= instance.OnBeatDrum;
         }
 
         public void RemoveCallbacks(IDrumActions instance)
@@ -2047,6 +2087,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     public interface IDrumActions
     {
         void OnCancel(InputAction.CallbackContext context);
+        void OnBeatDrum(InputAction.CallbackContext context);
     }
     public interface IPhoneActions
     {

@@ -12,7 +12,7 @@ public class DrumStick : MonoBehaviour
     private float positionTurnSpeed;
     private float rotationTurnSpeed;
     
-    private float rot = 5.5f;
+    //private float rot = 5.5f;
 
     private void Start()
     {

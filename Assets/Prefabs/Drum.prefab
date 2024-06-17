@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 173301709285250702}
   - component: {fileID: 73808176283270099}
   - component: {fileID: 1098189344142128172}
+  - component: {fileID: 2776627469866683745}
   m_Layer: 0
   m_Name: Drumstick
   m_TagString: Untagged
@@ -26,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400854593957123584}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29883623, y: 0.64085644, z: -0.64085644, w: 0.29883623}
-  m_LocalPosition: {x: -1.104, y: 1.259, z: 0.927}
+  m_LocalRotation: {x: 0.161729, y: 0.8373192, z: -0.34682897, w: 0.39044833}
+  m_LocalPosition: {x: -0.933, y: 1.104, z: 0.777}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3523523250586611819}
-  m_LocalEulerAnglesHint: {x: 90, y: 130, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 130, z: 0}
 --- !u!33 &73808176283270099
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -84,6 +85,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2776627469866683745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400854593957123584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458469d755f94407bdc1af589d7547b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drumStickPressedPosition: {fileID: 6063549993222975398}
 --- !u!1 &581529028120358987
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +364,7 @@ Transform:
   - {fileID: 485606843247799073}
   - {fileID: 4430443933837753642}
   - {fileID: 173301709285250702}
+  - {fileID: 6063549993222975398}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6393492190372210181
@@ -364,6 +379,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e6a84a71cacb340a86f1a7d05fe4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drumSound:
+    Guid:
+      Data1: 421237696
+      Data2: 1139075703
+      Data3: 1366197685
+      Data4: 2056063725
+    Path: event:/DrumPlayer
+  drumStick: {fileID: 2776627469866683745}
+  positionTurnSpeed: 30
+  rotationTurnSpeed: 30
+  interactable: {fileID: 3424523776648975768}
+  drumRadio: {fileID: 0}
+  gracePeriod: 0.2
+  rhythmAmount: 2
+  rhythmLength: 4
+  rhythmDelays:
+  - 0.3
+  - 0.6
+  - 0.9
+  currentRhythmIndex: 0
+  playRhythm: 0
+  rhythmMiniGameCompleted: 0
+--- !u!1 &4637229466637468443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6063549993222975398}
+  m_Layer: 0
+  m_Name: DrumstickPressedPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6063549993222975398
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4637229466637468443}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.29883623, y: 0.64085644, z: -0.64085644, w: 0.29883623}
+  m_LocalPosition: {x: -1.104, y: 1.259, z: 0.927}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3523523250586611819}
+  m_LocalEulerAnglesHint: {x: 90, y: 130, z: 0}
 --- !u!1 &7004522756590775344
 GameObject:
   m_ObjectHideFlags: 0

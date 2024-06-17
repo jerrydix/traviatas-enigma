@@ -561,13 +561,54 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652036195949}
+  - component: {fileID: 919132147495877848}
   m_Layer: 0
-  m_Name: radio
+  m_Name: DrumRadio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132147495877848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147495877847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f6f69d6cb74e9c96ee98063346cb13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radioDrumSound:
+    Guid:
+      Data1: -656916748
+      Data2: 1274996624
+      Data3: -132829276
+      Data4: 728919249
+    Path: event:/DrumDistorted
+  radioWrongSound:
+    Guid:
+      Data1: -1121586262
+      Data2: 1233244740
+      Data3: 98390147
+      Data4: -1477901387
+    Path: event:/Keys/Key 0
+  radioRightSound:
+    Guid:
+      Data1: 1793390802
+      Data2: 1216790578
+      Data3: 1421818292
+      Data4: 784336229
+    Path: event:/Keys/Key 10
+  radioFinishedSound:
+    Guid:
+      Data1: 980754829
+      Data2: 1324931501
+      Data3: -785483082
+      Data4: -1953968295
+    Path: event:/Keys/Key 5
 --- !u!1 &2076850632014605815
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drum
       objectReference: {fileID: 0}
+    - target: {fileID: 6393492190372210181, guid: 6f24586192dfe7b48886dba0bf851d71, type: 3}
+      propertyPath: drumRadio
+      value: 
+      objectReference: {fileID: 919132147495877848}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
