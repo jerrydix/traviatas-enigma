@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - PianoKey
+  - RS
   layers:
   - Default
   - TransparentFX
