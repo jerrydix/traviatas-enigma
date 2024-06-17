@@ -1409,8 +1409,8 @@ MonoBehaviour:
   positionTurnSpeed: 10
   rotationTurnSpeed: 10
   interactable: {fileID: 1599918023560719516}
-  sequenceAmount: 2
-  sequenceLength: 2
+  sequenceAmount: 3
+  sequenceLength: 5
   toneRate: 0.5
   currentSequenceIndex: 0
   playSequence: 0
