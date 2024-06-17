@@ -392,7 +392,7 @@ MonoBehaviour:
   interactable: {fileID: 3424523776648975768}
   drumRadio: {fileID: 0}
   gracePeriod: 0.2
-  rhythmAmount: 2
+  rhythmAmount: 3
   rhythmLength: 4
   rhythmDelays:
   - 0.3
