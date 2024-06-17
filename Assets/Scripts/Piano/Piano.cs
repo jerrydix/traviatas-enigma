@@ -190,11 +190,6 @@ public class Piano : MonoBehaviour
         CheckSequence();
     }
     
-    private void PlaySound(int key)
-    {
-        Debug.Log("Playing sound");
-    }
-    
     private void CheckSequence()
     {
         if (pianoMiniGameCompleted)
@@ -252,14 +247,13 @@ public class Piano : MonoBehaviour
     IEnumerator PlayWrongSound()
     {
         Debug.Log("Wrong sequence sound");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
         for (int i = 0; i < pianoKeys.Length; i++)
         {
-            Debug.Log("Key " + i + " pressed");
             AudioManager.Instance.PlayOneShot(pianoSounds[i], transform.position);
             pianoKeys[i].PressKey(positionTurnSpeed, rotationTurnSpeed);
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
         StartCoroutine(PlaySequence(sequences[currentSequenceIndex]));
     }
 
@@ -267,6 +261,23 @@ public class Piano : MonoBehaviour
     {
         Debug.Log("Finished sequence sound");
         yield return new WaitForSeconds(1);
+        foreach (var sequence in sequences)
+        {
+            foreach (var key in sequence)
+            {
+                AudioManager.Instance.PlayOneShot(pianoSounds[key], transform.position);
+                pianoKeys[key].PressKey(positionTurnSpeed, rotationTurnSpeed);
+                yield return new WaitForSeconds(toneRate / 2);
+            }
+        }
+        yield return new WaitForSeconds(0.5f);
+        for (int i = 0; i < pianoKeys.Length; i++)
+        {
+            AudioManager.Instance.PlayOneShot(pianoSounds[i], transform.position);
+            pianoKeys[i].PressKey(positionTurnSpeed, rotationTurnSpeed);
+            yield return new WaitForSeconds(0.05f);
+        }
+        yield return new WaitForSeconds(0.5f);
         inputActions.Piano.Enable();
     }
     
