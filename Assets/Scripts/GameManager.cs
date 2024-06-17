@@ -5,11 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     //todo open smth when this is true
-    public bool pianoMiniGameCompleted;
+    [HideInInspector] public bool pianoMiniGameCompleted;
+    [HideInInspector] public bool drumMiniGameCompleted;
     
     private void Start()
     {
         pianoMiniGameCompleted = false;
+        drumMiniGameCompleted = false;
     }
     
     
