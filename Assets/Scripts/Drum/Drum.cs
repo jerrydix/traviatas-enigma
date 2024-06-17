@@ -110,7 +110,6 @@ public class Drum : MonoBehaviour
             inputActions.Drum.Disable();
             Debug.Log("Wrong rhythm");
             currentPlayerRhythm = new List<float>();
-            //todo decide whether to restart whole minigame: currentSequenceIndex = 0;
             StartCoroutine(PlayWrongSound());
         }
         if (currentPlayerRhythm.Count == rhythms[currentRhythmIndex].Count)
