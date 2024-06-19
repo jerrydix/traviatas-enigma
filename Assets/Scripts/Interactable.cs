@@ -38,6 +38,12 @@ public class Interactable : MonoBehaviour
             case "Drum_1":
                 CameraZoomInteractDrum();
                 break;
+            case "PatephoneButton_1":
+                break;
+            case "MinorButton_1":
+                break;
+            case "MajorButton_1":
+                break;
         }
     }
 
@@ -71,6 +77,27 @@ public class Interactable : MonoBehaviour
 
         cameraMoveScript.enabled = false;
         isMoving = true;
+    }
+    
+    private void InteractPatephoneButton()
+    {
+        //todo play animation from PlayButton.cs
+        MajorMinor majorMinor = GameObject.Find("MajorMinor").GetComponent<MajorMinor>();
+        majorMinor.PlayMelody();
+    }
+    
+    private void InteractMinorButton()
+    {
+        //todo play animation from MinorButton.cs
+        MajorMinor majorMinor = GameObject.Find("MajorMinor").GetComponent<MajorMinor>();
+        majorMinor.MinorButtonPressed();
+    }
+    
+    private void InteractMajorButton()
+    {
+        //todo play animation from MajorButton.cs
+        MajorMinor majorMinor = GameObject.Find("MajorMinor").GetComponent<MajorMinor>();
+        majorMinor.MajorButtonPressed();
     }
 
     private void Update()
