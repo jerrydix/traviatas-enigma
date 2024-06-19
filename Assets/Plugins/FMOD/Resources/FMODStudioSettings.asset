@@ -481,6 +481,7 @@ MonoBehaviour:
   - Door
   - Drum
   - Footsteps
+  - MajorMinor
   - Piano
   BanksToLoad: []
   LiveUpdatePort: 9264

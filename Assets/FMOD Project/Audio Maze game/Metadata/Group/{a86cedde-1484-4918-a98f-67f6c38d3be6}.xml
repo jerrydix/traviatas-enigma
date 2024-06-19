@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{a86cedde-1484-4918-a98f-67f6c38d3be6}">
+		<property name="name">
+			<value>MajorMinor</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{12c018d2-9269-412e-87b9-278e0c37c53a}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{4515b788-ba0b-4e64-842f-d2a89e26f691}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{268fbaf8-3927-433a-bfd8-d5bb7ee1e054}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{12c018d2-9269-412e-87b9-278e0c37c53a}">
+		<relationship name="effects">
+			<destination>{e37728bb-3dc8-4379-bdcf-f7c69edab1b0}</destination>
+			<destination>{ad58aaca-2708-46d7-8510-bd7f5e7fd78d}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{4515b788-ba0b-4e64-842f-d2a89e26f691}" />
+	<object class="MixerBusFader" id="{e37728bb-3dc8-4379-bdcf-f7c69edab1b0}" />
+	<object class="MultibandEqEffect" id="{ad58aaca-2708-46d7-8510-bd7f5e7fd78d}">
+		<property name="filterTypeA">
+			<value>10</value>
+		</property>
+		<property name="filterTypeB">
+			<value>6</value>
+		</property>
+		<property name="filterTypeC">
+			<value>3</value>
+		</property>
+		<property name="filterTypeD">
+			<value>9</value>
+		</property>
+		<property name="frequencyA">
+			<value>782.910095</value>
+		</property>
+		<property name="frequencyB">
+			<value>129.082764</value>
+		</property>
+		<property name="frequencyC">
+			<value>2888.00977</value>
+		</property>
+		<property name="frequencyD">
+			<value>610.5672</value>
+		</property>
+		<property name="qualityA">
+			<value>0.100000001</value>
+		</property>
+		<property name="qualityB">
+			<value>0.100000001</value>
+		</property>
+		<property name="qualityC">
+			<value>0.100000001</value>
+		</property>
+		<property name="gainD">
+			<value>1.55172586</value>
+		</property>
+	</object>
+</objects>

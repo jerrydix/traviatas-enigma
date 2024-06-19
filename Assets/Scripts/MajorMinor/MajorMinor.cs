@@ -18,18 +18,22 @@ public class MajorMinor : MonoBehaviour
     [SerializeField] private PlayButton playButton;
     
     private int currentMajorMinorIndex;
+    private int currentAmount;
     private EventReference currentMelody;
     private EventInstance currentInstance;
     private bool currentIsMajor;
-    private bool isPlaying;
-    //todo loop melody until major or minor button is pressed
+    
+    [HideInInspector] public bool majorMinorMiniGameCompleted;
     
     private void Start()
     {
         melodies = melodiesDict.toDict();
+        majorMinorMiniGameCompleted = false;
         
         var initialIndex = Random.Range(0, melodies.Count);
         currentMajorMinorIndex = initialIndex;
+
+        currentAmount = 0;
         
         if (melodies.Count == 0)
         {
@@ -46,42 +50,72 @@ public class MajorMinor : MonoBehaviour
     
     public void PlayMelody()
     {
-        currentInstance.start();
+        if (!majorMinorMiniGameCompleted)
+            currentInstance.start();
     }
     
     public void MajorButtonPressed()
     {
-        CheckCorrentness(true);
+        if (!majorMinorMiniGameCompleted)
+            CheckCorrectness(true);
     }
     
     public void MinorButtonPressed()
     {
-        CheckCorrentness(false);
+        if (!majorMinorMiniGameCompleted)
+            CheckCorrectness(false);
     }
     
-    private void CheckCorrentness(bool isMajor)
+    private void CheckCorrectness(bool isMajor)
     {
         currentInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //todo check whether immediate stop is better
         if (currentIsMajor && isMajor || !currentIsMajor && !isMajor)
         {
             Debug.Log("Correct");
-            currentMajorMinorIndex++;
-            if (currentMajorMinorIndex >= majorMinorAmount)
+            currentAmount++;
+            if (currentAmount >= majorMinorAmount)
             {
                 //todo finished method
+                majorMinorMiniGameCompleted = true;
                 Debug.Log("Finished");
             }
             else
             {
+                //play next, other melody if correct
+                //todo add play right sound
+                var newIndex = Random.Range(0, melodies.Count);
+                while (newIndex == currentMajorMinorIndex)
+                {
+                    newIndex = Random.Range(0, melodies.Count);
+                }
+                currentMajorMinorIndex = newIndex;
+                
                 var melody = melodies.Keys.ToArray()[currentMajorMinorIndex];
                 currentMelody = melody;
                 currentIsMajor = melodies[melody];
+                currentInstance = RuntimeManager.CreateInstance(currentMelody);
+                currentInstance.set3DAttributes(gameObject.transform.position.To3DAttributes());
+                currentInstance.start();
             }
         }
         else
         {
-            Debug.Log("Wrong");
-            //todo play wrong sound and another melody
+            //play other melody if incorrect
+            //todo add play wrong sound
+            Debug.Log("Incorrect");
+            var newIndex = Random.Range(0, melodies.Count);
+            while (newIndex == currentMajorMinorIndex)
+            {
+                newIndex = Random.Range(0, melodies.Count);
+            }
+            currentMajorMinorIndex = newIndex;
+                
+            var melody = melodies.Keys.ToArray()[currentMajorMinorIndex];
+            currentMelody = melody;
+            currentIsMajor = melodies[melody];
+            currentInstance = RuntimeManager.CreateInstance(currentMelody);
+            currentInstance.set3DAttributes(gameObject.transform.position.To3DAttributes());
+            currentInstance.start();
         }
     }
 

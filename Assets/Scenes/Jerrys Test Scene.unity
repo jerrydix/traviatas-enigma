@@ -532,10 +532,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   majorMinorAmount: 0
   melodiesDict:
-    melodies: []
-  majorButton: {fileID: 0}
-  minorButton: {fileID: 0}
-  playButton: {fileID: 0}
+    melodies:
+    - melody:
+        Guid:
+          Data1: 1225408365
+          Data2: 1303954535
+          Data3: 1278056601
+          Data4: 1024782498
+        Path: event:/MajorMinorEvents/Major1
+      isMajor: 1
+    - melody:
+        Guid:
+          Data1: 708268501
+          Data2: 1262545276
+          Data3: 112641152
+          Data4: 2059564487
+        Path: event:/MajorMinorEvents/Minor1
+      isMajor: 0
+  majorButton: {fileID: 919132148142820994}
+  minorButton: {fileID: 919132149393488077}
+  playButton: {fileID: 8544783546801787608}
 --- !u!1 &2072405858
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,7 +688,6 @@ Transform:
   - {fileID: 5680519942968046883}
   - {fileID: 6645823806126223147}
   - {fileID: 6738450968772847563}
-  - {fileID: 543450653310703894}
   - {fileID: 543450653327696502}
   - {fileID: 543450652597130299}
   m_Father: {fileID: 0}
@@ -703,12 +718,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149577778092}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071067, w: 0.7071068}
-  m_LocalPosition: {x: -1.46, y: 0.0021629967, z: 0.0026914545}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071067, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450651947340529}
+  m_Father: {fileID: 5680519942968046883}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450653327696502
 Transform:
@@ -805,7 +820,7 @@ GameObject:
   - component: {fileID: 543450651947340529}
   - component: {fileID: 1761342749}
   m_Layer: 0
-  m_Name: Patephone
+  m_Name: MajorMinor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -837,7 +852,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 919132148142820993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c86b95249a3b0b46a4c47aab43c4ff6, type: 3}
+  m_Script: {fileID: 11500000, guid: 1157f1b5c26b1dc428cb5825026e65c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &919132149393488076
@@ -866,7 +881,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 919132149393488076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1157f1b5c26b1dc428cb5825026e65c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c86b95249a3b0b46a4c47aab43c4ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &919132149577778092
@@ -1697,7 +1712,8 @@ Transform:
   m_LocalPosition: {x: -1.46, y: 0.0021629967, z: 0.0026914545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 543450653310703894}
   m_Father: {fileID: 543450651947340529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5711236892499156237
@@ -2284,8 +2300,9 @@ GameObject:
   - component: {fileID: 5680519942968046883}
   - component: {fileID: 3010172807521475274}
   - component: {fileID: 8544783546801787607}
+  - component: {fileID: 8544783546801787608}
   m_Layer: 0
-  m_Name: Cube.002
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2416,6 +2433,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8544783546801787608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8416272007530362111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b461b5e01dc7924429876bc6e389da6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8707273951604946186
 GameObject:
   m_ObjectHideFlags: 0
