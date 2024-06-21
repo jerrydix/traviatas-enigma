@@ -9,10 +9,18 @@ using Random = UnityEngine.Random;
 
 public class MajorMinor : MonoBehaviour
 {
-    [SerializeField] private Dictionary<EventReference, bool> melodies;
+    [Header("General Settings")]
     [SerializeField] private int majorMinorAmount;
-
     [SerializeField] private Dict melodiesDict;
+    private Dictionary<EventReference, bool> melodies;
+    [SerializeField] private EventReference rightSound;
+    [SerializeField] private EventReference wrongSound;
+    [SerializeField] private EventReference finishedSound;
+    
+    [SerializeField] float positionTurnSpeed;
+    [SerializeField] float rotationTurnSpeed;
+    
+    [Header("Buttons")]
     [SerializeField] private MajorButton majorButton;
     [SerializeField] private MinorButton minorButton;
     [SerializeField] private PlayButton playButton;
@@ -22,6 +30,8 @@ public class MajorMinor : MonoBehaviour
     private EventReference currentMelody;
     private EventInstance currentInstance;
     private bool currentIsMajor;
+
+    private bool isPlaying;
     
     [HideInInspector] public bool majorMinorMiniGameCompleted;
     
@@ -51,38 +61,48 @@ public class MajorMinor : MonoBehaviour
     public void PlayMelody()
     {
         if (!majorMinorMiniGameCompleted)
+        {
             currentInstance.start();
+            isPlaying = true;
+        }
     }
     
     public void MajorButtonPressed()
     {
-        if (!majorMinorMiniGameCompleted)
-            CheckCorrectness(true);
+        majorButton.PressMajor(positionTurnSpeed);
+        if (!majorMinorMiniGameCompleted && isPlaying)
+        {
+            CheckCorrectness(true);   
+        }
     }
     
     public void MinorButtonPressed()
     {
-        if (!majorMinorMiniGameCompleted)
-            CheckCorrectness(false);
+        minorButton.PressMinor(positionTurnSpeed);
+        if (!majorMinorMiniGameCompleted && isPlaying)
+        {
+            CheckCorrectness(false);   
+        }
     }
     
     private void CheckCorrectness(bool isMajor)
     {
         currentInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //todo check whether immediate stop is better
+        isPlaying = false;
         if (currentIsMajor && isMajor || !currentIsMajor && !isMajor)
         {
-            Debug.Log("Correct");
             currentAmount++;
             if (currentAmount >= majorMinorAmount)
             {
-                //todo finished method
-                majorMinorMiniGameCompleted = true;
                 Debug.Log("Finished");
+                majorMinorMiniGameCompleted = true;
+                StartCoroutine(PlayFinishedSound());
             }
             else
             {
                 //play next, other melody if correct
-                //todo add play right sound
+                Debug.Log("Correct");
+                StartCoroutine(PlayRightSound());
                 var newIndex = Random.Range(0, melodies.Count);
                 while (newIndex == currentMajorMinorIndex)
                 {
@@ -96,13 +116,14 @@ public class MajorMinor : MonoBehaviour
                 currentInstance = RuntimeManager.CreateInstance(currentMelody);
                 currentInstance.set3DAttributes(gameObject.transform.position.To3DAttributes());
                 currentInstance.start();
+                isPlaying = true;
             }
         }
         else
         {
             //play other melody if incorrect
-            //todo add play wrong sound
             Debug.Log("Incorrect");
+            StartCoroutine(PlayWrongSound());
             var newIndex = Random.Range(0, melodies.Count);
             while (newIndex == currentMajorMinorIndex)
             {
@@ -116,12 +137,29 @@ public class MajorMinor : MonoBehaviour
             currentInstance = RuntimeManager.CreateInstance(currentMelody);
             currentInstance.set3DAttributes(gameObject.transform.position.To3DAttributes());
             currentInstance.start();
+            isPlaying = true;
         }
     }
 
-    private void Update()
+    IEnumerator PlayRightSound()
     {
-        
+        yield return new WaitForSeconds(0.5f);
+        AudioManager.Instance.PlayOneShot(rightSound, transform.position);
+        yield return new WaitForSeconds(1f);
+    }
+    
+    IEnumerator PlayWrongSound()
+    {
+        yield return new WaitForSeconds(0.5f);
+        AudioManager.Instance.PlayOneShot(wrongSound, transform.position);
+        yield return new WaitForSeconds(1f);
+    }
+    
+    IEnumerator PlayFinishedSound()
+    {
+        yield return new WaitForSeconds(0.5f);
+        AudioManager.Instance.PlayOneShot(finishedSound, transform.position);
+        yield return new WaitForSeconds(1f);
     }
 }
 

@@ -91,14 +91,12 @@ public class Interactable : MonoBehaviour
     
     private void InteractMajorButton()
     {
-        //todo play animation from MajorButton.cs
         MajorMinor majorMinor = GameObject.Find("MajorMinor").GetComponent<MajorMinor>();
         majorMinor.MajorButtonPressed();
     }
     
     private void InteractMinorButton()
     {
-        //todo play animation from MinorButton.cs
         MajorMinor majorMinor = GameObject.Find("MajorMinor").GetComponent<MajorMinor>();
         majorMinor.MinorButtonPressed();
     }
