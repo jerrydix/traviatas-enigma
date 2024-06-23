@@ -18,7 +18,6 @@
 		<relationship name="effects">
 			<destination>{e37728bb-3dc8-4379-bdcf-f7c69edab1b0}</destination>
 			<destination>{ad58aaca-2708-46d7-8510-bd7f5e7fd78d}</destination>
-			<destination>{713eac63-1aa1-4634-90f7-4455994a598f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4515b788-ba0b-4e64-842f-d2a89e26f691}" />
@@ -61,5 +60,4 @@
 			<value>1.55172586</value>
 		</property>
 	</object>
-	<object class="CompressorEffect" id="{713eac63-1aa1-4634-90f7-4455994a598f}" />
 </objects>

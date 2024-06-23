@@ -16,14 +16,15 @@ public class MajorMinor : MonoBehaviour
     [SerializeField] private EventReference rightSound;
     [SerializeField] private EventReference wrongSound;
     [SerializeField] private EventReference finishedSound;
+    [SerializeField] private Transform soundPosition;
     
     [SerializeField] float positionTurnSpeed;
     [SerializeField] float rotationTurnSpeed;
     
     [Header("Buttons")]
-    [SerializeField] private MajorButton majorButton;
-    [SerializeField] private MinorButton minorButton;
-    [SerializeField] private PlayButton playButton;
+    [SerializeField] private ButtonPress majorButton;
+    [SerializeField] private ButtonPress minorButton;
+    [SerializeField] private ButtonPress playButton;
     
     private int currentMajorMinorIndex;
     private int currentAmount;
@@ -55,11 +56,12 @@ public class MajorMinor : MonoBehaviour
         currentMelody = melody;
         currentIsMajor = melodies[melody];
         currentInstance = RuntimeManager.CreateInstance(currentMelody);
-        currentInstance.set3DAttributes(gameObject.transform.position.To3DAttributes());
+        currentInstance.set3DAttributes(soundPosition.To3DAttributes());
     }
     
     public void PlayMelody()
     {
+        playButton.PressButton(positionTurnSpeed);
         if (!majorMinorMiniGameCompleted)
         {
             currentInstance.start();
@@ -69,7 +71,7 @@ public class MajorMinor : MonoBehaviour
     
     public void MajorButtonPressed()
     {
-        majorButton.PressMajor(positionTurnSpeed);
+        majorButton.PressButton(positionTurnSpeed);
         if (!majorMinorMiniGameCompleted && isPlaying)
         {
             CheckCorrectness(true);   
@@ -78,7 +80,7 @@ public class MajorMinor : MonoBehaviour
     
     public void MinorButtonPressed()
     {
-        minorButton.PressMinor(positionTurnSpeed);
+        minorButton.PressButton(positionTurnSpeed);
         if (!majorMinorMiniGameCompleted && isPlaying)
         {
             CheckCorrectness(false);   
@@ -114,7 +116,7 @@ public class MajorMinor : MonoBehaviour
                 currentMelody = melody;
                 currentIsMajor = melodies[melody];
                 currentInstance = RuntimeManager.CreateInstance(currentMelody);
-                currentInstance.set3DAttributes(gameObject.transform.position.To3DAttributes());
+                currentInstance.set3DAttributes(soundPosition.To3DAttributes());
                 currentInstance.start();
                 isPlaying = true;
             }
@@ -135,7 +137,7 @@ public class MajorMinor : MonoBehaviour
             currentMelody = melody;
             currentIsMajor = melodies[melody];
             currentInstance = RuntimeManager.CreateInstance(currentMelody);
-            currentInstance.set3DAttributes(gameObject.transform.position.To3DAttributes());
+            currentInstance.set3DAttributes(soundPosition.To3DAttributes());
             currentInstance.start();
             isPlaying = true;
         }
@@ -144,21 +146,21 @@ public class MajorMinor : MonoBehaviour
     IEnumerator PlayRightSound()
     {
         yield return new WaitForSeconds(0.5f);
-        AudioManager.Instance.PlayOneShot(rightSound, transform.position);
+        AudioManager.Instance.PlayOneShot(rightSound, soundPosition.position);
         yield return new WaitForSeconds(1f);
     }
     
     IEnumerator PlayWrongSound()
     {
         yield return new WaitForSeconds(0.5f);
-        AudioManager.Instance.PlayOneShot(wrongSound, transform.position);
+        AudioManager.Instance.PlayOneShot(wrongSound, soundPosition.position);
         yield return new WaitForSeconds(1f);
     }
     
     IEnumerator PlayFinishedSound()
     {
         yield return new WaitForSeconds(0.5f);
-        AudioManager.Instance.PlayOneShot(finishedSound, transform.position);
+        AudioManager.Instance.PlayOneShot(finishedSound, soundPosition.position);
         yield return new WaitForSeconds(1f);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MajorButton : MonoBehaviour
+public class ButtonPress : MonoBehaviour
 {
     private bool pressed;
     private bool isMoving;
@@ -11,7 +11,6 @@ public class MajorButton : MonoBehaviour
     
     private Transform originalPosition;
     private Vector3 pressedPosition;
-    private Quaternion pressedRotation;
     private float positionTurnSpeed;
 
     void Start()
@@ -23,10 +22,9 @@ public class MajorButton : MonoBehaviour
         originalPosition.rotation = transform.rotation;
       
         pressedPosition = pressedTransform.position;
-        pressedRotation = pressedTransform.rotation;
     }
 
-    public void PressMajor(float positionTurnSpeed)
+    public void PressButton(float positionTurnSpeed)
     {
         Debug.Log("Pressed Major");
         this.positionTurnSpeed = positionTurnSpeed;
