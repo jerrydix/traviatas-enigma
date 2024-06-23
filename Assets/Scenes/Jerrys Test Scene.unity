@@ -592,24 +592,136 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efefa29e76871a4a8483226a4adf239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  majorMinorAmount: 0
+  majorMinorAmount: 2
   melodiesDict:
     melodies:
     - melody:
         Guid:
-          Data1: 1225408365
-          Data2: 1303954535
-          Data3: 1278056601
-          Data4: 1024782498
+          Data1: 1569075931
+          Data2: 1106207716
+          Data3: 114796700
+          Data4: -987692916
         Path: event:/MajorMinorEvents/Major1
       isMajor: 1
     - melody:
         Guid:
-          Data1: 708268501
-          Data2: 1262545276
-          Data3: 112641152
-          Data4: 2059564487
+          Data1: 515839021
+          Data2: 1099618376
+          Data3: 1485761953
+          Data4: 1836217827
+        Path: event:/MajorMinorEvents/Major2
+      isMajor: 1
+    - melody:
+        Guid:
+          Data1: -2028347625
+          Data2: 1185495634
+          Data3: 825407930
+          Data4: 710441649
+        Path: event:/MajorMinorEvents/Major3
+      isMajor: 1
+    - melody:
+        Guid:
+          Data1: 787185214
+          Data2: 1314551918
+          Data3: -1931070026
+          Data4: 446198597
+        Path: event:/MajorMinorEvents/Major4
+      isMajor: 1
+    - melody:
+        Guid:
+          Data1: -292112228
+          Data2: 1116590740
+          Data3: 1583699618
+          Data4: 892134030
+        Path: event:/MajorMinorEvents/Major5
+      isMajor: 1
+    - melody:
+        Guid:
+          Data1: 755805853
+          Data2: 1191258290
+          Data3: -2086597212
+          Data4: 835068571
+        Path: event:/MajorMinorEvents/Major6
+      isMajor: 1
+    - melody:
+        Guid:
+          Data1: -1597022163
+          Data2: 1174534689
+          Data3: 1444037019
+          Data4: -666917030
+        Path: event:/MajorMinorEvents/Major7
+      isMajor: 1
+    - melody:
+        Guid:
+          Data1: -206637906
+          Data2: 1081401423
+          Data3: -285019215
+          Data4: 1488306156
+        Path: event:/MajorMinorEvents/Major8
+      isMajor: 1
+    - melody:
+        Guid:
+          Data1: -25451934
+          Data2: 1087704370
+          Data3: 223383434
+          Data4: 1369510440
         Path: event:/MajorMinorEvents/Minor1
+      isMajor: 0
+    - melody:
+        Guid:
+          Data1: -1211723322
+          Data2: 1328513952
+          Data3: -1889431158
+          Data4: -261132879
+        Path: event:/MajorMinorEvents/Minor2
+      isMajor: 0
+    - melody:
+        Guid:
+          Data1: 1801372070
+          Data2: 1328520841
+          Data3: -434682976
+          Data4: -1058266020
+        Path: event:/MajorMinorEvents/Minor3
+      isMajor: 0
+    - melody:
+        Guid:
+          Data1: -1515837109
+          Data2: 1194495922
+          Data3: -1670581607
+          Data4: 365736148
+        Path: event:/MajorMinorEvents/Minor4
+      isMajor: 0
+    - melody:
+        Guid:
+          Data1: -758237095
+          Data2: 1258744702
+          Data3: -172025419
+          Data4: 1378866859
+        Path: event:/MajorMinorEvents/Minor5
+      isMajor: 0
+    - melody:
+        Guid:
+          Data1: -381352562
+          Data2: 1293747177
+          Data3: 2065456570
+          Data4: -565142608
+        Path: event:/MajorMinorEvents/Minor6
+      isMajor: 0
+    - melody:
+        Guid:
+          Data1: -1757247033
+          Data2: 1147917729
+          Data3: -1186519135
+          Data4: 975437947
+        Path: event:/MajorMinorEvents/Minor7
+      isMajor: 0
+    - melody:
+        Guid:
+          Data1: -1939298635
+          Data2: 1186160971
+          Data3: -1074218583
+          Data4: 517600238
+        Path: event:/MajorMinorEvents/Minor8
       isMajor: 0
   rightSound:
     Guid:

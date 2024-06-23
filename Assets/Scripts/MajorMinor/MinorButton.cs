@@ -41,14 +41,13 @@ public class MinorButton : MonoBehaviour
     private void Update()
     {
       
-        if (isMoving && pressed && Vector3.Distance(transform.position, pressedPosition) < 0.001f)
+        if (isMoving && pressed && Vector3.Distance(transform.position, pressedPosition) < 0.005f)
         {
             pressed = false;
         }
       
         if (isMoving && pressed)
         {
-            Debug.Log(positionTurnSpeed);
             transform.position = Vector3.Lerp(transform.position, pressedPosition, positionTurnSpeed * Time.deltaTime);
         }
         else if (isMoving && !pressed)
