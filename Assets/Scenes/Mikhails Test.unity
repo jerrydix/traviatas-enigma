@@ -2795,7 +2795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3483881628063661246, guid: 3acd5fd88c441f14a9dc5d4917763929, type: 3}
       propertyPath: _PixelationFactor
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4561359224231719891, guid: 3acd5fd88c441f14a9dc5d4917763929, type: 3}
       propertyPath: orientation
