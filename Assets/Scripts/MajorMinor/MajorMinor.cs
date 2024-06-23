@@ -13,6 +13,9 @@ public class MajorMinor : MonoBehaviour
     [SerializeField] private int majorMinorAmount;
     [SerializeField] private Dict melodiesDict;
     private Dictionary<EventReference, bool> melodies;
+    private List<EventReference> melodyList;
+    private static System.Random rng;
+        
     [SerializeField] private EventReference rightSound;
     [SerializeField] private EventReference wrongSound;
     [SerializeField] private EventReference finishedSound;
@@ -40,10 +43,11 @@ public class MajorMinor : MonoBehaviour
     {
         melodies = melodiesDict.toDict();
         majorMinorMiniGameCompleted = false;
-        
-        var initialIndex = Random.Range(0, melodies.Count);
-        currentMajorMinorIndex = initialIndex;
 
+        melodyList = melodies.Keys.ToList();
+        Shuffle(melodyList);
+        
+        currentMajorMinorIndex = 0;
         currentAmount = 0;
         
         if (melodies.Count == 0)
@@ -57,6 +61,17 @@ public class MajorMinor : MonoBehaviour
         currentIsMajor = melodies[melody];
         currentInstance = RuntimeManager.CreateInstance(currentMelody);
         currentInstance.set3DAttributes(soundPosition.To3DAttributes());
+    }
+    
+    private static void Shuffle<T>(IList<T> list)
+    {
+        rng = new System.Random();
+        var n = list.Count;  
+        while (n > 1) {  
+            n--;  
+            var k = rng.Next(n + 1);  
+            (list[k], list[n]) = (list[n], list[k]);
+        }  
     }
     
     public void PlayMelody()
@@ -89,7 +104,7 @@ public class MajorMinor : MonoBehaviour
     
     private void CheckCorrectness(bool isMajor)
     {
-        currentInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //todo check whether immediate stop is better
+        currentInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         isPlaying = false;
         if (currentIsMajor && isMajor || !currentIsMajor && !isMajor)
         {
@@ -105,20 +120,6 @@ public class MajorMinor : MonoBehaviour
                 //play next, other melody if correct
                 Debug.Log("Correct");
                 StartCoroutine(PlayRightSound());
-                var newIndex = Random.Range(0, melodies.Count);
-                while (newIndex == currentMajorMinorIndex)
-                {
-                    newIndex = Random.Range(0, melodies.Count);
-                }
-                currentMajorMinorIndex = newIndex;
-                
-                var melody = melodies.Keys.ToArray()[currentMajorMinorIndex];
-                currentMelody = melody;
-                currentIsMajor = melodies[melody];
-                currentInstance = RuntimeManager.CreateInstance(currentMelody);
-                currentInstance.set3DAttributes(soundPosition.To3DAttributes());
-                currentInstance.start();
-                isPlaying = true;
             }
         }
         else
@@ -126,42 +127,55 @@ public class MajorMinor : MonoBehaviour
             //play other melody if incorrect
             Debug.Log("Incorrect");
             StartCoroutine(PlayWrongSound());
-            var newIndex = Random.Range(0, melodies.Count);
-            while (newIndex == currentMajorMinorIndex)
-            {
-                newIndex = Random.Range(0, melodies.Count);
-            }
-            currentMajorMinorIndex = newIndex;
-                
-            var melody = melodies.Keys.ToArray()[currentMajorMinorIndex];
-            currentMelody = melody;
-            currentIsMajor = melodies[melody];
-            currentInstance = RuntimeManager.CreateInstance(currentMelody);
-            currentInstance.set3DAttributes(soundPosition.To3DAttributes());
-            currentInstance.start();
-            isPlaying = true;
         }
     }
 
     IEnumerator PlayRightSound()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         AudioManager.Instance.PlayOneShot(rightSound, soundPosition.position);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        currentMajorMinorIndex++;
+        if (currentMajorMinorIndex >= melodyList.Count)
+        {
+            currentMajorMinorIndex = 0;
+            Shuffle(melodyList);
+        }
+                
+        var melody = melodyList[currentMajorMinorIndex];
+        currentMelody = melody;
+        currentIsMajor = melodies[melody];
+        currentInstance = RuntimeManager.CreateInstance(currentMelody);
+        currentInstance.set3DAttributes(soundPosition.To3DAttributes());
+        currentInstance.start();
+        isPlaying = true;
     }
     
     IEnumerator PlayWrongSound()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         AudioManager.Instance.PlayOneShot(wrongSound, soundPosition.position);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        currentMajorMinorIndex++;
+        if (currentMajorMinorIndex >= melodyList.Count)
+        {
+            currentMajorMinorIndex = 0;
+            Shuffle(melodyList);
+        }
+                
+        var melody = melodyList[currentMajorMinorIndex];
+        currentMelody = melody;
+        currentIsMajor = melodies[melody];
+        currentInstance = RuntimeManager.CreateInstance(currentMelody);
+        currentInstance.set3DAttributes(soundPosition.To3DAttributes());
+        currentInstance.start();
+        isPlaying = true;
     }
     
     IEnumerator PlayFinishedSound()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         AudioManager.Instance.PlayOneShot(finishedSound, soundPosition.position);
-        yield return new WaitForSeconds(1f);
     }
 }
 
