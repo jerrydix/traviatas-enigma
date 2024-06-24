@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 121c6be9160caec42939ab0d777419a6
+guid: 14e07715cbc44c84090ae43d10dd6c81
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Decal
+    second: {fileID: 2100000, guid: c835d2544306c324a8e48a9ca02f6151, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
