@@ -26,7 +26,7 @@ public class ButtonPress : MonoBehaviour
 
     public void PressButton(float positionTurnSpeed)
     {
-        Debug.Log("Pressed MajorMinorButton");
+        Debug.Log("Pressed Button");
         this.positionTurnSpeed = positionTurnSpeed;
         pressed = true;
         isMoving = true;

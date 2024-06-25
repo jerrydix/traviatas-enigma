@@ -50,6 +50,12 @@ public class Interactable : MonoBehaviour
             case "Phone_1":
                 InteractPhone();
                 break;
+            case "ElevatorButtonInside_1":
+                InteractElevatorButtonInside();
+                break;
+            case "ElevatorButtonOutside_1":
+                InteractElevatorButtonOutside();
+                break;
         }
     }
 
@@ -107,6 +113,18 @@ public class Interactable : MonoBehaviour
     private void InteractPhone()
     {
         GameObject.Find("Phone").GetComponent<Phone>().Interact();
+    }
+    
+    private void InteractElevatorButtonInside()
+    {
+        //TODO MIKHAIL ELEVATOR
+        //GameObject.Find("Elevator").GetComponent<Elevator>().InteractInside();
+    }
+    
+    private void InteractElevatorButtonOutside()
+    {
+        //TODO MIKHAIL ELEVATOR
+        //GameObject.Find("Elevator").GetComponent<Elevator>().InteractOutside();
     }
 
     private void Update()
