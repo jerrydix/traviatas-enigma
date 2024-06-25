@@ -47,6 +47,9 @@ public class Interactable : MonoBehaviour
             case "MinorButton_1":
                 InteractMinorButton();
                 break;
+            case "Phone_1":
+                InteractPhone();
+                break;
         }
     }
 
@@ -99,6 +102,11 @@ public class Interactable : MonoBehaviour
     {
         MajorMinor majorMinor = GameObject.Find("MajorMinor").GetComponent<MajorMinor>();
         majorMinor.MinorButtonPressed();
+    }
+    
+    private void InteractPhone()
+    {
+        GameObject.Find("Phone").GetComponent<Phone>().Interact();
     }
 
     private void Update()
