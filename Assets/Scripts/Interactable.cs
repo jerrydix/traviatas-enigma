@@ -38,6 +38,9 @@ public class Interactable : MonoBehaviour
             case "Drum_1":
                 CameraZoomInteractDrum();
                 break;
+            case "Clock_1":
+                CameraZoomInteractClock();
+                break;
             case "PatephoneButton_1":
                 InteractPatephoneButton();
                 break;
@@ -58,6 +61,8 @@ public class Interactable : MonoBehaviour
                 break;
         }
     }
+    
+    //TODO MOVE ALL FIND METHODS / VARIABLE SETTINGS TO WITHIN THEIR RESPECTIVE CLASSES
 
     private void CameraZoomInteractPiano()
     {
@@ -87,6 +92,18 @@ public class Interactable : MonoBehaviour
         drum.currentRhythmIndex = 0;
         GameObject.Find("Main Camera").GetComponent<Interaction>().inInteraction = true;
 
+        cameraMoveScript.enabled = false;
+        isMoving = true;
+    }
+
+    private void CameraZoomInteractClock()
+    {
+        cameraOriginalPosition.position = cam.position;
+        cameraOriginalPosition.rotation = cam.rotation;
+        cameraOriginalPosition.localScale = cam.localScale;
+        
+        inputActions.Moving.Disable();
+        
         cameraMoveScript.enabled = false;
         isMoving = true;
     }

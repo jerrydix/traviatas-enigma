@@ -1109,6 +1109,245 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""Clocks"",
+            ""id"": ""599f4531-c4f7-499c-92a5-889a0dcc988c"",
+            ""actions"": [
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""415e4e0f-ae64-4287-b425-1f9b1b205182"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Digit1"",
+                    ""type"": ""Button"",
+                    ""id"": ""11c1ab09-e1a6-4c58-ada7-61bdd859868a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Digit2"",
+                    ""type"": ""Button"",
+                    ""id"": ""c0434f00-c92e-43d4-8dee-747e20cdca71"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Digit3"",
+                    ""type"": ""Button"",
+                    ""id"": ""343166a9-55c4-4601-9d33-be4a3a9cecbf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Digit4"",
+                    ""type"": ""Button"",
+                    ""id"": ""98fd450b-afdd-4408-b7ad-db9de248ecb6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Digit5"",
+                    ""type"": ""Button"",
+                    ""id"": ""493c429a-1500-40f6-9876-bad87887789c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Digit6"",
+                    ""type"": ""Button"",
+                    ""id"": ""bb832dda-3fd4-49c1-a7a7-ae6d54a8e1e0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Digit7"",
+                    ""type"": ""Button"",
+                    ""id"": ""40024cb4-9894-470a-a77b-8cb789f22b8d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Digit8"",
+                    ""type"": ""Button"",
+                    ""id"": ""575d7e25-579d-4675-be8a-ec6c75e1dde9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Digit9"",
+                    ""type"": ""Button"",
+                    ""id"": ""6978151d-e2e4-46de-a02c-3c1c41ee3dec"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Digit0"",
+                    ""type"": ""Button"",
+                    ""id"": ""8ea4d1e2-f497-4f6d-861d-ad5e4a08435e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""9864d68e-5fd9-4d68-b33b-d23be8756d3e"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e4cae34-80e0-4824-87d1-71ac5ff40859"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dada8c32-6c5f-42ee-b76b-de43a263f1f1"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Digit1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e55212e4-b23c-4d67-aad4-eac70c01cfc2"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Digit2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eef0dc98-c409-469b-a707-cc0d54cfefdd"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Digit3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0d87b03e-1837-4295-9a9b-7a60d23bee7a"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Digit4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c55b2c5-48f6-40d9-962f-d199c3101054"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Digit5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4aceebed-9f40-44c3-bb68-953036801b04"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Digit6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f10706e-9c60-4efe-bd1a-974840fcb90b"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Digit7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""18141729-43ab-482f-8368-ed09e0ecce0e"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Digit8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ad5c98dd-cf85-45df-bfa3-0b641f9d544d"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Digit9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""87552b9a-bb97-4d14-b5c5-c07a85ed89de"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Digit0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Phone"",
             ""id"": ""63fff13f-8608-4a44-aca3-15599b6783a9"",
             ""actions"": [
@@ -1406,6 +1645,19 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Drum = asset.FindActionMap("Drum", throwIfNotFound: true);
         m_Drum_Cancel = m_Drum.FindAction("Cancel", throwIfNotFound: true);
         m_Drum_BeatDrum = m_Drum.FindAction("BeatDrum", throwIfNotFound: true);
+        // Clocks
+        m_Clocks = asset.FindActionMap("Clocks", throwIfNotFound: true);
+        m_Clocks_Cancel = m_Clocks.FindAction("Cancel", throwIfNotFound: true);
+        m_Clocks_Digit1 = m_Clocks.FindAction("Digit1", throwIfNotFound: true);
+        m_Clocks_Digit2 = m_Clocks.FindAction("Digit2", throwIfNotFound: true);
+        m_Clocks_Digit3 = m_Clocks.FindAction("Digit3", throwIfNotFound: true);
+        m_Clocks_Digit4 = m_Clocks.FindAction("Digit4", throwIfNotFound: true);
+        m_Clocks_Digit5 = m_Clocks.FindAction("Digit5", throwIfNotFound: true);
+        m_Clocks_Digit6 = m_Clocks.FindAction("Digit6", throwIfNotFound: true);
+        m_Clocks_Digit7 = m_Clocks.FindAction("Digit7", throwIfNotFound: true);
+        m_Clocks_Digit8 = m_Clocks.FindAction("Digit8", throwIfNotFound: true);
+        m_Clocks_Digit9 = m_Clocks.FindAction("Digit9", throwIfNotFound: true);
+        m_Clocks_Digit0 = m_Clocks.FindAction("Digit0", throwIfNotFound: true);
         // Phone
         m_Phone = asset.FindActionMap("Phone", throwIfNotFound: true);
         m_Phone_HangUp = m_Phone.FindAction("HangUp", throwIfNotFound: true);
@@ -1861,6 +2113,132 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     }
     public DrumActions @Drum => new DrumActions(this);
 
+    // Clocks
+    private readonly InputActionMap m_Clocks;
+    private List<IClocksActions> m_ClocksActionsCallbackInterfaces = new List<IClocksActions>();
+    private readonly InputAction m_Clocks_Cancel;
+    private readonly InputAction m_Clocks_Digit1;
+    private readonly InputAction m_Clocks_Digit2;
+    private readonly InputAction m_Clocks_Digit3;
+    private readonly InputAction m_Clocks_Digit4;
+    private readonly InputAction m_Clocks_Digit5;
+    private readonly InputAction m_Clocks_Digit6;
+    private readonly InputAction m_Clocks_Digit7;
+    private readonly InputAction m_Clocks_Digit8;
+    private readonly InputAction m_Clocks_Digit9;
+    private readonly InputAction m_Clocks_Digit0;
+    public struct ClocksActions
+    {
+        private @PlayerInput m_Wrapper;
+        public ClocksActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Cancel => m_Wrapper.m_Clocks_Cancel;
+        public InputAction @Digit1 => m_Wrapper.m_Clocks_Digit1;
+        public InputAction @Digit2 => m_Wrapper.m_Clocks_Digit2;
+        public InputAction @Digit3 => m_Wrapper.m_Clocks_Digit3;
+        public InputAction @Digit4 => m_Wrapper.m_Clocks_Digit4;
+        public InputAction @Digit5 => m_Wrapper.m_Clocks_Digit5;
+        public InputAction @Digit6 => m_Wrapper.m_Clocks_Digit6;
+        public InputAction @Digit7 => m_Wrapper.m_Clocks_Digit7;
+        public InputAction @Digit8 => m_Wrapper.m_Clocks_Digit8;
+        public InputAction @Digit9 => m_Wrapper.m_Clocks_Digit9;
+        public InputAction @Digit0 => m_Wrapper.m_Clocks_Digit0;
+        public InputActionMap Get() { return m_Wrapper.m_Clocks; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ClocksActions set) { return set.Get(); }
+        public void AddCallbacks(IClocksActions instance)
+        {
+            if (instance == null || m_Wrapper.m_ClocksActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ClocksActionsCallbackInterfaces.Add(instance);
+            @Cancel.started += instance.OnCancel;
+            @Cancel.performed += instance.OnCancel;
+            @Cancel.canceled += instance.OnCancel;
+            @Digit1.started += instance.OnDigit1;
+            @Digit1.performed += instance.OnDigit1;
+            @Digit1.canceled += instance.OnDigit1;
+            @Digit2.started += instance.OnDigit2;
+            @Digit2.performed += instance.OnDigit2;
+            @Digit2.canceled += instance.OnDigit2;
+            @Digit3.started += instance.OnDigit3;
+            @Digit3.performed += instance.OnDigit3;
+            @Digit3.canceled += instance.OnDigit3;
+            @Digit4.started += instance.OnDigit4;
+            @Digit4.performed += instance.OnDigit4;
+            @Digit4.canceled += instance.OnDigit4;
+            @Digit5.started += instance.OnDigit5;
+            @Digit5.performed += instance.OnDigit5;
+            @Digit5.canceled += instance.OnDigit5;
+            @Digit6.started += instance.OnDigit6;
+            @Digit6.performed += instance.OnDigit6;
+            @Digit6.canceled += instance.OnDigit6;
+            @Digit7.started += instance.OnDigit7;
+            @Digit7.performed += instance.OnDigit7;
+            @Digit7.canceled += instance.OnDigit7;
+            @Digit8.started += instance.OnDigit8;
+            @Digit8.performed += instance.OnDigit8;
+            @Digit8.canceled += instance.OnDigit8;
+            @Digit9.started += instance.OnDigit9;
+            @Digit9.performed += instance.OnDigit9;
+            @Digit9.canceled += instance.OnDigit9;
+            @Digit0.started += instance.OnDigit0;
+            @Digit0.performed += instance.OnDigit0;
+            @Digit0.canceled += instance.OnDigit0;
+        }
+
+        private void UnregisterCallbacks(IClocksActions instance)
+        {
+            @Cancel.started -= instance.OnCancel;
+            @Cancel.performed -= instance.OnCancel;
+            @Cancel.canceled -= instance.OnCancel;
+            @Digit1.started -= instance.OnDigit1;
+            @Digit1.performed -= instance.OnDigit1;
+            @Digit1.canceled -= instance.OnDigit1;
+            @Digit2.started -= instance.OnDigit2;
+            @Digit2.performed -= instance.OnDigit2;
+            @Digit2.canceled -= instance.OnDigit2;
+            @Digit3.started -= instance.OnDigit3;
+            @Digit3.performed -= instance.OnDigit3;
+            @Digit3.canceled -= instance.OnDigit3;
+            @Digit4.started -= instance.OnDigit4;
+            @Digit4.performed -= instance.OnDigit4;
+            @Digit4.canceled -= instance.OnDigit4;
+            @Digit5.started -= instance.OnDigit5;
+            @Digit5.performed -= instance.OnDigit5;
+            @Digit5.canceled -= instance.OnDigit5;
+            @Digit6.started -= instance.OnDigit6;
+            @Digit6.performed -= instance.OnDigit6;
+            @Digit6.canceled -= instance.OnDigit6;
+            @Digit7.started -= instance.OnDigit7;
+            @Digit7.performed -= instance.OnDigit7;
+            @Digit7.canceled -= instance.OnDigit7;
+            @Digit8.started -= instance.OnDigit8;
+            @Digit8.performed -= instance.OnDigit8;
+            @Digit8.canceled -= instance.OnDigit8;
+            @Digit9.started -= instance.OnDigit9;
+            @Digit9.performed -= instance.OnDigit9;
+            @Digit9.canceled -= instance.OnDigit9;
+            @Digit0.started -= instance.OnDigit0;
+            @Digit0.performed -= instance.OnDigit0;
+            @Digit0.canceled -= instance.OnDigit0;
+        }
+
+        public void RemoveCallbacks(IClocksActions instance)
+        {
+            if (m_Wrapper.m_ClocksActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IClocksActions instance)
+        {
+            foreach (var item in m_Wrapper.m_ClocksActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_ClocksActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public ClocksActions @Clocks => new ClocksActions(this);
+
     // Phone
     private readonly InputActionMap m_Phone;
     private List<IPhoneActions> m_PhoneActionsCallbackInterfaces = new List<IPhoneActions>();
@@ -2088,6 +2466,20 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     {
         void OnCancel(InputAction.CallbackContext context);
         void OnBeatDrum(InputAction.CallbackContext context);
+    }
+    public interface IClocksActions
+    {
+        void OnCancel(InputAction.CallbackContext context);
+        void OnDigit1(InputAction.CallbackContext context);
+        void OnDigit2(InputAction.CallbackContext context);
+        void OnDigit3(InputAction.CallbackContext context);
+        void OnDigit4(InputAction.CallbackContext context);
+        void OnDigit5(InputAction.CallbackContext context);
+        void OnDigit6(InputAction.CallbackContext context);
+        void OnDigit7(InputAction.CallbackContext context);
+        void OnDigit8(InputAction.CallbackContext context);
+        void OnDigit9(InputAction.CallbackContext context);
+        void OnDigit0(InputAction.CallbackContext context);
     }
     public interface IPhoneActions
     {
