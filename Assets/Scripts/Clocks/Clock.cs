@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 
 public class Clock : MonoBehaviour
 {
+    //todo clock manager
+    
     [SerializeField] private string hour;
     [SerializeField] private string minute;
     [SerializeField] private EventReference digitSound;
