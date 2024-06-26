@@ -134,14 +134,12 @@ public class Interactable : MonoBehaviour
     
     private void InteractElevatorButtonInside()
     {
-        //TODO MIKHAIL ELEVATOR
-        //GameObject.Find("Elevator").GetComponent<Elevator>().InteractInside();
+        GameObject.Find("Elevator").GetComponent<S_Elevator>().InteractInside();
     }
     
     private void InteractElevatorButtonOutside()
     {
-        //TODO MIKHAIL ELEVATOR
-        //GameObject.Find("Elevator").GetComponent<Elevator>().InteractOutside();
+        GameObject.Find("Elevator").GetComponent<S_Elevator>().InteractOutside();
     }
 
     private void Update()
