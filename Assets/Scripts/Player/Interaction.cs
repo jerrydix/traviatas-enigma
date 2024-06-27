@@ -18,7 +18,6 @@ public class Interaction : MonoBehaviour
     {
         inputActions = GameObject.Find("Player").GetComponent<PlayerMovement>().inputActions;
         inInteraction = false;
-        inInteraction = false;
     }
 
     private void Update()
