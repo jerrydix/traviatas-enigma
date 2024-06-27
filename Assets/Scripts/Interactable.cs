@@ -103,6 +103,7 @@ public class Interactable : MonoBehaviour
         cameraOriginalPosition.localScale = cam.localScale;
         
         inputActions.Moving.Disable();
+        GameObject.Find("Main Camera").GetComponent<Interaction>().inInteraction = true;
         
         cameraMoveScript.enabled = false;
         isMoving = true;
@@ -110,7 +111,6 @@ public class Interactable : MonoBehaviour
     
     private void InteractPatephoneButton()
     {
-        //todo play animation from PlayButton.cs
         MajorMinor majorMinor = GameObject.Find("MajorMinor").GetComponent<MajorMinor>();
         majorMinor.PlayMelody();
     }

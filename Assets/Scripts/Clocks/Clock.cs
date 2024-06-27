@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using FMODUnity;
@@ -29,6 +30,17 @@ public class Clock : MonoBehaviour
         clockIsFinished = false;
         inputActions = GameObject.Find("Player").GetComponent<PlayerMovement>().inputActions;
         inputList = new List<int> (new int[4]);
+        
+        inputActions.Clocks.Digit1.performed += PressKey1;
+        inputActions.Clocks.Digit2.performed += PressKey2;
+        inputActions.Clocks.Digit3.performed += PressKey3;
+        inputActions.Clocks.Digit4.performed += PressKey4;
+        inputActions.Clocks.Digit5.performed += PressKey5;
+        inputActions.Clocks.Digit6.performed += PressKey6;
+        inputActions.Clocks.Digit7.performed += PressKey7;
+        inputActions.Clocks.Digit8.performed += PressKey8;
+        inputActions.Clocks.Digit9.performed += PressKey9;
+        inputActions.Clocks.Digit0.performed += PressKey0;
     }
 
     // Update is called once per frame
@@ -39,9 +51,10 @@ public class Clock : MonoBehaviour
             CharacterSelecter(-2);
         }
         
-        if (interactable.objIsActive && !interactable.isMoving && !clockIsFinished)
+        if (interactable.objIsActive && !interactable.isMoving)
         {
-            CharacterSelecter(currentCharIndex);
+            if (!clockIsFinished)
+                CharacterSelecter(currentCharIndex);
             inputActions.Clocks.Enable();
         }
         
@@ -76,6 +89,8 @@ public class Clock : MonoBehaviour
     private void SetDigit(int digit) {
         inputList[currentCharIndex] = digit;
         currentCharIndex++;
+        if (currentCharIndex > 3)
+            currentCharIndex = 0;
     }
 
     private void CheckCorrectness()
@@ -86,6 +101,7 @@ public class Clock : MonoBehaviour
             inputList[3] == int.Parse(minute[1].ToString()))
         {
             clockIsFinished = true;
+            GameManager.Instance.CheckClocks();
             AudioManager.Instance.PlayOneShot(finishedSound, transform.position);
         }
     }
@@ -149,7 +165,21 @@ public class Clock : MonoBehaviour
     {
         PressKeyLogic(0);
     }
+
+    private void OnDestroy()
+    {
+        inputActions.Clocks.Digit1.performed -= PressKey1;
+        inputActions.Clocks.Digit2.performed -= PressKey2;
+        inputActions.Clocks.Digit3.performed -= PressKey3;
+        inputActions.Clocks.Digit4.performed -= PressKey4;
+        inputActions.Clocks.Digit5.performed -= PressKey5;
+        inputActions.Clocks.Digit6.performed -= PressKey6;
+        inputActions.Clocks.Digit7.performed -= PressKey7;
+        inputActions.Clocks.Digit8.performed -= PressKey8;
+        inputActions.Clocks.Digit9.performed -= PressKey9;
+        inputActions.Clocks.Digit0.performed -= PressKey0;
     
+    }
 }
 
 public static class StringExtensions
