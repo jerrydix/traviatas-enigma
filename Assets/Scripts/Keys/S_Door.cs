@@ -22,7 +22,7 @@ public class S_Door : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance( transform.parent.transform.parent.position, player.position) <= 2f)
+        if (Vector3.Distance( transform.parent.transform.parent.position, player.position) <= 2f) //todo add a check for player having the key
         {
             transform.rotation = Quaternion.Lerp(Quaternion.Euler(transform.rotation.eulerAngles),openedRotation, interSpeed * Time.deltaTime);
         }
