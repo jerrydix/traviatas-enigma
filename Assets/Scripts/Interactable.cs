@@ -7,6 +7,8 @@ using UnityEngine.PlayerLoop;
 public class Interactable : MonoBehaviour
 {
     [SerializeField] Transform cameraInteractablePosition;
+    [SerializeField] private GameObject parentScriptObject;
+    
     private Transform cam;
     private Transform cameraOriginalPosition;
     private CameraMove cameraMoveScript;
@@ -59,11 +61,27 @@ public class Interactable : MonoBehaviour
             case "ElevatorButtonOutside_1":
                 InteractElevatorButtonOutside();
                 break;
+            case "Cymbals_1":
+                InteractInstrument();
+                break;
+            case "Trumpet_1":
+                InteractInstrument();
+                break;
+            case "Violin_1":
+                InteractInstrument();
+                break;
+            case "Mann_1_1":
+                InteractMann();
+                break;
+            case "Mann_2_1":
+                InteractMann();
+                break;
+            case "Mann_3_1":
+                InteractMann();
+                break;
         }
     }
     
-    //TODO MOVE ALL FIND METHODS / VARIABLE SETTINGS TO WITHIN THEIR RESPECTIVE CLASSES
-
     private void CameraZoomInteractPiano()
     {
         cameraOriginalPosition.position = cam.position;
@@ -71,7 +89,7 @@ public class Interactable : MonoBehaviour
         cameraOriginalPosition.localScale = cam.localScale;
       
         inputActions.Moving.Disable();
-        Piano piano = GameObject.Find("Piano").GetComponent<Piano>();
+        Piano piano = parentScriptObject.GetComponent<Piano>();
         piano.playSequence = true;
         piano.currentSequenceIndex = 0;
         GameObject.Find("Main Camera").GetComponent<Interaction>().inInteraction = true;
@@ -87,7 +105,7 @@ public class Interactable : MonoBehaviour
         cameraOriginalPosition.localScale = cam.localScale;
 
         inputActions.Moving.Disable();
-        Drum drum = GameObject.Find("Drum").GetComponent<Drum>();
+        Drum drum = parentScriptObject.GetComponent<Drum>();
         drum.playRhythm = true;
         drum.currentRhythmIndex = 0;
         GameObject.Find("Main Camera").GetComponent<Interaction>().inInteraction = true;
@@ -111,35 +129,45 @@ public class Interactable : MonoBehaviour
     
     private void InteractPatephoneButton()
     {
-        MajorMinor majorMinor = GameObject.Find("MajorMinor").GetComponent<MajorMinor>();
+        MajorMinor majorMinor = parentScriptObject.GetComponent<MajorMinor>();
         majorMinor.PlayMelody();
     }
     
     private void InteractMajorButton()
     {
-        MajorMinor majorMinor = GameObject.Find("MajorMinor").GetComponent<MajorMinor>();
+        MajorMinor majorMinor = parentScriptObject.GetComponent<MajorMinor>();
         majorMinor.MajorButtonPressed();
     }
     
     private void InteractMinorButton()
     {
-        MajorMinor majorMinor = GameObject.Find("MajorMinor").GetComponent<MajorMinor>();
+        MajorMinor majorMinor = parentScriptObject.GetComponent<MajorMinor>();
         majorMinor.MinorButtonPressed();
     }
     
     private void InteractPhone()
     {
-        GameObject.Find("Phone").GetComponent<Phone>().Interact();
+        parentScriptObject.GetComponent<Phone>().Interact();
     }
     
     private void InteractElevatorButtonInside()
     {
-        GameObject.Find("Elevator").GetComponent<S_Elevator>().InteractInside();
+        parentScriptObject.GetComponent<S_Elevator>().InteractInside();
     }
     
     private void InteractElevatorButtonOutside()
     {
-        GameObject.Find("Elevator").GetComponent<S_Elevator>().InteractOutside();
+        parentScriptObject.GetComponent<S_Elevator>().InteractOutside();
+    }
+
+    private void InteractInstrument()
+    {
+        parentScriptObject.GetComponent<Instrument>().CollectItem();
+    }
+    
+    private void InteractMann()
+    {
+        parentScriptObject.GetComponent<Mannequin>().Interact();
     }
 
     private void Update()

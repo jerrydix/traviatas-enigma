@@ -24,7 +24,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool drumMiniGameCompleted;
     
     [SerializeField] private List<Clock> clocks;
+    [SerializeField] private List<Mannequin> mannequins;
     [HideInInspector] public bool clockMiniGameCompleted; 
+    [HideInInspector] public bool mannequinMiniGameCompleted;
     
     public void CheckClocks()
     {
@@ -39,9 +41,17 @@ public class GameManager : MonoBehaviour
         clockMiniGameCompleted = true;
     }
     
-    public void CheckKeys()
+    public void CheckMannequins()
     {
+        foreach (var mann in mannequins)
+        {
+            if (!mann.mannequinCompleted)
+            {
+                return;
+            }
+        }
         
+        mannequinMiniGameCompleted = true;
     }
         
     private void Start()

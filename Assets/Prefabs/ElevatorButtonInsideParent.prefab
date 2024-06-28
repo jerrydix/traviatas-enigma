@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraInteractablePosition: {fileID: 0}
+  parentScriptObject: {fileID: 2167061570430516474}
   isMoving: 0
   objIsActive: 0
 --- !u!1 &6663034736284012552

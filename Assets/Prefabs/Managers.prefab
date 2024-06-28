@@ -78,6 +78,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pianoMiniGameCompleted: 0
+  drumMiniGameCompleted: 0
+  clocks: []
+  mannequins:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  clockMiniGameCompleted: 0
+  mannequinMiniGameCompleted: 0
 --- !u!1 &9015199782930450842
 GameObject:
   m_ObjectHideFlags: 0

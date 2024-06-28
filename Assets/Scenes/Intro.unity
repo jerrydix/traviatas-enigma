@@ -1063,6 +1063,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4631647728564124697, guid: f41db95f15ee52648a8857364043538d, type: 3}
+      propertyPath: parentScriptObject
+      value: 
+      objectReference: {fileID: 1172158028}
     - target: {fileID: 5583232334202996235, guid: f41db95f15ee52648a8857364043538d, type: 3}
       propertyPath: m_Name
       value: ElevatorButtonOutsideParent
@@ -1133,6 +1137,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1172158029}
     m_Modifications:
+    - target: {fileID: 53194670551529566, guid: c7c2f8e677f05e74793a5ceaaf604e77, type: 3}
+      propertyPath: parentScriptObject
+      value: 
+      objectReference: {fileID: 1172158028}
     - target: {fileID: 2167061570430516474, guid: c7c2f8e677f05e74793a5ceaaf604e77, type: 3}
       propertyPath: m_Name
       value: ElevatorButtonInsideParent

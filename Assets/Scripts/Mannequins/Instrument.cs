@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Instrument : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private InstrumentInventory inventory;
+    [SerializeField] private int itemIndex;
+    
+    private void Start()
     {
-        
+        inventory = GameObject.Find("InstrumentInventory").GetComponent<InstrumentInventory>();
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public void CollectItem()
     {
-        
+        inventory.AddItem(itemIndex);
+        Destroy(gameObject);
     }
 }
