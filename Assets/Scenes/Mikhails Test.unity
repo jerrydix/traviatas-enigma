@@ -2323,6 +2323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5623798629135696789, guid: 3acd5fd88c441f14a9dc5d4917763929, type: 3}
+      propertyPath: m_TagString
+      value: CH
+      objectReference: {fileID: 0}
     - target: {fileID: 6036384661025099995, guid: 3acd5fd88c441f14a9dc5d4917763929, type: 3}
       propertyPath: camPos
       value: 

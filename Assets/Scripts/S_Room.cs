@@ -12,12 +12,14 @@ public class S_Room : MonoBehaviour
     private bool isIn;
     public GameObject[] rooms;
     private GameObject player;
+    private GameObject CameraHolder;
     private bool swapped;
     private Coroutine swapCoroutine;
     
     // Start is called before the first frame update
     void Start()
     {
+        CameraHolder = GameObject.FindWithTag("CH");
         player = GameObject.FindWithTag("Player");
         doorScript = door.GetComponent<S_Door>();
     }
@@ -65,6 +67,7 @@ public class S_Room : MonoBehaviour
         {
             isIn = true;
             player.transform.parent = transform;
+            CameraHolder.transform.parent = transform;
         }
     }
 
@@ -83,6 +86,7 @@ public class S_Room : MonoBehaviour
             isIn = false;
             swapped = false;
             player.transform.parent = null;
+            CameraHolder.transform.parent = null;
             swapCoroutine = null;
         }
     }
