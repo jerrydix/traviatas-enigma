@@ -773,11 +773,11 @@ MonoBehaviour:
     Path: event:/Keys/Key 0
   finishedSound:
     Guid:
-      Data1: 634332667
-      Data2: 1235475743
-      Data3: -2026543472
-      Data4: 85077395
-    Path: event:/Keys/Key 11
+      Data1: -1633410863
+      Data2: 1171796805
+      Data3: 1338462123
+      Data4: -1512812529
+    Path: event:/Clock/ClockCorrect
   interactable: {fileID: 7272613614164490216}
   currentText: {fileID: 1813577764345984316}
   clockIsFinished: 0

@@ -54,27 +54,39 @@ public class InstrumentInventory : MonoBehaviour
     
     public void RemoveItem(int item)
     {
+        
+        
         currentItemIndex--;
-
+        
         switch (item)
         {
             case 0:
-                items[currentItemIndex].sprite = null;
+                ItemRemover(0);
                 itemsSetDict[cymbalSprite] = false;
-                currentItems.Remove(0);
                 break;
             case 1:
-                items[currentItemIndex].sprite = null;
+                ItemRemover(1);
                 itemsSetDict[trumpetSprite] = false;
-                currentItems.Remove(1);
                 break;
             case 2:
-                items[currentItemIndex].sprite = null;
+                ItemRemover(2);
                 itemsSetDict[violinSprite] = false;
-                currentItems.Remove(2);
                 break;
         }
-        
+    }
+
+    private void ItemRemover(int item)
+    {
+        items[currentItems.IndexOf(item)].sprite = null;
+        for (int i = currentItems.IndexOf(item) + 1; i < items.Count; i++)
+        {
+            items[i - 1].sprite = items[i].sprite;
+            if (i == items.Count - 1)
+                items[i].sprite = null;
+            if (i < currentItems.Count)
+                currentItems[i - 1] = currentItems[i];
+        }
+        currentItems.Remove(item);
     }
 
     private void LateUpdate()

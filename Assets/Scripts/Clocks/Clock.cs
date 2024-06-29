@@ -103,13 +103,16 @@ public class Clock : MonoBehaviour
             GameManager.Instance.CheckClocks();
             AudioManager.Instance.PlayOneShot(finishedSound, transform.position);
         }
+        else
+        {
+            AudioManager.Instance.PlayOneShot(digitSound, transform.position);
+        }
     }
 
     private void PressKeyLogic(int index)
     {
         if (!clockIsFinished)
         {
-            AudioManager.Instance.PlayOneShot(digitSound, transform.position);
             SetDigit(index);
             CheckCorrectness();   
         }

@@ -11,9 +11,6 @@ public class Mannequin : MonoBehaviour
     [HideInInspector] public bool mannequinCompleted;
     private InstrumentInventory inventory;
     
-    //todo if instrument is in players inventory / hand then give it to mannequin upon interaction
-    //make UI with 2d sprites for collected instruments and keys
-    
     void Start()
     {
         mannequinCompleted = false;

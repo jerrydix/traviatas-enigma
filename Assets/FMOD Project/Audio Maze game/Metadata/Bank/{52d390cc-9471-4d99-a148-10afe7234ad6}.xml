@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Bank" id="{52d390cc-9471-4d99-a148-10afe7234ad6}">
+		<property name="name">
+			<value>Clock</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7e8aa9fd-251b-419f-baf0-4f838efd1ead}</destination>
+		</relationship>
+	</object>
+</objects>
