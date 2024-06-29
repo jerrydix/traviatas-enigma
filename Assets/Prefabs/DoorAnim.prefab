@@ -190,6 +190,7 @@ MonoBehaviour:
       Data3: -1087876449
       Data4: 389505294
     Path: event:/DoorClose
+  door: {fileID: 1404959943276390535}
 --- !u!1 &3521838799309384079
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +526,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interSpeed: 5
   rot: 110
+  itemIndex: 0
+  lockable: 0
+  keyUnlockSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  isLocked: 0
 --- !u!1 &5255109946690360635
 GameObject:
   m_ObjectHideFlags: 0

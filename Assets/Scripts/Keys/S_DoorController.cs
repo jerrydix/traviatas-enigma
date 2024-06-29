@@ -7,9 +7,10 @@ using FMODUnity;
 public class S_DoorController : MonoBehaviour
 {
     [SerializeField] private EventReference[] sounds;
+    [SerializeField] private S_Door door;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && (door.lockable && !door.isLocked || !door.lockable))
         {
             AudioManager.Instance.PlayOneShot(sounds[0], transform.position);
         }
@@ -17,7 +18,7 @@ public class S_DoorController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && (door.lockable && !door.isLocked || !door.lockable))
         {
             AudioManager.Instance.PlayOneShot(sounds[1], transform.position);
         }

@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InstrumentInventory : MonoBehaviour
+public class KeyInventory : MonoBehaviour
 {
     [SerializeField] private List<Image> items;
-    [SerializeField] private Sprite cymbalSprite;
-    [SerializeField] private Sprite trumpetSprite;
-    [SerializeField] private Sprite violinSprite;
+    [SerializeField] private Sprite drumKeySprite;
+    [SerializeField] private Sprite pianoKeySprite;
+    [SerializeField] private Sprite patephoneKeySprite;
 
     [HideInInspector] public List<int> currentItems;
     private Dictionary<Sprite, bool> itemsSetDict;
@@ -19,9 +19,9 @@ public class InstrumentInventory : MonoBehaviour
     {
         itemsSetDict = new Dictionary<Sprite, bool>
         {
-            { cymbalSprite, false },
-            { trumpetSprite, false },
-            { violinSprite, false }
+            { drumKeySprite, false },
+            { pianoKeySprite,  false },
+            { patephoneKeySprite, false }
         };
         currentItems = new List<int>();
     }
@@ -31,18 +31,18 @@ public class InstrumentInventory : MonoBehaviour
         switch (item)
         {
             case 0:
-                items[currentItemIndex].sprite = cymbalSprite;
-                itemsSetDict[cymbalSprite] = true;
+                items[currentItemIndex].sprite = drumKeySprite;
+                itemsSetDict[drumKeySprite] = true;
                 currentItems.Add(0);
                 break;
             case 1:
-                items[currentItemIndex].sprite = trumpetSprite;
-                itemsSetDict[trumpetSprite] = true;
+                items[currentItemIndex].sprite = pianoKeySprite;
+                itemsSetDict[pianoKeySprite] = true;
                 currentItems.Add(1);
                 break;
             case 2:
-                items[currentItemIndex].sprite = violinSprite;
-                itemsSetDict[violinSprite] = true;
+                items[currentItemIndex].sprite = patephoneKeySprite;
+                itemsSetDict[patephoneKeySprite] = true;
                 currentItems.Add(2);
                 break;
         }
@@ -60,15 +60,15 @@ public class InstrumentInventory : MonoBehaviour
         {
             case 0:
                 ItemRemover(0);
-                itemsSetDict[cymbalSprite] = false;
+                itemsSetDict[drumKeySprite] = false;
                 break;
             case 1:
                 ItemRemover(1);
-                itemsSetDict[trumpetSprite] = false;
+                itemsSetDict[pianoKeySprite] = false;
                 break;
             case 2:
                 ItemRemover(2);
-                itemsSetDict[violinSprite] = false;
+                itemsSetDict[patephoneKeySprite] = false;
                 break;
         }
     }

@@ -466,7 +466,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.83867055, z: 0, w: 0.54463917}
   m_LocalPosition: {x: -26.273, y: 1.704, z: 0.483}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.14999999, y: 0.15, z: 0.14999999}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6247118451863864481}
@@ -495,7 +495,7 @@ MonoBehaviour:
       Data2: 1274996624
       Data3: -132829276
       Data4: 728919249
-    Path: event:/DrumDistorted
+    Path: event:/Drum/DrumDistorted
   radioWrongSound:
     Guid:
       Data1: -1121586262

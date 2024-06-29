@@ -79,6 +79,15 @@ public class Interactable : MonoBehaviour
             case "Mann_3_1":
                 InteractMann();
                 break;
+            case "DrumKey_1":
+                InteractKey();
+                break;
+            case "PatephoneKey_1":
+                InteractKey();
+                break;
+            case "PianoKey_1":
+                InteractKey();
+                break;
         }
     }
     
@@ -168,6 +177,11 @@ public class Interactable : MonoBehaviour
     private void InteractMann()
     {
         parentScriptObject.GetComponent<Mannequin>().Interact();
+    }
+    
+    private void InteractKey()
+    {
+        parentScriptObject.GetComponent<Key>().CollectItem();
     }
 
     private void Update()

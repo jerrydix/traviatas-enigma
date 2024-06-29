@@ -5,24 +5,20 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    // Start is called before the first frame update
-    
+    private KeyInventory inventory;
+
     [SerializeField] private EventReference keyPickupSound;
-    [SerializeField] private S_Door door;
-    void Start()
+    [SerializeField] private int itemIndex;
+    
+    private void Start()
     {
-        
+        inventory = GameObject.Find("KeyInventory").GetComponent<KeyInventory>();
     }
-
-    private void Interact()
+    
+    public void CollectItem()
     {
-        AudioManager.Instance.PlayOneShot(keyPickupSound);
-        //todo transfer key to player inventory
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        inventory.AddItem(itemIndex);
+        AudioManager.Instance.PlayOneShot(keyPickupSound, transform.position);
+        Destroy(gameObject);
     }
 }
