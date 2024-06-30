@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{9ea420d1-3345-45d8-ab4f-c74f0f50d4a5}">
 		<property name="name">
-			<value>ClockCorrect</value>
+			<value>ClockFinished</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>

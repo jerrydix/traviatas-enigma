@@ -483,6 +483,7 @@ MonoBehaviour:
   - Drum
   - Footsteps
   - MajorMinor
+  - Mannequins
   - Phone
   - Piano
   BanksToLoad: []

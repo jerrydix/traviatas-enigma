@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{a8ff149e-b4b7-42d6-b80f-dd4bcb5fe66c}">
 		<property name="assetPath">
-			<value>SFX/SFX_14.wav</value>
+			<value>SFX/InfiniteRoomContinuousSFX.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

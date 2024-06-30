@@ -1516,6 +1516,14 @@ MonoBehaviour:
           Data4: 517600238
         Path: event:/MajorMinorEvents/Minor8
       isMajor: 0
+    - melody:
+        Guid:
+          Data1: -1017564726
+          Data2: 1261636833
+          Data3: -2119119722
+          Data4: 1767131576
+        Path: event:/MajorMinorEvents/HorrorEasterEgg
+      isMajor: 0
   rightSound:
     Guid:
       Data1: -1121586262

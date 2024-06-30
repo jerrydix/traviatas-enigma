@@ -1057,6 +1057,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 665123492792073754, guid: ae0b063e62940e840b4c37f8f02de6d5, type: 3}
+      propertyPath: m_TagString
+      value: StoneFloor
+      objectReference: {fileID: 0}
     - target: {fileID: 1819961762797715577, guid: ae0b063e62940e840b4c37f8f02de6d5, type: 3}
       propertyPath: m_Name
       value: Opera

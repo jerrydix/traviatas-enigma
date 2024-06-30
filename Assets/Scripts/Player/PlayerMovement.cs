@@ -22,7 +22,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform cameraLookAt;
     
     [Header("Sound")]
-    [SerializeField] private EventReference steps;
+    [SerializeField] private EventReference tileSteps;
+    [SerializeField] private EventReference woodSteps;
+    private EventReference steps;
 
     [SerializeField] private float rate;
     private float time;
@@ -40,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         inputActions.UI.Enable();
         inputActions.RestartGame.Enable();
         transform.position = spawn.position;
+        steps = tileSteps;
     }
 
     void FixedUpdate()
@@ -83,6 +86,16 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.velocity = new Vector3(lim.x, _rigidbody.velocity.y, lim.z);
         }
     }
-    
-    
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("WoodFloor"))
+        {
+            steps = woodSteps;
+        }
+        else if (other.gameObject.CompareTag("StoneFloor"))
+        {
+            steps = tileSteps;
+        }
+    }
 }

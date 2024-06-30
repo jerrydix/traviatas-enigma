@@ -8,6 +8,8 @@ TagManager:
   - PianoKey
   - RS
   - CH
+  - WoodFloor
+  - StoneFloor
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - UI
   - Interactable
   - PP
-  - 
-  - 
+  - StoneFloor
+  - WoodFloor
   - 
   - 
   - 

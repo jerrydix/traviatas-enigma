@@ -766,17 +766,17 @@ MonoBehaviour:
   minute: 23
   digitSound:
     Guid:
-      Data1: -1121586262
-      Data2: 1233244740
-      Data3: 98390147
-      Data4: -1477901387
-    Path: event:/Keys/Key 0
+      Data1: -671505360
+      Data2: 1158756133
+      Data3: 1086948254
+      Data4: -412470702
+    Path: event:/Clock/ClockCorrect
   finishedSound:
     Guid:
-      Data1: -1633410863
-      Data2: 1171796805
-      Data3: 1338462123
-      Data4: -1512812529
+      Data1: -671505360
+      Data2: 1158756133
+      Data3: 1086948254
+      Data4: -412470702
     Path: event:/Clock/ClockCorrect
   interactable: {fileID: 7272613614164490216}
   currentText: {fileID: 1813577764345984316}
