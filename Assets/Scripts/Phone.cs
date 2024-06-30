@@ -53,7 +53,7 @@ public class Phone : MonoBehaviour
     public void StartRing()
     {
         //todo change first sound to ring sound in gamemanager i guess, instead of below thing
-        //callInstance.start();
+        callInstance.start();
     }
 
     private void Update()
