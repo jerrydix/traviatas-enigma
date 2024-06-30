@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 3428622155206281851}
   - component: {fileID: 5620045085044678750}
   - component: {fileID: 1404959943276390535}
+  - component: {fileID: 4986677972570040592}
   m_Layer: 0
   m_Name: Cube.001
   m_TagString: Untagged
@@ -532,13 +533,23 @@ MonoBehaviour:
   lockable: 0
   keyUnlockSound:
     Guid:
-      Data1: -1633410863
-      Data2: 1171796805
-      Data3: 1338462123
-      Data4: -1512812529
+      Data1: -671505360
+      Data2: 1158756133
+      Data3: 1086948254
+      Data4: -412470702
     Path: event:/Clock/ClockCorrect
   isLocked: 0
   rot: 110
+--- !u!41 &4986677972570040592
+OcclusionPortal:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394102495509719162}
+  m_Open: 1
+  m_Center: {x: -0.50155896, y: 0.018435001, z: -0.0030646399}
+  m_Size: {x: 1.0554916, y: 2.1957722, z: 0.34362674}
 --- !u!1 &5255109946690360635
 GameObject:
   m_ObjectHideFlags: 0

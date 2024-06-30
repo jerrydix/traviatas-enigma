@@ -48,9 +48,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7768796009490323730, guid: 3ebfc9cb20e4a8341aa58ebdd175e9c4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -2251244191874932685, guid: 3ebfc9cb20e4a8341aa58ebdd175e9c4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 401122468259050895, guid: 3ebfc9cb20e4a8341aa58ebdd175e9c4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3ebfc9cb20e4a8341aa58ebdd175e9c4, type: 3}
       propertyPath: m_Name
       value: ConnectWall_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ebfc9cb20e4a8341aa58ebdd175e9c4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3566207899841815972, guid: 3ebfc9cb20e4a8341aa58ebdd175e9c4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152111983555740953, guid: 3ebfc9cb20e4a8341aa58ebdd175e9c4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

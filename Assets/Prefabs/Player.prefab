@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 831878641890791006}
   - component: {fileID: 169688908671357125}
   - component: {fileID: 224121504763872017}
+  - component: {fileID: 4189247389394184231}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,6 +170,123 @@ MonoBehaviour:
       Data4: 2003060598
     Path: event:/FootstepsWood
   rate: 0.5
+--- !u!114 &4189247389394184231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036433665844531178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3905942753275143a3886f275532ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 0}
+  blinkingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.48308071
+      value: 0.50721586
+      inSlope: 0.8076994
+      outSlope: 0.8076994
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.132019
+      value: 0.29074097
+      inSlope: -0.048307445
+      outSlope: -0.048307445
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.25712994
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.9226093
+      value: 0.7262524
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 2.500629
+      value: 0.46891388
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 3.3413413
+      value: 0.88822544
+      inSlope: 0.30263367
+      outSlope: 0.30263367
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 3.8818579
+      value: 0.7435323
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 5.003862
+      value: 0.9869594
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  blinkingCurve_2:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: -1.1726828
+      outSlope: -1.1726828
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.49426427
+    - serializedVersion: 3
+      time: 5
+      value: -23
+      inSlope: -16.76559
+      outSlope: -16.76559
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.08780537
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  effectLength: 0
+  speed: 0.7
 --- !u!1 &5528467595778557902
 GameObject:
   m_ObjectHideFlags: 0

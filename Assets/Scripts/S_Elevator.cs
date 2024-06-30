@@ -12,6 +12,7 @@ public class S_Elevator : MonoBehaviour
     private S_Effects effects;
     [SerializeField] private bool intro;
     private GameObject player;
+    public Vector3 teleportPosition = new Vector3(0f, 1f, 0f);
     
     [Header("Buttons")]
     [SerializeField] private ButtonPress insideButton;
@@ -82,7 +83,7 @@ public class S_Elevator : MonoBehaviour
         yield return new WaitForSeconds(2f);
         effects.CloseEyes();
         yield return new WaitForSeconds(effects.effectLength);
-        player.transform.position = new Vector3(0f, 1f, 0f);
+        player.transform.position = teleportPosition;
         effects.OpenEyes();
         yield return new WaitForSeconds(effects.effectLength);
     }
