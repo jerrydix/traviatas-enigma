@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{79f8bb9e-5bfe-4c36-bff2-a5b0e2306c00}">
 		<property name="assetPath">
-			<value>Ring_2.wav</value>
+			<value>Phone/Ring_2.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

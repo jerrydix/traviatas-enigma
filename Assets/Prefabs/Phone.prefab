@@ -337,13 +337,15 @@ MonoBehaviour:
   phoneHoldTransform: {fileID: 0}
   positionTurnSpeed: 5
   rotationTurnSpeed: 5
+  transitionDistanceStart: 9
+  transitionDistanceEnd: 1
   callSound:
     Guid:
-      Data1: -231644597
-      Data2: 1283100877
-      Data3: 1482829700
-      Data4: -1334563270
-    Path: event:/Phone/PhoneRing
+      Data1: 985579725
+      Data2: 1275692324
+      Data3: -1020674663
+      Data4: -1870771559
+    Path: event:/Phone/PhonePickup
   phonePickup:
     Guid:
       Data1: 985579725

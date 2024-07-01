@@ -1365,9 +1365,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1020705726573580522, guid: c8aabe061eec4834a9c63685daeed9a0, type: 3}
+      propertyPath: callSound.Path
+      value: event:/Phone/RingChanger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020705726573580522, guid: c8aabe061eec4834a9c63685daeed9a0, type: 3}
       propertyPath: phoneHoldTransform
       value: 
       objectReference: {fileID: 3095998887204877200}
+    - target: {fileID: 1020705726573580522, guid: c8aabe061eec4834a9c63685daeed9a0, type: 3}
+      propertyPath: callSound.Guid.Data1
+      value: 2106380370
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020705726573580522, guid: c8aabe061eec4834a9c63685daeed9a0, type: 3}
+      propertyPath: callSound.Guid.Data2
+      value: 1119077648
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020705726573580522, guid: c8aabe061eec4834a9c63685daeed9a0, type: 3}
+      propertyPath: callSound.Guid.Data3
+      value: 1269135257
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020705726573580522, guid: c8aabe061eec4834a9c63685daeed9a0, type: 3}
+      propertyPath: callSound.Guid.Data4
+      value: 1131339473
+      objectReference: {fileID: 0}
     - target: {fileID: 4783393155908278099, guid: c8aabe061eec4834a9c63685daeed9a0, type: 3}
       propertyPath: m_Name
       value: Phone

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{c8481178-73ae-4476-a35a-90d405a1e13a}">
+		<property name="name">
+			<value>RingSwitcher</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e2aeec76-f2fd-4de5-85ac-03abf592876f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{51d6d112-8556-4c18-9a6c-6477201b3aa1}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{51d6d112-8556-4c18-9a6c-6477201b3aa1}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
