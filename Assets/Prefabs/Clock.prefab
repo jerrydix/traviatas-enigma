@@ -773,11 +773,11 @@ MonoBehaviour:
     Path: event:/Clock/ClockCorrect
   finishedSound:
     Guid:
-      Data1: -671505360
-      Data2: 1158756133
-      Data3: 1086948254
-      Data4: -412470702
-    Path: event:/Clock/ClockCorrect
+      Data1: -1633410863
+      Data2: 1171796805
+      Data3: 1338462123
+      Data4: -1512812529
+    Path: event:/Clock/ClockFinished
   interactable: {fileID: 7272613614164490216}
   currentText: {fileID: 1813577764345984316}
   clockIsFinished: 0
