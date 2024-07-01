@@ -187,6 +187,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 903886441412836454}
     m_Modifications:
+    - target: {fileID: 4340577901138192479, guid: 9ae4e8f626b6427428ae74913dfe91f5, type: 3}
+      propertyPath: interactSound.Path
+      value: event:/Mannequins/Cymbals
+      objectReference: {fileID: 0}
+    - target: {fileID: 4340577901138192479, guid: 9ae4e8f626b6427428ae74913dfe91f5, type: 3}
+      propertyPath: interactSound.Guid.Data1
+      value: -529466366
+      objectReference: {fileID: 0}
+    - target: {fileID: 4340577901138192479, guid: 9ae4e8f626b6427428ae74913dfe91f5, type: 3}
+      propertyPath: interactSound.Guid.Data2
+      value: 1289233638
+      objectReference: {fileID: 0}
+    - target: {fileID: 4340577901138192479, guid: 9ae4e8f626b6427428ae74913dfe91f5, type: 3}
+      propertyPath: interactSound.Guid.Data3
+      value: 79933607
+      objectReference: {fileID: 0}
+    - target: {fileID: 4340577901138192479, guid: 9ae4e8f626b6427428ae74913dfe91f5, type: 3}
+      propertyPath: interactSound.Guid.Data4
+      value: -1756850911
+      objectReference: {fileID: 0}
     - target: {fileID: 6101142344469922986, guid: 9ae4e8f626b6427428ae74913dfe91f5, type: 3}
       propertyPath: m_Name
       value: Mann_1
@@ -303,6 +323,26 @@ PrefabInstance:
     - target: {fileID: 1668719862241771230, guid: c94a9e468dd52cc46bc85bfd53801349, type: 3}
       propertyPath: m_Name
       value: Mann_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931671458101099573, guid: c94a9e468dd52cc46bc85bfd53801349, type: 3}
+      propertyPath: interactSound.Path
+      value: event:/Mannequins/Violin
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931671458101099573, guid: c94a9e468dd52cc46bc85bfd53801349, type: 3}
+      propertyPath: interactSound.Guid.Data1
+      value: 1158610374
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931671458101099573, guid: c94a9e468dd52cc46bc85bfd53801349, type: 3}
+      propertyPath: interactSound.Guid.Data2
+      value: 1333532879
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931671458101099573, guid: c94a9e468dd52cc46bc85bfd53801349, type: 3}
+      propertyPath: interactSound.Guid.Data3
+      value: 1045945791
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931671458101099573, guid: c94a9e468dd52cc46bc85bfd53801349, type: 3}
+      propertyPath: interactSound.Guid.Data4
+      value: 86125176
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -955,6 +995,26 @@ PrefabInstance:
     - target: {fileID: 3494781704798325463, guid: b6da288bfb88e274aacc501dfff02f3a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182204553418080770, guid: b6da288bfb88e274aacc501dfff02f3a, type: 3}
+      propertyPath: interactSound.Path
+      value: event:/Mannequins/Trumpet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182204553418080770, guid: b6da288bfb88e274aacc501dfff02f3a, type: 3}
+      propertyPath: interactSound.Guid.Data1
+      value: -748095140
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182204553418080770, guid: b6da288bfb88e274aacc501dfff02f3a, type: 3}
+      propertyPath: interactSound.Guid.Data2
+      value: 1185934925
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182204553418080770, guid: b6da288bfb88e274aacc501dfff02f3a, type: 3}
+      propertyPath: interactSound.Guid.Data3
+      value: 2078301349
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182204553418080770, guid: b6da288bfb88e274aacc501dfff02f3a, type: 3}
+      propertyPath: interactSound.Guid.Data4
+      value: 384333045
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

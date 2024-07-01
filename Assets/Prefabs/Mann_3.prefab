@@ -103,11 +103,11 @@ MonoBehaviour:
   itemIndex: 2
   interactSound:
     Guid:
-      Data1: -1121586262
-      Data2: 1233244740
-      Data3: 98390147
-      Data4: -1477901387
-    Path: event:/Keys/Key 0
+      Data1: 1158610374
+      Data2: 1333532879
+      Data3: 1045945791
+      Data4: 86125176
+    Path: event:/Mannequins/Violin
   mannequinCompleted: 0
 --- !u!1 &3845205719222548566
 GameObject:
