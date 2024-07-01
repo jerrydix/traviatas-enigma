@@ -169,7 +169,8 @@ PrefabInstance:
       value: Cymbals
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5219156621522847432, guid: df0460ce24ec1904198738e4755f41ac, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df0460ce24ec1904198738e4755f41ac, type: 3}
@@ -630,7 +631,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2246867817487148220, guid: 7c4762a9464025d47be499dfb8645570, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c4762a9464025d47be499dfb8645570, type: 3}
