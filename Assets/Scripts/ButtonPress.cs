@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 public class ButtonPress : MonoBehaviour
@@ -7,6 +8,7 @@ public class ButtonPress : MonoBehaviour
     private bool pressed;
     private bool isMoving;
 
+    [SerializeField] private EventReference buttonSound;
     [SerializeField] private Transform pressedTransform;
     
     private Transform originalPosition;
@@ -27,6 +29,7 @@ public class ButtonPress : MonoBehaviour
     public void PressButton(float positionTurnSpeed)
     {
         Debug.Log("Pressed Button");
+        AudioManager.Instance.PlayOneShot(buttonSound, transform.position);
         this.positionTurnSpeed = positionTurnSpeed;
         pressed = true;
         isMoving = true;
