@@ -1511,6 +1511,45 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""Singing"",
+            ""id"": ""236b8d27-ca45-4340-931c-5a6639453a2a"",
+            ""actions"": [
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""ca5f0735-8407-422b-ba0c-d72565098547"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""59505083-cd5a-4c7a-8de4-de3a434f0d76"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c1fdc8c7-601f-401b-b04b-c4e14f1d727d"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Computer"",
             ""id"": ""eae35682-f1c3-452e-b569-c57f3563649e"",
             ""actions"": [
@@ -1665,6 +1704,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Phone_Question2 = m_Phone.FindAction("Question2", throwIfNotFound: true);
         m_Phone_Question3 = m_Phone.FindAction("Question3", throwIfNotFound: true);
         m_Phone_Question4 = m_Phone.FindAction("Question4", throwIfNotFound: true);
+        // Singing
+        m_Singing = asset.FindActionMap("Singing", throwIfNotFound: true);
+        m_Singing_Cancel = m_Singing.FindAction("Cancel", throwIfNotFound: true);
         // Computer
         m_Computer = asset.FindActionMap("Computer", throwIfNotFound: true);
         m_Computer_Cancel = m_Computer.FindAction("Cancel", throwIfNotFound: true);
@@ -2317,6 +2359,52 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     }
     public PhoneActions @Phone => new PhoneActions(this);
 
+    // Singing
+    private readonly InputActionMap m_Singing;
+    private List<ISingingActions> m_SingingActionsCallbackInterfaces = new List<ISingingActions>();
+    private readonly InputAction m_Singing_Cancel;
+    public struct SingingActions
+    {
+        private @PlayerInput m_Wrapper;
+        public SingingActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Cancel => m_Wrapper.m_Singing_Cancel;
+        public InputActionMap Get() { return m_Wrapper.m_Singing; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SingingActions set) { return set.Get(); }
+        public void AddCallbacks(ISingingActions instance)
+        {
+            if (instance == null || m_Wrapper.m_SingingActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_SingingActionsCallbackInterfaces.Add(instance);
+            @Cancel.started += instance.OnCancel;
+            @Cancel.performed += instance.OnCancel;
+            @Cancel.canceled += instance.OnCancel;
+        }
+
+        private void UnregisterCallbacks(ISingingActions instance)
+        {
+            @Cancel.started -= instance.OnCancel;
+            @Cancel.performed -= instance.OnCancel;
+            @Cancel.canceled -= instance.OnCancel;
+        }
+
+        public void RemoveCallbacks(ISingingActions instance)
+        {
+            if (m_Wrapper.m_SingingActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ISingingActions instance)
+        {
+            foreach (var item in m_Wrapper.m_SingingActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_SingingActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public SingingActions @Singing => new SingingActions(this);
+
     // Computer
     private readonly InputActionMap m_Computer;
     private List<IComputerActions> m_ComputerActionsCallbackInterfaces = new List<IComputerActions>();
@@ -2488,6 +2576,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnQuestion2(InputAction.CallbackContext context);
         void OnQuestion3(InputAction.CallbackContext context);
         void OnQuestion4(InputAction.CallbackContext context);
+    }
+    public interface ISingingActions
+    {
+        void OnCancel(InputAction.CallbackContext context);
     }
     public interface IComputerActions
     {

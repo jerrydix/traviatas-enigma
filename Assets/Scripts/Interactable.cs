@@ -88,6 +88,9 @@ public class Interactable : MonoBehaviour
             case "PianoKey_1":
                 InteractKey();
                 break;
+            case "Singing_1":
+                CameraZoomInteractSinging();
+                break;
         }
     }
     
@@ -182,6 +185,19 @@ public class Interactable : MonoBehaviour
     private void InteractKey()
     {
         parentScriptObject.GetComponent<Key>().CollectItem();
+    }
+    
+    private void CameraZoomInteractSinging()
+    {
+        cameraOriginalPosition.position = cam.position;
+        cameraOriginalPosition.rotation = cam.rotation;
+        cameraOriginalPosition.localScale = cam.localScale;
+        
+        inputActions.Moving.Disable();
+        GameObject.Find("Main Camera").GetComponent<Interaction>().inInteraction = true;
+        
+        cameraMoveScript.enabled = false;
+        isMoving = true;
     }
 
     private void Update()
