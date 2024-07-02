@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 
 public class S_RoomSpawner : MonoBehaviour
@@ -8,6 +11,8 @@ public class S_RoomSpawner : MonoBehaviour
 
     [SerializeField] private int roomsAmount;
     [SerializeField] private float offset;
+    [SerializeField] private EventReference introMusic;
+    private EventInstance musicInstance;
     private GameObject player;
     private float limit;
     
@@ -15,6 +20,7 @@ public class S_RoomSpawner : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player").gameObject;
+        musicInstance = RuntimeManager.CreateInstance(introMusic);
         limit = roomsAmount * offset / 2;
         Perform();
     }
@@ -85,5 +91,35 @@ public class S_RoomSpawner : MonoBehaviour
             player.transform.position = new Vector3(-player.transform.position.x, player.transform.position.y, -player.transform.position.z - offset);
         }
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            gameObject.GetComponent<BoxCollider>().enabled = false;
+            musicInstance.start();
+            StartCoroutine(setMusicParam());
+        }
+    }
+
+    IEnumerator setMusicParam()
+    {
+        
+        float volume = 0;
+        while (volume < 1)
+        {
+            volume += 0.1f;
+            musicInstance.setParameterByName("IntroVolume", volume);
+            yield return new WaitForSeconds(0.1f);
+        }
+        
+        float value = 0;
+        while (value < 1)
+        {
+            value += 0.1f;
+            musicInstance.setParameterByName("Intro", value);
+            yield return new WaitForSeconds(0.8f);
+        }
     }
 }
