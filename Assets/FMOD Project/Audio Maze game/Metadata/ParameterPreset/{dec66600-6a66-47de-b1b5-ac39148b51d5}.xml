@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{dec66600-6a66-47de-b1b5-ac39148b51d5}">
+		<property name="name">
+			<value>LiftVolume</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e2aeec76-f2fd-4de5-85ac-03abf592876f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{5f61b93b-b2ac-4377-abf1-0c603506ceb4}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{5f61b93b-b2ac-4377-abf1-0c603506ceb4}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

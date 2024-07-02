@@ -257,6 +257,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8d667cc79192f71479bac302f0fbb335, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7055497189328370680}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8d667cc79192f71479bac302f0fbb335, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8792652411245413303}
     - targetCorrespondingSourceObject: {fileID: -466329591000292508, guid: 8d667cc79192f71479bac302f0fbb335, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3663707980553836940}
@@ -315,9 +318,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionTurnSpeed: 3
   intro: 1
+  LiftSounds:
+  - Guid:
+      Data1: 1985053630
+      Data2: 1231553769
+      Data3: -1141777990
+      Data4: -2137318767
+    Path: event:/Lift/DoorMove
+  - Guid:
+      Data1: -1058007503
+      Data2: 1328971227
+      Data3: -182196804
+      Data4: -477862286
+    Path: event:/Lift/LiftLoop
   teleportPosition: {x: 0, y: 1, z: 0}
   insideButton: {fileID: 598445171617392997}
   outsideButton: {fileID: 4446632978346721935}
+--- !u!65 &8792652411245413303
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2226401318675959893}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1791834, y: 1, z: 1.0219126}
+  m_Center: {x: -0.017144263, y: 0, z: -0.6979079}
 --- !u!1 &5220828360786484737 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6507901977716847365, guid: 8d667cc79192f71479bac302f0fbb335, type: 3}

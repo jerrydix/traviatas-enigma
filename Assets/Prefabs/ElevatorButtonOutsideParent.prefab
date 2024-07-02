@@ -368,4 +368,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0672a922353c0004bb1f872bb9c61c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonSound:
+    Guid:
+      Data1: -1285186289
+      Data2: 1181876574
+      Data3: 1269959084
+      Data4: -866019652
+    Path: event:/Lift/Button
   pressedTransform: {fileID: 7234511990631293234}
