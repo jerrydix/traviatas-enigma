@@ -19480,6 +19480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2072405859}
+  - component: {fileID: 2072405860}
   m_Layer: 0
   m_Name: Spawn
   m_TagString: Untagged
@@ -19502,6 +19503,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2072405860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072405858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23024857cb315b6489826b6b48b06ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2076174135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19553,6 +19566,10 @@ PrefabInstance:
     - target: {fileID: 2907333712106510267, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
       propertyPath: m_Name
       value: LevelParentPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 3436421687283110441, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6305140936060109383, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
       propertyPath: volume
