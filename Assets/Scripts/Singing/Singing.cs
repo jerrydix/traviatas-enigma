@@ -36,7 +36,6 @@ public class Singing : MonoBehaviour
     private void Start()
     {
         currentIndex = 0;
-        lyricsText.text = lyrics[currentIndex];
         inputActions = GameObject.Find("Player").GetComponent<PlayerMovement>().inputActions;
     }
     
@@ -52,6 +51,7 @@ public class Singing : MonoBehaviour
             if (!inVerse)
             {
                 inVerse = true;
+                lyricsText.text = lyrics[currentIndex];
                 StartRecording();
             }
         }
@@ -78,6 +78,7 @@ public class Singing : MonoBehaviour
             {
                 //todo finish logic
                 singingIsFinished = true;
+                GameManager.Instance.singingMiniGameCompleted = true;
             }
         }
         else
@@ -149,13 +150,13 @@ public class Singing : MonoBehaviour
     
     private void StartRecording() {
         
-        clip = Microphone.Start(null, false, recordingLength, 44100);
+        clip = Microphone.Start(GameManager.Instance.currentMicrophone, false, recordingLength, 44100);
         recording = true;
     }
     
     private void StopRecording() {
-        var position = Microphone.GetPosition(null);
-        Microphone.End(null);
+        var position = Microphone.GetPosition(GameManager.Instance.currentMicrophone);
+        Microphone.End(GameManager.Instance.currentMicrophone);
         var samples = new float[position * clip.channels];
         clip.GetData(samples, 0);
         bytes = EncodeAsWAV(samples, clip.frequency, clip.channels);

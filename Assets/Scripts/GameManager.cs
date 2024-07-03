@@ -20,14 +20,18 @@ public class GameManager : MonoBehaviour
     }
 
     //todo open smth when this is true
-    [HideInInspector] public bool pianoMiniGameCompleted;
-    [HideInInspector] public bool drumMiniGameCompleted;
-    
     [SerializeField] private List<Clock> clocks;
+    [HideInInspector] public bool clockMiniGameCompleted;
     [SerializeField] private List<Mannequin> mannequins;
-    [HideInInspector] public bool clockMiniGameCompleted; 
     [HideInInspector] public bool mannequinMiniGameCompleted;
-    
+    [HideInInspector] public string currentMicrophone;
+    [HideInInspector] public bool singingMiniGameCompleted;
+
+    private void Start()
+    {
+        currentMicrophone = null;
+    }
+
     public void CheckClocks()
     {
         foreach (var clock in clocks)
@@ -52,15 +56,5 @@ public class GameManager : MonoBehaviour
         }
         
         mannequinMiniGameCompleted = true;
-    }
-        
-    private void Start()
-    {
-        
-    }
-
-    private void Update()
-    {
-        
     }
 }
