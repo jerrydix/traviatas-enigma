@@ -59,11 +59,17 @@ public class S_Elevator : MonoBehaviour
     {
         if (isClosed)
         {
-            AudioManager.Instance.PlayOneShot(LiftSounds[0], transform.position);
-            outsideButton.PressButton(positionTurnSpeed);
-            anim.Play("Open");
-            isClosed = false;
+            StartCoroutine(OpenDoors());
         }
+    }
+
+    IEnumerator OpenDoors()
+    {
+        isClosed = false;
+        outsideButton.PressButton(positionTurnSpeed);
+        yield return new WaitForSeconds(1.5f);
+        AudioManager.Instance.PlayOneShot(LiftSounds[0], transform.position);
+        anim.Play("Open");
     }
 
     private void OnTriggerStay(Collider other)
@@ -80,7 +86,7 @@ public class S_Elevator : MonoBehaviour
     {
         isMoving = true;
         insideButton.PressButton(positionTurnSpeed);
-        AudioManager.Instance.PlayOneShot(LiftSounds[0], transform.position);
+        AudioManager.Instance.PlayOneShot(LiftSounds[2], transform.position);
         anim.Play("Close");
         yield return new WaitForSeconds(2);
         musicInstance.start();

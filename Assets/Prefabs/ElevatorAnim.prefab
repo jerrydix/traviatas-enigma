@@ -331,6 +331,12 @@ MonoBehaviour:
       Data3: -182196804
       Data4: -477862286
     Path: event:/Lift/LiftLoop
+  - Guid:
+      Data1: -1133989924
+      Data2: 1319185249
+      Data3: 270125730
+      Data4: -157332082
+    Path: event:/Lift/DoorClose
   teleportPosition: {x: 0, y: 1, z: 0}
   insideButton: {fileID: 598445171617392997}
   outsideButton: {fileID: 4446632978346721935}
