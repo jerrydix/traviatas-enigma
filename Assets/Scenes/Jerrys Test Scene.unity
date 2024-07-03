@@ -593,10 +593,94 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelParentPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4200215482232400666, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4200215482232400666, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4200215482232400666, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237522471890878972, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549428841378027569, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549428841378027569, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549428841378027569, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5946440926009534296, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5946440926009534296, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6301030508486713628, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6301030508486713628, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6301030508486713628, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329588447857642213, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329588447857642213, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130517677695919670, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130517677695919670, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7980188712150215025, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
       propertyPath: spawn
       value: 
       objectReference: {fileID: 2072405859}
+    - target: {fileID: 8458886345810968597, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458886345810968597, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8753686911800999824, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8753686911800999824, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8753686911800999824, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
