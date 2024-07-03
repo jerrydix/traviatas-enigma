@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{914fc299-6c2a-4465-bd1b-0bad5dac312d}">
+		<property name="name">
+			<value>Lift</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{109edfd5-bb36-4247-bc34-16a586c28837}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{f8c3400c-77b7-4765-84c4-bc380f7b706c}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{268fbaf8-3927-433a-bfd8-d5bb7ee1e054}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{109edfd5-bb36-4247-bc34-16a586c28837}">
+		<relationship name="effects">
+			<destination>{26301317-3737-4aa8-8e97-f6f7a7e07d26}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{f8c3400c-77b7-4765-84c4-bc380f7b706c}" />
+	<object class="MixerBusFader" id="{26301317-3737-4aa8-8e97-f6f7a7e07d26}" />
+</objects>
