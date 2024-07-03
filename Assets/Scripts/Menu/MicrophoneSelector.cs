@@ -11,6 +11,7 @@ public class MicrophoneSelector : MonoBehaviour
     public static UnityAction<int> OnMicrophoneChoiceChanged;
      void Start()
     {
+        
         PopulateSourceDropDown();
     }
 
