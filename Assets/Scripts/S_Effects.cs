@@ -28,11 +28,17 @@ public class S_Effects : MonoBehaviour
     void Awake()
     {
         effectLength = blinkingCurve.length;
-        volume.profile.TryGetSettings(out vignette);
-        volume.profile.TryGetSettings(out depthOfField);
-        volume.profile.TryGetSettings(out grain);
-        volume.profile.TryGetSettings(out backColor);
-
+        try
+        {
+            volume.profile.TryGetSettings(out vignette);
+            volume.profile.TryGetSettings(out depthOfField);
+            volume.profile.TryGetSettings(out grain);
+            volume.profile.TryGetSettings(out backColor);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
 
     public void CloseEyes()

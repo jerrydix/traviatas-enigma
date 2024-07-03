@@ -21,7 +21,7 @@ public class notReload : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
-            }
+        }
     }
 
 
