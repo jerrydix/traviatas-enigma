@@ -351,6 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionTurnSpeed: 3
+  lift: {fileID: 808510343078704430}
   intro: 1
   LiftSounds:
   - Guid:
@@ -375,6 +376,8 @@ MonoBehaviour:
   teleportPosition: {x: 0, y: 1, z: 0}
   insideButton: {fileID: 598445171617392997}
   outsideButton: {fileID: 4446632978346721935}
+  insideButtonGO: {fileID: 8602160526055994512}
+  outsideButtonGO: {fileID: 2709528444624276135}
 --- !u!65 &8792652411245413303
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -567,6 +570,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f41db95f15ee52648a8857364043538d, type: 3}
+--- !u!1 &2709528444624276135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5583232334202996235, guid: f41db95f15ee52648a8857364043538d, type: 3}
+  m_PrefabInstance: {fileID: 7557477753646255276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4446632978346721935 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6148557927153421859, guid: f41db95f15ee52648a8857364043538d, type: 3}
@@ -658,5 +666,10 @@ MonoBehaviour:
 --- !u!4 &5669620683166700225 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2872585799680301739, guid: c7c2f8e677f05e74793a5ceaaf604e77, type: 3}
+  m_PrefabInstance: {fileID: 7598681327375566954}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8602160526055994512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2167061570430516474, guid: c7c2f8e677f05e74793a5ceaaf604e77, type: 3}
   m_PrefabInstance: {fileID: 7598681327375566954}
   m_PrefabAsset: {fileID: 0}

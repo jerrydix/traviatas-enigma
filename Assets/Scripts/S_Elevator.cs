@@ -13,6 +13,7 @@ public class S_Elevator : MonoBehaviour
     private bool isClosed = true;
     private bool isMoving;
     private S_Effects effects;
+    public GameObject lift;
     
     [SerializeField] private bool intro;
     [SerializeField] private EventReference[] LiftSounds;
@@ -22,17 +23,25 @@ public class S_Elevator : MonoBehaviour
     private EventInstance musicInstance;
     private bool isIn;
     public Vector3 teleportPosition = new Vector3(0f, 1f, 0f);
+    [SerializeField] private Vector3 originalPos;
+    private Vector3 teleportTo;
+    private bool onSecondFloor;
     
     [Header("Buttons")]
     [SerializeField] private ButtonPress insideButton;
     [SerializeField] private ButtonPress outsideButton;
+    
+    [SerializeField] private GameObject insideButtonGO;
+    [SerializeField] private GameObject outsideButtonGO;
 
     private void Start()
     {
+        originalPos = lift.transform.position;
         musicInstance = RuntimeManager.CreateInstance(LiftSounds[1]);
         anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
         effects = player.GetComponent<S_Effects>();
+        teleportTo = teleportPosition;
     }
 
     public void InteractInside()
@@ -75,14 +84,29 @@ public class S_Elevator : MonoBehaviour
         anim.Play("Open");
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            player.transform.parent = transform;
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
-        isIn = true;
+        if (other.CompareTag("Player"))
+        {
+            isIn = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isIn = false;
+        if (other.CompareTag("Player"))
+        {
+            isIn = false;
+            player.transform.parent = null;
+        }
     }
 
     IEnumerator Close()
@@ -93,8 +117,15 @@ public class S_Elevator : MonoBehaviour
         anim.Play("Close");
         yield return new WaitForSeconds(2);
         musicInstance.start();
-        isMoving = false;
-        isClosed = true;
+        if (!intro)
+        {
+            StartCoroutine(LiftSwap());
+        }
+        else
+        {
+            isMoving = false;
+            isClosed = true;
+        }
     }
     
     IEnumerator Open()
@@ -118,6 +149,26 @@ public class S_Elevator : MonoBehaviour
         effects.OpenEyes();
         yield return new WaitForSeconds(effects.effectLength);
     }
+    
+    IEnumerator LiftSwap()
+    {
+        StartCoroutine(setMusicParamBack());
+        yield return new WaitForSeconds(4f);
+        if (onSecondFloor)
+        {
+            teleportTo = originalPos;
+        }
+        else
+        {
+            teleportTo = teleportPosition;
+        }
+
+        onSecondFloor = !onSecondFloor;
+        lift.transform.position = teleportTo;
+        StartCoroutine(setMusicParam());
+        isMoving = false;
+        isClosed = true;
+    }
 
     IEnumerator setMusicParam()
     {
@@ -131,5 +182,17 @@ public class S_Elevator : MonoBehaviour
         }
         musicInstance.stop(STOP_MODE.IMMEDIATE);
         
+    }
+    
+    IEnumerator setMusicParamBack()
+    {
+
+        float volume = 1;
+        while (volume >= 0)
+        {
+            volume -= 0.3f;
+            musicInstance.setParameterByName("LiftVolume", volume);
+            yield return new WaitForSeconds(0.3f);
+        }
     }
 }
