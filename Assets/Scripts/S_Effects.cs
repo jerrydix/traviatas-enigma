@@ -8,7 +8,8 @@ using UnityEngine.Rendering.PostProcessing;
 public class S_Effects : MonoBehaviour
 {
     [SerializeField] private PostProcessVolume volume;
-    [SerializeField] private AnimationCurve blinkingCurve;
+    [SerializeField] private AnimationCurve blinkingCurveClose;
+    [SerializeField] private AnimationCurve blinkingCurveOpen;
     [SerializeField] private AnimationCurve blinkingCurve_2;
 
 
@@ -27,7 +28,7 @@ public class S_Effects : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        effectLength = blinkingCurve.length;
+        effectLength = blinkingCurveOpen.length;
         try
         {
             volume.profile.TryGetSettings(out vignette);
@@ -56,7 +57,7 @@ public class S_Effects : MonoBehaviour
         while (intensityTime < 5)
         {
             intensityTime += speed * Time.deltaTime;
-            float intensity = blinkingCurve.Evaluate(intensityTime);
+            float intensity = blinkingCurveClose.Evaluate(intensityTime);
             float postExp = blinkingCurve_2.Evaluate(intensityTime);
             vignette.intensity.value = intensity;
             backColor.postExposure.value = postExp;
@@ -72,7 +73,7 @@ public class S_Effects : MonoBehaviour
         while (intensityTime > 0)
         {
             intensityTime -= speed * Time.deltaTime;
-            float intensity = blinkingCurve.Evaluate(intensityTime);
+            float intensity = blinkingCurveOpen.Evaluate(intensityTime);
             float postExp = blinkingCurve_2.Evaluate(intensityTime);
             vignette.intensity.value = intensity;
             depthOfField.focalLength.value = Math.Clamp(intensityTime * 60f, 1, 300);
