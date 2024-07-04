@@ -13,8 +13,11 @@ public class S_Elevator : MonoBehaviour
     private bool isClosed = true;
     private bool isMoving;
     private S_Effects effects;
+    
     [SerializeField] private bool intro;
     [SerializeField] private EventReference[] LiftSounds;
+    [SerializeField] private Transform doorPosition; 
+    
     private GameObject player;
     private EventInstance musicInstance;
     private bool isIn;
@@ -68,7 +71,7 @@ public class S_Elevator : MonoBehaviour
         isClosed = false;
         outsideButton.PressButton(positionTurnSpeed);
         yield return new WaitForSeconds(1.5f);
-        AudioManager.Instance.PlayOneShot(LiftSounds[0], transform.position);
+        AudioManager.Instance.PlayOneShot(LiftSounds[0], doorPosition.position);
         anim.Play("Open");
     }
 
@@ -86,7 +89,7 @@ public class S_Elevator : MonoBehaviour
     {
         isMoving = true;
         insideButton.PressButton(positionTurnSpeed);
-        AudioManager.Instance.PlayOneShot(LiftSounds[2], transform.position);
+        AudioManager.Instance.PlayOneShot(LiftSounds[2], doorPosition.position);
         anim.Play("Close");
         yield return new WaitForSeconds(2);
         musicInstance.start();
@@ -98,7 +101,7 @@ public class S_Elevator : MonoBehaviour
     {
         isMoving = true;
         insideButton.PressButton(positionTurnSpeed);
-        AudioManager.Instance.PlayOneShot(LiftSounds[0], transform.position);
+        AudioManager.Instance.PlayOneShot(LiftSounds[0], doorPosition.position);
         anim.Play("Open");
         yield return new WaitForSeconds(2);
         isMoving = false;

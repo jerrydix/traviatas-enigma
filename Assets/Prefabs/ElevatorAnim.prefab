@@ -126,6 +126,37 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &5612646814417684964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8457130711656350649}
+  m_Layer: 0
+  m_Name: DoorPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8457130711656350649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5612646814417684964}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.667, y: 0.739, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8130617302393200325}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1307360994848763140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -250,6 +281,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8d667cc79192f71479bac302f0fbb335, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6844411427633613597}
+    - targetCorrespondingSourceObject: {fileID: -2093772787462966335, guid: 8d667cc79192f71479bac302f0fbb335, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8457130711656350649}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8d667cc79192f71479bac302f0fbb335, type: 3}
       insertIndex: -1
@@ -337,6 +371,7 @@ MonoBehaviour:
       Data3: 270125730
       Data4: -157332082
     Path: event:/Lift/DoorClose
+  doorPosition: {fileID: 8457130711656350649}
   teleportPosition: {x: 0, y: 1, z: 0}
   insideButton: {fileID: 598445171617392997}
   outsideButton: {fileID: 4446632978346721935}
@@ -466,6 +501,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.2804736, y: 2.3896189, z: 0.368893}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &8130617302393200325 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2093772787462966335, guid: 8d667cc79192f71479bac302f0fbb335, type: 3}
+  m_PrefabInstance: {fileID: 1307360994848763140}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7557477753646255276
 PrefabInstance:
   m_ObjectHideFlags: 0
