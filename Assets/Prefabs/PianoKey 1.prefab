@@ -228,9 +228,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyPickupSound:
     Guid:
-      Data1: 859608816
-      Data2: 1211591303
-      Data3: -617191545
-      Data4: -1363483674
-    Path: event:/Keys/Key 3
+      Data1: 769991838
+      Data2: 1122998682
+      Data3: 2081122461
+      Data4: -1334634402
+    Path: event:/DoorKeys/PianoKey
   itemIndex: 1

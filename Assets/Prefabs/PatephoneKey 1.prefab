@@ -102,11 +102,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyPickupSound:
     Guid:
-      Data1: -2129296459
-      Data2: 1117301178
-      Data3: 1601291700
-      Data4: 986889009
-    Path: event:/Keys/Key 1
+      Data1: -129814913
+      Data2: 1092226205
+      Data3: -545646708
+      Data4: -2017544569
+    Path: event:/DoorKeys/MajorMinorKey
   itemIndex: 2
 --- !u!1 &3441596683014407104
 GameObject:

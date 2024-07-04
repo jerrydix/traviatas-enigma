@@ -480,6 +480,7 @@ MonoBehaviour:
   Banks:
   - Clock
   - Door
+  - DoorKeys
   - Drum
   - Footsteps
   - Intro
