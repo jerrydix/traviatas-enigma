@@ -80,7 +80,6 @@ public class S_Door : MonoBehaviour
         }
         else
         {
-            Debug.Log("Closing");
             needSideCheck = true;
             transform.rotation = Quaternion.Lerp(Quaternion.Euler(transform.rotation.eulerAngles),originalRotation, interSpeed * Time.deltaTime);
         }
