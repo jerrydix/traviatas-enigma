@@ -11,6 +11,7 @@ public class S_Door : MonoBehaviour
     [HideInInspector] public Quaternion openedRotation2;
     [SerializeField] private Transform playerSideChecker;
     private bool playerInFront;
+    private bool needSideCheck;
     
     [HideInInspector] public Quaternion originalRotation;
     [HideInInspector] public bool isClosed;
@@ -53,23 +54,34 @@ public class S_Door : MonoBehaviour
                 CheckKey();
             else if (!lockable || lockable && !isLocked)
             {
-                if  (Vector3.Distance(playerSideChecker.position, player.position) < Vector3.Distance(transform.position, player.position))
+                if (needSideCheck)
                 {
-                    playerInFront = true;
+                    if (Vector3.Distance(playerSideChecker.position, player.position) < Vector3.Distance(transform.position, player.position))
+                    {
+                        playerInFront = true;
+                    }
+                    else
+                    {
+                        playerInFront = false;
+                    }   
                 }
-                else
-                {
-                    playerInFront = false;
-                }
-                
+
                 if (playerInFront)
+                {
+                    needSideCheck = false;
                     transform.rotation = Quaternion.Lerp(Quaternion.Euler(transform.rotation.eulerAngles),openedRotation1, interSpeed * Time.deltaTime);
+                }
                 else
+                {
+                    needSideCheck = false;
                     transform.rotation = Quaternion.Lerp(Quaternion.Euler(transform.rotation.eulerAngles),openedRotation2, interSpeed * Time.deltaTime);
+                }
             }
         }
         else
         {
+            Debug.Log("Closing");
+            needSideCheck = true;
             transform.rotation = Quaternion.Lerp(Quaternion.Euler(transform.rotation.eulerAngles),originalRotation, interSpeed * Time.deltaTime);
         }
 
