@@ -50,10 +50,11 @@ public class S_Room : MonoBehaviour
         swapRoom.transform.rotation = originalRotation;
         
         swapRoomScript.doorScript.originalRotation = swapRoomScript.door.transform.rotation;
-        swapRoomScript.doorScript.openedRotation = Quaternion.Euler(new Vector3(swapRoomScript.doorScript.originalRotation.eulerAngles.x, swapRoomScript.doorScript.originalRotation.eulerAngles.y + swapRoomScript.doorScript.rot, swapRoomScript.doorScript.originalRotation.eulerAngles.z));
+        swapRoomScript.doorScript.openedRotation1 = Quaternion.Euler(new Vector3(swapRoomScript.doorScript.originalRotation.eulerAngles.x, swapRoomScript.doorScript.originalRotation.eulerAngles.y + swapRoomScript.doorScript.rot, swapRoomScript.doorScript.originalRotation.eulerAngles.z));
+        swapRoomScript.doorScript.openedRotation2 = Quaternion.Euler(new Vector3(swapRoomScript.doorScript.originalRotation.eulerAngles.x, swapRoomScript.doorScript.originalRotation.eulerAngles.y - swapRoomScript.doorScript.rot, swapRoomScript.doorScript.originalRotation.eulerAngles.z));
         
         doorScript.originalRotation = door.transform.rotation;
-        doorScript.openedRotation = Quaternion.Euler(new Vector3(doorScript.originalRotation.eulerAngles.x, doorScript.originalRotation.eulerAngles.y + doorScript.rot, doorScript.originalRotation.eulerAngles.z));
+        doorScript.openedRotation1 = Quaternion.Euler(new Vector3(doorScript.originalRotation.eulerAngles.x, doorScript.originalRotation.eulerAngles.y + doorScript.rot, doorScript.originalRotation.eulerAngles.z));
     }
 
     private void Update()

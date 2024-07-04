@@ -7,10 +7,13 @@ using UnityEngine;
 
 public class S_Door : MonoBehaviour
 {
-    private Animator anim;
-    public Quaternion openedRotation;
-    public Quaternion originalRotation;
-    public bool isClosed;
+    [HideInInspector] public Quaternion openedRotation1;
+    [HideInInspector] public Quaternion openedRotation2;
+    [SerializeField] private Transform playerSideChecker;
+    private bool playerInFront;
+    
+    [HideInInspector] public Quaternion originalRotation;
+    [HideInInspector] public bool isClosed;
     [SerializeField] private float interSpeed;
     [SerializeField] private int itemIndex;
     public bool lockable;
@@ -23,13 +26,16 @@ public class S_Door : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponentInChildren<Animator>();
         player = GameObject.Find("Player").transform;
         originalRotation = transform.rotation;
         
-        openedRotation = Quaternion.Euler(new Vector3(originalRotation.eulerAngles.x, originalRotation.eulerAngles.y + rot, originalRotation.eulerAngles.z));
+        openedRotation1 = Quaternion.Euler(new Vector3(originalRotation.eulerAngles.x, originalRotation.eulerAngles.y + rot, originalRotation.eulerAngles.z));
+        openedRotation2 = Quaternion.Euler(new Vector3(originalRotation.eulerAngles.x, originalRotation.eulerAngles.y - rot, originalRotation.eulerAngles.z));
+
         inventory = GameObject.Find("KeyInventory").GetComponent<KeyInventory>();
         isLocked = true;
+        
+        
     }
 
     private void Update()
@@ -39,7 +45,21 @@ public class S_Door : MonoBehaviour
             if (lockable && isLocked)
                 CheckKey();
             else
-                transform.rotation = Quaternion.Lerp(Quaternion.Euler(transform.rotation.eulerAngles),openedRotation, interSpeed * Time.deltaTime);
+            {
+                if  (Vector3.Distance(playerSideChecker.position, player.position) < Vector3.Distance(transform.position, player.position))
+                {
+                    playerInFront = true;
+                }
+                else
+                {
+                    playerInFront = false;
+                }
+                
+                if (playerInFront)
+                    transform.rotation = Quaternion.Lerp(Quaternion.Euler(transform.rotation.eulerAngles),openedRotation1, interSpeed * Time.deltaTime);
+                else
+                    transform.rotation = Quaternion.Lerp(Quaternion.Euler(transform.rotation.eulerAngles),openedRotation2, interSpeed * Time.deltaTime);
+            }
         }
         else
         {
