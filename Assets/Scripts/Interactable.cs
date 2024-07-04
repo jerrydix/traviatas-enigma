@@ -159,7 +159,7 @@ public class Interactable : MonoBehaviour
     
     private void InteractPhone()
     {
-       //parentScriptObject.GetComponent<Phone>().Interact();
+       parentScriptObject.GetComponent<Phone>().Interact();
     }
     
     private void InteractElevatorButtonInside()
