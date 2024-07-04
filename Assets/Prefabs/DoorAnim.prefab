@@ -107,6 +107,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4493585093827132993, guid: 81ebbf544759e564fbffa9fe2a2747fd, type: 3}
+--- !u!1 &1451654863620434420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4421436614420102805}
+  m_Layer: 0
+  m_Name: KeyHolePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4421436614420102805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451654863620434420}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.522, y: -0.036, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8973156037386088903}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2212478664467139357
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +501,7 @@ Transform:
   m_Children:
   - {fileID: 8817846559521856078}
   - {fileID: 790889418206406739}
+  - {fileID: 4421436614420102805}
   - {fileID: 6436968302746699293}
   m_Father: {fileID: 4874643070880681857}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -567,11 +599,19 @@ MonoBehaviour:
   lockable: 0
   keyUnlockSound:
     Guid:
-      Data1: -671505360
-      Data2: 1158756133
-      Data3: 1086948254
-      Data4: -412470702
-    Path: event:/Clock/ClockCorrect
+      Data1: -1142032471
+      Data2: 1268626618
+      Data3: -527452794
+      Data4: 2015957960
+    Path: event:/Doors/KeyUnlock
+  keyHolePosition: {fileID: 4421436614420102805}
+  doorOpenSound:
+    Guid:
+      Data1: 786870634
+      Data2: 1185589841
+      Data3: 1451289788
+      Data4: -2038803157
+    Path: event:/Doors/DoorOpen
   isLocked: 0
   rot: 110
 --- !u!41 &4986677972570040592

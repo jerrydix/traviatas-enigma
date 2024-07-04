@@ -12,7 +12,6 @@ public class S_DoorController : MonoBehaviour
     {
         if (other.CompareTag("Player") && (door.lockable && !door.isLocked || !door.lockable))
         {
-            Debug.Log("OPEN");
             AudioManager.Instance.PlayOneShot(sounds[0], transform.position);
         }
     }

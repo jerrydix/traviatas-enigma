@@ -17,12 +17,18 @@ public class S_Door : MonoBehaviour
     [SerializeField] private float interSpeed;
     [SerializeField] private int itemIndex;
     public bool lockable;
+    
     [SerializeField] private EventReference keyUnlockSound;
+    [SerializeField] private Transform keyHolePosition;
+    
+    [SerializeField] private EventReference doorOpenSound;
     [HideInInspector] public bool isLocked;
     private float lerpPercent = 0.0f;
     public int rot;
     private Transform player;
     private KeyInventory inventory;
+    
+    private bool unlocking;
 
     void Start()
     {
@@ -35,6 +41,7 @@ public class S_Door : MonoBehaviour
         inventory = GameObject.Find("KeyInventory").GetComponent<KeyInventory>();
         isLocked = true;
         
+        unlocking = false;
         
     }
 
@@ -42,9 +49,9 @@ public class S_Door : MonoBehaviour
     {
         if (Vector3.Distance( transform.parent.transform.parent.position, player.position) <= 2f)
         {
-            if (lockable && isLocked)
+            if (lockable && isLocked && !unlocking)
                 CheckKey();
-            else
+            else if (!lockable || lockable && !isLocked)
             {
                 if  (Vector3.Distance(playerSideChecker.position, player.position) < Vector3.Distance(transform.position, player.position))
                 {
@@ -81,10 +88,18 @@ public class S_Door : MonoBehaviour
     {
         if (inventory.currentItems.Contains(itemIndex))
         {
-            Debug.Log("Key check");
-            isLocked = false;
-            AudioManager.Instance.PlayOneShot(keyUnlockSound, transform.position);
-            inventory.RemoveItem(itemIndex);
+            unlocking = true;
+            AudioManager.Instance.PlayOneShot(keyUnlockSound, keyHolePosition.position);
+            StartCoroutine(DoorUnlock());
         }
+    }
+    
+    private IEnumerator DoorUnlock()
+    {
+        yield return new WaitForSeconds(1f);
+        inventory.RemoveItem(itemIndex);
+        isLocked = false;
+        unlocking = false;
+        AudioManager.Instance.PlayOneShot(doorOpenSound, transform.position);
     }
 }
