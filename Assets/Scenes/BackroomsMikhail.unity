@@ -19915,6 +19915,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7928507233366803465, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
+      propertyPath: _TextureWarpingFactor
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7980188712150215025, guid: 9c19f7268e89e4b4abfa341a535fabbe, type: 3}
       propertyPath: spawn
       value: 
