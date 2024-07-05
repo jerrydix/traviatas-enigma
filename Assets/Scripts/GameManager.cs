@@ -97,4 +97,9 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void SetMotor()
+    {
+        motorMinigameCompleted = true;
+    }
 }

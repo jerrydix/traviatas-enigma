@@ -64,7 +64,7 @@ public class S_Motor : MonoBehaviour
         if (matchesAmount == sequence.Length)
         {
             motorMiniGameCompleted = true;
-            GameManager.Instance.motorMinigameCompleted = true;
+            GameManager.Instance.SetMotor();
         }
         
     }
