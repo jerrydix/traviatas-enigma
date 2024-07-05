@@ -91,6 +91,9 @@ public class Interactable : MonoBehaviour
             case "Singing_1":
                 CameraZoomInteractSinging();
                 break;
+            case "Radio_1":
+                InteractRadio();
+                break;
         }
     }
     
@@ -185,6 +188,11 @@ public class Interactable : MonoBehaviour
     private void InteractKey()
     {
         parentScriptObject.GetComponent<Key>().CollectItem();
+    }
+
+    private void InteractRadio()
+    {
+        parentScriptObject.GetComponent<S_Radio>().TurnOnOff();
     }
     
     private void CameraZoomInteractSinging()

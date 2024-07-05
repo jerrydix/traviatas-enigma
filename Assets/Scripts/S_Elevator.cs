@@ -26,6 +26,7 @@ public class S_Elevator : MonoBehaviour
     [SerializeField] private Vector3 originalPos;
     private Vector3 teleportTo;
     private bool onSecondFloor;
+    private GameObject cam;
     
     [Header("Buttons")]
     [SerializeField] private ButtonPress insideButton;
@@ -36,6 +37,7 @@ public class S_Elevator : MonoBehaviour
 
     private void Start()
     {
+        cam = GameObject.FindWithTag("CH");
         originalPos = lift.transform.position;
         musicInstance = RuntimeManager.CreateInstance(LiftSounds[1]);
         anim = GetComponent<Animator>();
@@ -89,6 +91,8 @@ public class S_Elevator : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player.transform.parent = transform;
+            cam.transform.parent = transform;
+
         }
     }
 
@@ -106,6 +110,8 @@ public class S_Elevator : MonoBehaviour
         {
             isIn = false;
             player.transform.parent = null;
+            cam.transform.parent = null;
+
         }
     }
 
@@ -166,8 +172,8 @@ public class S_Elevator : MonoBehaviour
         onSecondFloor = !onSecondFloor;
         lift.transform.position = teleportTo;
         StartCoroutine(setMusicParam());
-        isMoving = false;
-        isClosed = true;
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(Open());
     }
 
     IEnumerator setMusicParam()

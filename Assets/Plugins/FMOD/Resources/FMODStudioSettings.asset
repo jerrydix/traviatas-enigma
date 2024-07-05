@@ -487,8 +487,10 @@ MonoBehaviour:
   - Lift
   - MajorMinor
   - Mannequins
+  - Opera
   - Phone
   - Piano
+  - Radio
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
