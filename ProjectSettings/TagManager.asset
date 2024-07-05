@@ -10,6 +10,7 @@ TagManager:
   - CH
   - WoodFloor
   - StoneFloor
+  - Motor
   layers:
   - Default
   - TransparentFX

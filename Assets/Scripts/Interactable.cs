@@ -94,6 +94,9 @@ public class Interactable : MonoBehaviour
             case "Radio_1":
                 InteractRadio();
                 break;
+            case "Lever_1":
+                InteractLever();
+                break;
         }
     }
     
@@ -127,6 +130,11 @@ public class Interactable : MonoBehaviour
 
         cameraMoveScript.enabled = false;
         isMoving = true;
+    }
+
+    private void InteractLever()
+    {
+        parentScriptObject.GetComponent<S_Lever>().Toggle();
     }
 
     private void CameraZoomInteractClock()
