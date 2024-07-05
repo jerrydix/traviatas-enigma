@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using FMOD.Studio;
 using FMODUnity;
 using HuggingFace.API;
 using TMPro;
@@ -9,6 +8,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Singing : MonoBehaviour
 {
+    //todo use selected microphone from settings
+    
     [SerializeField] Interactable interactable;
     
     [SerializeField] private List<string> lyrics;
@@ -16,8 +17,6 @@ public class Singing : MonoBehaviour
     [SerializeField] private float APIRetryDelay;
     [SerializeField] private EventReference correctSound;
     [SerializeField] private EventReference wrongSound;
-    [SerializeField] private EventReference operaMusic;
-    private EventInstance operaMusicInstance;
     [SerializeField] private GameObject soundSource;
     [SerializeField] private int maxIncorrectWords;
     [SerializeField] private int recordingLength;
@@ -56,6 +55,12 @@ public class Singing : MonoBehaviour
                 StartRecording();
             }
         }
+
+        /*if (inputActions.Clocks.Cancel.triggered && interactable.objIsActive)
+        {
+            interactable.isMoving = true;
+            inputActions.Clocks.Disable();
+        }*/
     }
     
     private void CheckVerse()
