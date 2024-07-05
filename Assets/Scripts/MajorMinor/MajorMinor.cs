@@ -60,7 +60,7 @@ public class MajorMinor : MonoBehaviour
         currentMelody = melody;
         currentIsMajor = melodies[melody];
         currentInstance = RuntimeManager.CreateInstance(currentMelody);
-        currentInstance.set3DAttributes(soundPosition.To3DAttributes());
+        RuntimeManager.AttachInstanceToGameObject(currentInstance, soundPosition);
     }
     
     private static void Shuffle<T>(IList<T> list)
@@ -146,7 +146,7 @@ public class MajorMinor : MonoBehaviour
         currentMelody = melody;
         currentIsMajor = melodies[melody];
         currentInstance = RuntimeManager.CreateInstance(currentMelody);
-        currentInstance.set3DAttributes(soundPosition.To3DAttributes());
+        RuntimeManager.AttachInstanceToGameObject(currentInstance, soundPosition);
         currentInstance.start();
         isPlaying = true;
     }
@@ -167,7 +167,7 @@ public class MajorMinor : MonoBehaviour
         currentMelody = melody;
         currentIsMajor = melodies[melody];
         currentInstance = RuntimeManager.CreateInstance(currentMelody);
-        currentInstance.set3DAttributes(soundPosition.To3DAttributes());
+        RuntimeManager.AttachInstanceToGameObject(currentInstance, soundPosition);
         currentInstance.start();
         isPlaying = true;
     }

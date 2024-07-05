@@ -42,7 +42,7 @@ public class Phone : MonoBehaviour
         isCalling = true;
         inputActions = GameObject.Find("Player").GetComponent<PlayerMovement>().inputActions;
         callInstance = RuntimeManager.CreateInstance(callSound);
-        callInstance.set3DAttributes(transform.To3DAttributes());
+        RuntimeManager.AttachInstanceToGameObject(callInstance, transform);
         player = GameObject.Find("Player");
         
         //start 5

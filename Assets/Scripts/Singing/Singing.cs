@@ -17,7 +17,9 @@ public class Singing : MonoBehaviour
     [SerializeField] private float APIRetryDelay;
     [SerializeField] private EventReference correctSound;
     [SerializeField] private EventReference wrongSound;
-    [SerializeField] private GameObject soundSource;
+    [SerializeField] private EventReference operaMusic;
+    private EventInstance operaMusicInstance;
+    [SerializeField] private Transform soundSource;
     [SerializeField] private int maxIncorrectWords;
     [SerializeField] private int recordingLength;
     
@@ -37,6 +39,9 @@ public class Singing : MonoBehaviour
     {
         currentIndex = 0;
         inputActions = GameObject.Find("Player").GetComponent<PlayerMovement>().inputActions;
+        
+        operaMusicInstance = RuntimeManager.CreateInstance(operaMusic);
+        RuntimeManager.AttachInstanceToGameObject(operaMusicInstance, soundSource.transform);
     }
     
     private void Update()
