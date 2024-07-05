@@ -19,6 +19,13 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    [HideInInspector] public string currentMicrophone; 
+    
+    private void Start()
+    {
+        currentMicrophone = null;
+    }
     
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
     {

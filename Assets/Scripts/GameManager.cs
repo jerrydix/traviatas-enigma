@@ -20,17 +20,21 @@ public class GameManager : MonoBehaviour
     }
 
     //todo open smth when this is true
-    [SerializeField] private List<Clock> clocks;
-    [HideInInspector] public bool clockMiniGameCompleted;
+    
+    [SerializeField] private List<Piano> pianos;
+    [HideInInspector] int amountPianosCompleted; //0-3
+    [SerializeField] private List<Drum> drums;
+    [HideInInspector] int amountDrumsCompleted; //0-3
+    [SerializeField] private List<MajorMinor> majorMinors;
+    [HideInInspector] int amountMajorMinorsCompleted; //0-3
     [SerializeField] private List<Mannequin> mannequins;
     [HideInInspector] public bool mannequinMiniGameCompleted;
-    [HideInInspector] public string currentMicrophone;
+    [SerializeField] private List<Clock> clocks;
+    [HideInInspector] public bool clockMiniGameCompleted;
+    [HideInInspector] public bool motorMinigameCompleted;
+    
     [HideInInspector] public bool singingMiniGameCompleted;
 
-    private void Start()
-    {
-        currentMicrophone = null;
-    }
 
     public void CheckClocks()
     {
@@ -56,5 +60,41 @@ public class GameManager : MonoBehaviour
         }
         
         mannequinMiniGameCompleted = true;
+    }
+    
+    public void CheckMajorMinors()
+    {
+        amountMajorMinorsCompleted = 0;
+        foreach (var majorMinor in majorMinors)
+        {
+            if (majorMinor.majorMinorMiniGameCompleted)
+            {
+                amountMajorMinorsCompleted++;
+            }
+        }
+    }
+    
+    public void CheckDrums()
+    {
+        amountDrumsCompleted = 0;
+        foreach (var drum in drums)
+        {
+            if (drum.rhythmMiniGameCompleted)
+            {
+                amountDrumsCompleted++;
+            }
+        }
+    }
+    
+    public void CheckPianos()
+    {
+        amountPianosCompleted = 0;
+        foreach (var piano in pianos)
+        {
+            if (piano.pianoMiniGameCompleted)
+            {
+                amountPianosCompleted++;
+            }
+        }
     }
 }

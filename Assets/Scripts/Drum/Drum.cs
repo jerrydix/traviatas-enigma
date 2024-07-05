@@ -121,6 +121,7 @@ public class Drum : MonoBehaviour
             {
                 Debug.Log("Finished all rhythms");
                 rhythmMiniGameCompleted = true;
+                GameManager.Instance.CheckDrums();
                 StartCoroutine(PlayFinishedSound());
                 return;
             }

@@ -34,6 +34,6 @@ public class MicrophoneSelector : MonoBehaviour
     {
         deviceIndex = index;
         OnMicrophoneChoiceChanged?.Invoke(deviceIndex);
-        GameManager.Instance.currentMicrophone = microphones[deviceIndex];
+        AudioManager.Instance.currentMicrophone = microphones[deviceIndex];
     }
 }

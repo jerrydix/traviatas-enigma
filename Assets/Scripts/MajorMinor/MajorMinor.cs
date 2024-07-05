@@ -113,6 +113,7 @@ public class MajorMinor : MonoBehaviour
             {
                 Debug.Log("Finished");
                 majorMinorMiniGameCompleted = true;
+                GameManager.Instance.CheckMajorMinors();
                 StartCoroutine(PlayFinishedSound());
             }
             else

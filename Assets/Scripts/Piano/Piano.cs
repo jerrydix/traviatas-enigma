@@ -213,6 +213,7 @@ public class Piano : MonoBehaviour
             {
                 Debug.Log("Finished all sequences");
                 pianoMiniGameCompleted = true;
+                GameManager.Instance.CheckPianos();
                 StartCoroutine(PlayFinishedSound());
                 return;
             }

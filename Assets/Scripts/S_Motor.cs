@@ -13,7 +13,8 @@ public class S_Motor : MonoBehaviour
     private bool[] currentSequence = new []{false, false, false, false, false};
     private EventInstance instance;
     
-    // Start is called before the first frame update
+    [HideInInspector] public bool motorMiniGameCompleted;
+    
     void Start()
     {
         instance = RuntimeManager.CreateInstance(sound);
@@ -28,7 +29,6 @@ public class S_Motor : MonoBehaviour
         for (int i = 0; i < sequence.Length; i++)
         {
             currentSequence[i] = levers[i].isToogle;
-            Debug.Log(currentSequence[i] + " IS");
         }
 
         for (int j = 0; j < sequence.Length; j++)
@@ -61,6 +61,11 @@ public class S_Motor : MonoBehaviour
                 break;
         }
         
-        Debug.Log(matchesAmount);
+        if (matchesAmount == sequence.Length)
+        {
+            motorMiniGameCompleted = true;
+            GameManager.Instance.motorMinigameCompleted = true;
+        }
+        
     }
 }

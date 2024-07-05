@@ -156,13 +156,13 @@ public class Singing : MonoBehaviour
     
     private void StartRecording() {
         
-        clip = Microphone.Start(GameManager.Instance.currentMicrophone, false, recordingLength, 44100);
+        clip = Microphone.Start(AudioManager.Instance.currentMicrophone, false, recordingLength, 44100);
         recording = true;
     }
     
     private void StopRecording() {
-        var position = Microphone.GetPosition(GameManager.Instance.currentMicrophone);
-        Microphone.End(GameManager.Instance.currentMicrophone);
+        var position = Microphone.GetPosition(AudioManager.Instance.currentMicrophone);
+        Microphone.End(AudioManager.Instance.currentMicrophone);
         var samples = new float[position * clip.channels];
         clip.GetData(samples, 0);
         bytes = EncodeAsWAV(samples, clip.frequency, clip.channels);
