@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using FMOD.Studio;
 using FMODUnity;
 using HuggingFace.API;
 using TMPro;
