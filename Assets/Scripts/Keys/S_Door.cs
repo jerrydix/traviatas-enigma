@@ -35,7 +35,6 @@ public class S_Door : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         originalRotation = transform.rotation;
-        
         openedRotation1 = Quaternion.Euler(new Vector3(originalRotation.eulerAngles.x, originalRotation.eulerAngles.y + rot, originalRotation.eulerAngles.z));
         openedRotation2 = Quaternion.Euler(new Vector3(originalRotation.eulerAngles.x, originalRotation.eulerAngles.y - rot, originalRotation.eulerAngles.z));
 
