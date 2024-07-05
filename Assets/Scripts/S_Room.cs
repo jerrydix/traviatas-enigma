@@ -55,6 +55,7 @@ public class S_Room : MonoBehaviour
         
         doorScript.originalRotation = door.transform.rotation;
         doorScript.openedRotation1 = Quaternion.Euler(new Vector3(doorScript.originalRotation.eulerAngles.x, doorScript.originalRotation.eulerAngles.y + doorScript.rot, doorScript.originalRotation.eulerAngles.z));
+        doorScript.openedRotation2 = Quaternion.Euler(new Vector3(doorScript.originalRotation.eulerAngles.x, doorScript.originalRotation.eulerAngles.y - doorScript.rot, doorScript.originalRotation.eulerAngles.z));
     }
 
     private void Update()
