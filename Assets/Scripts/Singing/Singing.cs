@@ -20,7 +20,7 @@ public class Singing : MonoBehaviour
     [SerializeField] private EventReference wrongSound;
     [SerializeField] private EventReference operaMusic;
     private EventInstance operaMusicInstance;
-    [SerializeField] private Transform soundSource;
+    [SerializeField] private GameObject soundSource;
     [SerializeField] private int maxIncorrectWords;
     [SerializeField] private int recordingLength;
     

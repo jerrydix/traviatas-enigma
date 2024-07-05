@@ -484,10 +484,12 @@ MonoBehaviour:
   - Drum
   - Footsteps
   - Intro
+  - Levers
   - Lift
   - MajorMinor
   - Mannequins
   - Opera
+  - OperaFinalMinigame
   - Phone
   - Piano
   - Radio
