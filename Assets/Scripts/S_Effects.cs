@@ -61,6 +61,10 @@ public class S_Effects : MonoBehaviour
     {
         while (intensityTime < 5)
         {
+            if (intensityTime > 1f)
+            {
+                gameObject.GetComponent<PlayerMovement>().inputActions.Moving.Move.Disable();
+            }
             intensityTime += speed * Time.deltaTime;
             float alphaValue = crossCurve.Evaluate(intensityTime);;
             Debug.Log(alphaValue);
@@ -80,6 +84,10 @@ public class S_Effects : MonoBehaviour
     {
         while (intensityTime > 0)
         {
+            if (intensityTime < 1f)
+            {
+                gameObject.GetComponent<PlayerMovement>().inputActions.Moving.Move.Enable();
+            }
             intensityTime -= speed * Time.deltaTime;
             float intensity = blinkingCurveOpen.Evaluate(intensityTime);
             float postExp = blinkingCurve_2.Evaluate(intensityTime);

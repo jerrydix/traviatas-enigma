@@ -27,8 +27,6 @@ public class GrandpaClock : MonoBehaviour
         var _3 = (instance.getParameterByName("Hours", out float discard2,out float hourValue));
         var _2 = (instance.getParameterByName("Minutes", out float discard3,out float minuteValue));
         
-        
-        
         if (hourValue == hour && value == 0)
         {
             instance.setParameterByName("inMinutes", 1);
