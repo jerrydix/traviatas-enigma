@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{9022c5af-b2b7-4496-b001-e6a917cd60dd}">
 		<property name="name">
-			<value>GrandpaClockActual</value>
+			<value>GrandpaClock</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{468114df-4203-40c0-ac77-38606df448a4}</destination>
+			<destination>{bc9bf804-9e7a-41f1-92f1-1a5fdc381fd9}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{6bf4c854-3a00-4252-b51e-ac25865c3ca3}</destination>
@@ -38,6 +38,9 @@
 			<destination>{d678df78-d6a6-4ac4-b09d-919f3a83ce2f}</destination>
 			<destination>{9b343e9c-6ce0-44f9-9d62-cef050ed9700}</destination>
 			<destination>{ef5c4591-d793-4ded-a5d4-c7bc26a77fab}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{52d390cc-9471-4d99-a148-10afe7234ad6}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{6bf4c854-3a00-4252-b51e-ac25865c3ca3}">
@@ -202,7 +205,7 @@
 			<value>0.20000000000000001</value>
 		</property>
 		<property name="length">
-			<value>2.5999999999999996</value>
+			<value>2.5899999999999994</value>
 		</property>
 		<property name="timelockedOffset">
 			<value>8.1000000000000032</value>
@@ -230,11 +233,12 @@
 	</object>
 	<object class="CommandSound" id="{23ce0312-a497-4563-b778-52ecda62c876}">
 		<property name="start">
-			<value>0.002</value>
+			<value>0.050000000000000003</value>
 		</property>
 		<property name="length">
-			<value>2.6879999999999966</value>
+			<value>0.25</value>
 		</property>
+		<property name="name" />
 		<property name="commandType">
 			<value>4</value>
 		</property>
@@ -261,10 +265,10 @@
 	</object>
 	<object class="CommandSound" id="{92f16751-2387-4731-97a8-d81ed47ffeb5}">
 		<property name="start">
-			<value>0.002</value>
+			<value>0.050000000000000003</value>
 		</property>
 		<property name="length">
-			<value>2.6879999999999926</value>
+			<value>0.25</value>
 		</property>
 		<property name="commandType">
 			<value>4</value>
@@ -390,7 +394,7 @@
 	<object class="MixerBusFader" id="{cdadaad3-2156-49e7-971d-b5abf98ba2d2}" />
 	<object class="AutomationPoint" id="{235ea0f5-4ca2-4ecd-ad1a-e9062dfe7c5c}">
 		<property name="position">
-			<value>1.8000000000000003</value>
+			<value>1.6000000000000001</value>
 		</property>
 		<property name="value">
 			<value>0</value>
@@ -401,7 +405,7 @@
 	</object>
 	<object class="AutomationPoint" id="{b6b679be-b06e-4314-8367-7bd0b1570b25}">
 		<property name="position">
-			<value>2.7999999999999998</value>
+			<value>2.7999999999999989</value>
 		</property>
 		<property name="value">
 			<value>-80</value>
@@ -417,7 +421,7 @@
 	</object>
 	<object class="AutomationPoint" id="{cf599a2e-2a73-4bfa-bd6b-dfe62e537e86}">
 		<property name="position">
-			<value>1.8000000000000007</value>
+			<value>1.6000000000000005</value>
 		</property>
 		<property name="value">
 			<value>0</value>
@@ -428,7 +432,7 @@
 	</object>
 	<object class="AutomationPoint" id="{2ecd0d29-fafa-4907-b89d-571cba206cec}">
 		<property name="position">
-			<value>2.8000000000000003</value>
+			<value>2.7999999999999994</value>
 		</property>
 		<property name="value">
 			<value>-80</value>
