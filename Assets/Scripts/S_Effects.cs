@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.UI;
 
 public class S_Effects : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class S_Effects : MonoBehaviour
     [SerializeField] private AnimationCurve blinkingCurveClose;
     [SerializeField] private AnimationCurve blinkingCurveOpen;
     [SerializeField] private AnimationCurve blinkingCurve_2;
+    [SerializeField] private AnimationCurve crossCurve;
+
+
+    [SerializeField] private Image img;
 
 
     private float intensityTime;
@@ -57,12 +62,15 @@ public class S_Effects : MonoBehaviour
         while (intensityTime < 5)
         {
             intensityTime += speed * Time.deltaTime;
+            float alphaValue = crossCurve.Evaluate(intensityTime);;
+            Debug.Log(alphaValue);
             float intensity = blinkingCurveClose.Evaluate(intensityTime);
             float postExp = blinkingCurve_2.Evaluate(intensityTime);
             vignette.intensity.value = intensity;
             backColor.postExposure.value = postExp;
             depthOfField.focalLength.value = Math.Clamp(intensityTime * 60f, 1, 300);
             grain.intensity.value = intensityTime * 0.2f;
+            img.color = new Color(255, 255, 255, 255 * alphaValue);
             grain.size.value = intensityTime * 0.8f;
             yield return null;
         }
@@ -75,6 +83,7 @@ public class S_Effects : MonoBehaviour
             intensityTime -= speed * Time.deltaTime;
             float intensity = blinkingCurveOpen.Evaluate(intensityTime);
             float postExp = blinkingCurve_2.Evaluate(intensityTime);
+            img.color = new Color(255, 255, 255, 255);
             vignette.intensity.value = intensity;
             depthOfField.focalLength.value = Math.Clamp(intensityTime * 60f, 1, 300);
             grain.intensity.value = intensityTime * 0.2f;
