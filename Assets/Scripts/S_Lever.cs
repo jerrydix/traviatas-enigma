@@ -33,20 +33,23 @@ public class S_Lever : MonoBehaviour
 
     public void Toggle()
     {
-        if (!isMoving)
+        if (!GameManager.Instance.motorMinigameCompleted)
         {
-            if (isToogle)
+            if (!isMoving)
             {
-                anim.Play("Close");
+                if (isToogle)
+                {
+                    anim.Play("Close");
+                }
+                else
+                {
+                    anim.Play("Open");
+                }
+                AudioManager.Instance.PlayOneShotAttached(toggleSound, gameObject);
+                StartCoroutine(toggleCor());
+                isToogle = !isToogle;
+                motor.checkSequence();
             }
-            else
-            {
-                anim.Play("Open");
-            }
-            AudioManager.Instance.PlayOneShotAttached(toggleSound, gameObject);
-            StartCoroutine(toggleCor());
-            isToogle = !isToogle;
-            motor.checkSequence();
         }
     }
 
