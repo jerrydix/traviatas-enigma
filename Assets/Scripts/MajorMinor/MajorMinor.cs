@@ -60,7 +60,7 @@ public class MajorMinor : MonoBehaviour
         currentMelody = melody;
         currentIsMajor = melodies[melody];
         currentInstance = RuntimeManager.CreateInstance(currentMelody);
-        RuntimeManager.AttachInstanceToGameObject(currentInstance, soundPosition);
+        
     }
     
     private static void Shuffle<T>(IList<T> list)
@@ -79,6 +79,7 @@ public class MajorMinor : MonoBehaviour
         playButton.PressButton(positionTurnSpeed);
         if (!majorMinorMiniGameCompleted)
         {
+            RuntimeManager.AttachInstanceToGameObject(currentInstance, soundPosition);
             currentInstance.start();
             isPlaying = true;
         }

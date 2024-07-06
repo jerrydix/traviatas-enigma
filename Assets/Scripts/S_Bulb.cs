@@ -11,7 +11,7 @@ public class S_Bulb : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartBlinking();
+        
     }
 
     private IEnumerator Blink()
@@ -19,9 +19,9 @@ public class S_Bulb : MonoBehaviour
         while (true)
         {
             mat.SetFloat("_Emission", 0f);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.25f);
             mat.SetFloat("_Emission", 1f);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.25f);
 
         }
     }

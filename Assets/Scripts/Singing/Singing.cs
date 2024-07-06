@@ -23,6 +23,7 @@ public class Singing : MonoBehaviour
     [SerializeField] private GameObject soundSource;
     [SerializeField] private int maxIncorrectWords;
     [SerializeField] private int recordingLength;
+    [SerializeField] private S_Bulb bulb;
     
     private int currentIndex;
     private string currentPlayerLyrics;
@@ -38,6 +39,7 @@ public class Singing : MonoBehaviour
 
     private void Start()
     {
+        bulb.StandBy();
         currentIndex = 0;
         inputActions = GameObject.Find("Player").GetComponent<PlayerMovement>().inputActions;
         
@@ -71,6 +73,7 @@ public class Singing : MonoBehaviour
     
     private void CheckVerse()
     {
+        bulb.StandBy();
         if (CompareVerses())
         {
             AudioManager.Instance.PlayOneShotAttached(correctSound, soundSource);
@@ -155,12 +158,13 @@ public class Singing : MonoBehaviour
     }
     
     private void StartRecording() {
-        
+        bulb.StartBlinking();
         clip = Microphone.Start(AudioManager.Instance.currentMicrophone, false, recordingLength, 44100);
         recording = true;
     }
     
     private void StopRecording() {
+        bulb.StandBy();
         var position = Microphone.GetPosition(AudioManager.Instance.currentMicrophone);
         Microphone.End(AudioManager.Instance.currentMicrophone);
         var samples = new float[position * clip.channels];
@@ -171,6 +175,7 @@ public class Singing : MonoBehaviour
     }
 
     private void SendRecording() {
+        bulb.StandBy();
         HuggingFaceAPI.AutomaticSpeechRecognition(bytes, response => {
             currentPlayerLyrics = response;
             CheckVerse();
