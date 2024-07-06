@@ -59,6 +59,7 @@ public class S_Effects : MonoBehaviour
 
     IEnumerator Close()
     {
+        intensityTime = 0f;
         while (intensityTime < 5)
         {
             if (intensityTime > 1f)
@@ -67,7 +68,6 @@ public class S_Effects : MonoBehaviour
             }
             intensityTime += speed * Time.deltaTime;
             float alphaValue = crossCurve.Evaluate(intensityTime);;
-            Debug.Log(alphaValue);
             float intensity = blinkingCurveClose.Evaluate(intensityTime);
             float postExp = blinkingCurve_2.Evaluate(intensityTime);
             vignette.intensity.value = intensity;
@@ -82,6 +82,9 @@ public class S_Effects : MonoBehaviour
 
     IEnumerator Open()
     {
+        intensityTime = 5f;
+        // On build uncomment
+        //gameObject.GetComponent<PlayerMovement>().inputActions.Moving.Move.Disable();
         while (intensityTime > 0)
         {
             if (intensityTime < 1f)

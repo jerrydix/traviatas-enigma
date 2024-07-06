@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: dcc859d7f41599c418f265c49432ad3c
+  - enabled: 1
+    path: Assets/Scenes/BackroomsMikhail.unity
+    guid: 17998e6332468a94d8eb6c54527ac754
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 374b932a9c3afc34e8069ddeb1c6cc9d, type: 2}

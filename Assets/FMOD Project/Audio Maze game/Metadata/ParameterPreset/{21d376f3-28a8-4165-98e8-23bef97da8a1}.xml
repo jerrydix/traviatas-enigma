@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{21d376f3-28a8-4165-98e8-23bef97da8a1}">
+		<property name="name">
+			<value>PhoneTransition</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e2aeec76-f2fd-4de5-85ac-03abf592876f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{1f791f8d-07d4-4bba-a6d1-4cd49d64e4ac}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{1f791f8d-07d4-4bba-a6d1-4cd49d64e4ac}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

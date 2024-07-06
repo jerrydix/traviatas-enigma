@@ -45,6 +45,14 @@ public class PlayerMovement : MonoBehaviour
         steps = tileSteps;
     }
 
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name != "Intro")
+        {
+            GetComponent<S_Effects>().OpenEyes();
+        }
+    }
+
     void FixedUpdate()
     {
         Vector2 moveInput = inputActions.Moving.Move.ReadValue<Vector2>();

@@ -954,6 +954,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2036433665844531178, guid: 282bed9b167e0cc40a06cd51a418c3f9, type: 3}
   m_PrefabInstance: {fileID: 6298420934333826431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1403929483 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4189247389394184231, guid: 282bed9b167e0cc40a06cd51a418c3f9, type: 3}
+  m_PrefabInstance: {fileID: 6298420934333826431}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403929481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3905942753275143a3886f275532ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1420427791 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8060904066537330888, guid: 3acd5fd88c441f14a9dc5d4917763929, type: 3}
@@ -1020,8 +1031,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1020705726573580522, guid: c8aabe061eec4834a9c63685daeed9a0, type: 3}
+      propertyPath: effects
+      value: 
+      objectReference: {fileID: 1403929483}
+    - target: {fileID: 1020705726573580522, guid: c8aabe061eec4834a9c63685daeed9a0, type: 3}
+      propertyPath: trans.Path
+      value: event:/Phone/Transition
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020705726573580522, guid: c8aabe061eec4834a9c63685daeed9a0, type: 3}
       propertyPath: callSound.Path
       value: event:/Phone/RingChanger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020705726573580522, guid: c8aabe061eec4834a9c63685daeed9a0, type: 3}
+      propertyPath: trans.Guid.Data1
+      value: -1287998750
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020705726573580522, guid: c8aabe061eec4834a9c63685daeed9a0, type: 3}
+      propertyPath: trans.Guid.Data2
+      value: 1117645332
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020705726573580522, guid: c8aabe061eec4834a9c63685daeed9a0, type: 3}
+      propertyPath: trans.Guid.Data3
+      value: 340435605
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020705726573580522, guid: c8aabe061eec4834a9c63685daeed9a0, type: 3}
+      propertyPath: trans.Guid.Data4
+      value: 1650165059
       objectReference: {fileID: 0}
     - target: {fileID: 1020705726573580522, guid: c8aabe061eec4834a9c63685daeed9a0, type: 3}
       propertyPath: phoneHoldTransform

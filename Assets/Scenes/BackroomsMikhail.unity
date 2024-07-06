@@ -4568,6 +4568,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2cb46dcc4a9a614886a085cddeb7e69, type: 3}
+--- !u!114 &360178491 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 385154795978232195, guid: 86e24a1fd0e98824ea9836eecc114242, type: 3}
+  m_PrefabInstance: {fileID: 2444139473909151916}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &363805000
 GameObject:
   m_ObjectHideFlags: 0
@@ -21913,6 +21924,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4165967677545084479, guid: 282bed9b167e0cc40a06cd51a418c3f9, type: 3}
   m_PrefabInstance: {fileID: 7900279152413920599}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1662697525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4189247389394184231, guid: 282bed9b167e0cc40a06cd51a418c3f9, type: 3}
+  m_PrefabInstance: {fileID: 7900279152413920599}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662697517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3905942753275143a3886f275532ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1668485960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30450,6 +30472,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2072405859}
     - target: {fileID: 224121504763872017, guid: 282bed9b167e0cc40a06cd51a418c3f9, type: 3}
+      propertyPath: effects
+      value: 
+      objectReference: {fileID: 1662697525}
+    - target: {fileID: 224121504763872017, guid: 282bed9b167e0cc40a06cd51a418c3f9, type: 3}
       propertyPath: cameraLookAt
       value: 
       objectReference: {fileID: 238795122}
@@ -30498,9 +30524,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4189247389394184231, guid: 282bed9b167e0cc40a06cd51a418c3f9, type: 3}
+      propertyPath: img
+      value: 
+      objectReference: {fileID: 360178491}
+    - target: {fileID: 4189247389394184231, guid: 282bed9b167e0cc40a06cd51a418c3f9, type: 3}
       propertyPath: volume
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8254724346739328523}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

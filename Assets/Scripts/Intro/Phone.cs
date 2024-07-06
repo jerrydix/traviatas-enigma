@@ -5,6 +5,7 @@ using FMODUnity;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Phone : MonoBehaviour
@@ -27,6 +28,9 @@ public class Phone : MonoBehaviour
 
     [SerializeField] private EventReference callSound;
     [SerializeField] private EventReference phonePickup;
+    [SerializeField] private EventReference trans;
+
+    [SerializeField] private S_Effects effects;
     
     
     private PlayerInput inputActions;
@@ -67,7 +71,17 @@ public class Phone : MonoBehaviour
             inputActions.Moving.Disable();
             GameObject.Find("Main Camera").GetComponent<Interaction>().inInteraction = true;
             isMoving = true;
+            StartCoroutine(exitScene());
         }
+    }
+
+    IEnumerator exitScene()
+    {
+        AudioManager.Instance.PlayOneShotAttached(trans, gameObject);
+        yield return new WaitForSeconds(4f);
+        effects.CloseEyes();
+        yield return new WaitForSeconds(5.5f);
+        SceneManager.LoadScene("BackroomsMikhail");
     }
 
     public void StartRing()
