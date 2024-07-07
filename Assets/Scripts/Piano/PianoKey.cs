@@ -22,6 +22,7 @@ public class PianoKey : MonoBehaviour
       pressed = false;
       isMoving = false;
       originalPosition = new GameObject().transform;
+      originalPosition.parent = transform.parent;
       originalPosition.position = transform.position;
       originalPosition.rotation = transform.rotation;
       

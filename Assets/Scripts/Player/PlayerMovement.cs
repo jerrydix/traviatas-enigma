@@ -47,10 +47,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name != "Intro")
-        {
-            GetComponent<S_Effects>().OpenEyes();
-        }
+        //if (SceneManager.GetActiveScene().name != "Intro")
+        //{
+        //    GetComponent<S_Effects>().OpenEyes();
+        //}
     }
 
     void FixedUpdate()
