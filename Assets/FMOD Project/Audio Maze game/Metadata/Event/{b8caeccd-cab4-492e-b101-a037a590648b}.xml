@@ -78,11 +78,8 @@
 		<property name="isAsync">
 			<value>true</value>
 		</property>
-		<property name="isCutoff">
-			<value>true</value>
-		</property>
 		<property name="length">
-			<value>5</value>
+			<value>10</value>
 		</property>
 		<relationship name="sounds">
 			<destination>{2272fd46-023f-467a-8e21-05d186e2ba10}</destination>

@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -17,10 +19,20 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+        instance = RuntimeManager.CreateInstance(sounds);
+        longInstance = RuntimeManager.CreateInstance(longSounds);
+        longInstance.start();
     }
+    
+    [SerializeField] private EventReference sounds;
+    [SerializeField] private EventReference longSounds;
+
+    [SerializeField] private EventInstance instance;
+    [SerializeField] private EventInstance longInstance;
 
     //todo open smth when this is true
-    
+    [HideInInspector] public bool isSFXPlaying;
     [SerializeField] private List<Piano> pianos;
     [HideInInspector] int amountPianosCompleted; //0-3
     private bool pianosComplete;
@@ -40,6 +52,15 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool singingMiniGameCompleted;
     [SerializeField] private S_MainDoor mainDoor;
 
+    public void PlayLong()
+    {
+        StartCoroutine(PlayLongSound());
+    }
+
+    public void PlayShort()
+    {
+        StartCoroutine(PlaySound());
+    }
 
     public void CheckClocks()
     {
@@ -146,5 +167,34 @@ public class GameManager : MonoBehaviour
         {
             mainDoor.OpenDoor();
         }
+    }
+    
+    IEnumerator PlaySound()
+    {
+        isSFXPlaying = true;
+        instance.start();
+        yield return new WaitForSeconds(10f);
+        isSFXPlaying = false;
+    }
+    
+    IEnumerator PlayLongSound()
+    {
+        isSFXPlaying = true;
+        longInstance.start();
+        float fade = 0;
+        while (fade < 1)
+        {
+            fade += Time.deltaTime * 0.5f;
+            longInstance.setParameterByName("Crossfade", fade);
+            yield return null;
+        }
+        yield return new WaitForSeconds(45f);
+        while (fade >= 0)
+        {
+            fade -= Time.deltaTime * 0.5f;
+            longInstance.setParameterByName("Crossfade", fade);
+            yield return null;
+        }
+        isSFXPlaying = false;
     }
 }
