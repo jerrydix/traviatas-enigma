@@ -28,6 +28,9 @@
 		<relationship name="timeline">
 			<destination>{6c7f833c-cb1f-4295-963d-5f9132358313}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{773f7e6d-b2bf-44d6-92b2-93996ed1a30c}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{adcdc6f4-0e5c-43b0-b197-0495e4563b92}">
 		<relationship name="masterBus">
@@ -78,6 +81,9 @@
 		<relationship name="fadeInCurve">
 			<destination>{2f884b89-1581-46a0-a357-98e8b2dbfe23}</destination>
 		</relationship>
+		<relationship name="fadeOutCurve">
+			<destination>{cc15b025-ee12-4896-9c4a-8cd12fd28f61}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{bdbe4c1c-84e7-44ba-b5b4-262f986460c0}</destination>
 		</relationship>
@@ -102,6 +108,14 @@
 			<destination>{bbafc0e0-5c97-46ac-afff-9b166dc66315}</destination>
 		</relationship>
 	</object>
+	<object class="FadeCurve" id="{cc15b025-ee12-4896-9c4a-8cd12fd28f61}">
+		<relationship name="startPoint">
+			<destination>{10651dcb-6d1a-4f90-8b4c-d93228cb9dbb}</destination>
+		</relationship>
+		<relationship name="endPoint">
+			<destination>{11abea38-6a06-4896-8ef0-4bc352d73174}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{494cc1b6-5e0d-46a0-8fa9-a41ba5d41520}" />
 	<object class="MixerBusFader" id="{5055a37c-2cba-42b7-a56b-3c563462abf8}" />
 	<object class="AutomationPoint" id="{22addeda-3811-4aa1-965e-6d1eddaeaa58}">
@@ -121,6 +135,25 @@
 		</property>
 		<property name="value">
 			<value>1</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{10651dcb-6d1a-4f90-8b4c-d93228cb9dbb}">
+		<property name="position">
+			<value>2.2000000000000002</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+		<property name="curveShape">
+			<value>0.25471893</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{11abea38-6a06-4896-8ef0-4bc352d73174}">
+		<property name="position">
+			<value>3</value>
+		</property>
+		<property name="value">
+			<value>0</value>
 		</property>
 	</object>
 </objects>
