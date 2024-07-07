@@ -22,10 +22,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform cameraLookAt;
     
     [Header("Sound")]
-    [SerializeField] private EventReference tileSteps;
+    [SerializeField] private EventReference metalSteps;
     [SerializeField] private EventReference woodSteps;
+    [SerializeField] private EventReference carpetSteps;
     private EventReference steps;
-
+    
     [SerializeField] private float rate;
     private float time;
    
@@ -42,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         inputActions.UI.Enable();
         inputActions.RestartGame.Enable();
         transform.position = spawn.position;
-        steps = tileSteps;
+        steps = woodSteps;
     }
 
     private void Start()
@@ -95,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.CompareTag("WoodFloor"))
         {
@@ -103,7 +104,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("StoneFloor"))
         {
-            steps = tileSteps;
+            steps = metalSteps;
+        }
+        else if (other.gameObject.CompareTag("CarpetFloor"))
+        {
+            steps = carpetSteps;
         }
     }
 }

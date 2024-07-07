@@ -11,6 +11,7 @@ TagManager:
   - WoodFloor
   - StoneFloor
   - Motor
+  - CarpetFloor
   layers:
   - Default
   - TransparentFX

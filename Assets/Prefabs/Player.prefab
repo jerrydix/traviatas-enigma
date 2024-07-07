@@ -155,13 +155,13 @@ MonoBehaviour:
   moveSpeed: 9
   drag: 10
   cameraLookAt: {fileID: 0}
-  tileSteps:
+  metalSteps:
     Guid:
-      Data1: 1982988969
-      Data2: 1195101559
-      Data3: 1061804455
-      Data4: -285248801
-    Path: event:/Footsteps/FootstepsTiles
+      Data1: 716044580
+      Data2: 1227887761
+      Data3: -164118347
+      Data4: -714487714
+    Path: event:/Footsteps/FootstepsMetal
   woodSteps:
     Guid:
       Data1: 250007797
@@ -169,6 +169,13 @@ MonoBehaviour:
       Data3: 2069878463
       Data4: 2003060598
     Path: event:/Footsteps/FootstepsWood
+  carpetSteps:
+    Guid:
+      Data1: 1982988969
+      Data2: 1195101559
+      Data3: 1061804455
+      Data4: -285248801
+    Path: event:/Footsteps/FootstepsCarpet
   rate: 0.5
 --- !u!114 &4189247389394184231
 MonoBehaviour:
@@ -363,6 +370,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  crossCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  img: {fileID: 0}
   effectLength: 0
   speed: 0.7
 --- !u!1 &5528467595778557902
