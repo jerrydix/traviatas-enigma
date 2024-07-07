@@ -390,6 +390,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: 8643f616b89b1e64eabb3161c8da0f25, type: 3}
+      propertyPath: m_TagString
+      value: WoodFloor
+      objectReference: {fileID: 0}
     - target: {fileID: -2271502847731017999, guid: 8643f616b89b1e64eabb3161c8da0f25, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.6548

@@ -262,6 +262,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6507901977716847365, guid: 8d667cc79192f71479bac302f0fbb335, type: 3}
+      propertyPath: m_TagString
+      value: StoneFloor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507901977716847365, guid: 8d667cc79192f71479bac302f0fbb335, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}

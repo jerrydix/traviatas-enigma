@@ -297,6 +297,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 436affe1ffb7f454a9fd35fb90f633b4, type: 2}
     - target: {fileID: -8153468022190502949, guid: d35f0c5689a14fd41b3d6f26d2e87a5e, type: 3}
+      propertyPath: m_TagString
+      value: WoodFloor
+      objectReference: {fileID: 0}
+    - target: {fileID: -8153468022190502949, guid: d35f0c5689a14fd41b3d6f26d2e87a5e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
