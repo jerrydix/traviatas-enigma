@@ -34,19 +34,6 @@ public class Piano : MonoBehaviour
         currentPlayerSequence = new List<int>();
         inputActions = GameObject.Find("Player").GetComponent<PlayerMovement>().inputActions;
         
-        inputActions.Piano.Key0.performed += PressKey0;
-        inputActions.Piano.Key1.performed += PressKey1;
-        inputActions.Piano.Key2.performed += PressKey2;
-        inputActions.Piano.Key3.performed += PressKey3;
-        inputActions.Piano.Key4.performed += PressKey4;
-        inputActions.Piano.Key5.performed += PressKey5;
-        inputActions.Piano.Key6.performed += PressKey6;
-        inputActions.Piano.Key7.performed += PressKey7;
-        inputActions.Piano.Key8.performed += PressKey8;
-        inputActions.Piano.Key9.performed += PressKey9;
-        inputActions.Piano.Key10.performed += PressKey10;
-        inputActions.Piano.Key11.performed += PressKey11;
-        
         sequences = new List<List<int>>();
         
         for (int i = 0; i < sequenceAmount; i++)
@@ -67,12 +54,36 @@ public class Piano : MonoBehaviour
             StartCoroutine(PlaySequence(sequences[currentSequenceIndex]));
         } else if (interactable.objIsActive && !interactable.isMoving && pianoMiniGameCompleted)
         {
+            inputActions.Piano.Key0.performed += PressKey0;
+            inputActions.Piano.Key1.performed += PressKey1;
+            inputActions.Piano.Key2.performed += PressKey2;
+            inputActions.Piano.Key3.performed += PressKey3;
+            inputActions.Piano.Key4.performed += PressKey4;
+            inputActions.Piano.Key5.performed += PressKey5;
+            inputActions.Piano.Key6.performed += PressKey6;
+            inputActions.Piano.Key7.performed += PressKey7;
+            inputActions.Piano.Key8.performed += PressKey8;
+            inputActions.Piano.Key9.performed += PressKey9;
+            inputActions.Piano.Key10.performed += PressKey10;
+            inputActions.Piano.Key11.performed += PressKey11;
             inputActions.Piano.Enable();
         }
         
         if (inputActions.Piano.Cancel.triggered && interactable.objIsActive)
         {
             interactable.isMoving = true;
+            inputActions.Piano.Key0.performed -= PressKey0;
+            inputActions.Piano.Key1.performed -= PressKey1;
+            inputActions.Piano.Key2.performed -= PressKey2;
+            inputActions.Piano.Key3.performed -= PressKey3;
+            inputActions.Piano.Key4.performed -= PressKey4;
+            inputActions.Piano.Key5.performed -= PressKey5;
+            inputActions.Piano.Key6.performed -= PressKey6;
+            inputActions.Piano.Key7.performed -= PressKey7;
+            inputActions.Piano.Key8.performed -= PressKey8;
+            inputActions.Piano.Key9.performed -= PressKey9;
+            inputActions.Piano.Key10.performed -= PressKey10;
+            inputActions.Piano.Key11.performed -= PressKey11;   
             inputActions.Piano.Disable();
         }
         
@@ -91,6 +102,18 @@ public class Piano : MonoBehaviour
         }
         inPianoSequence = false;
         currentPlayerSequence = new List<int>();
+        inputActions.Piano.Key0.performed += PressKey0;
+        inputActions.Piano.Key1.performed += PressKey1;
+        inputActions.Piano.Key2.performed += PressKey2;
+        inputActions.Piano.Key3.performed += PressKey3;
+        inputActions.Piano.Key4.performed += PressKey4;
+        inputActions.Piano.Key5.performed += PressKey5;
+        inputActions.Piano.Key6.performed += PressKey6;
+        inputActions.Piano.Key7.performed += PressKey7;
+        inputActions.Piano.Key8.performed += PressKey8;
+        inputActions.Piano.Key9.performed += PressKey9;
+        inputActions.Piano.Key10.performed += PressKey10;
+        inputActions.Piano.Key11.performed += PressKey11;
         inputActions.Piano.Enable();
     }
 
@@ -220,22 +243,6 @@ public class Piano : MonoBehaviour
             currentPlayerSequence = new List<int>();
             StartCoroutine(PlayRightSound());
         }
-    }
-    
-    private void OnDestroy()
-    {
-        inputActions.Piano.Key0.performed -= PressKey0;
-        inputActions.Piano.Key1.performed -= PressKey1;
-        inputActions.Piano.Key2.performed -= PressKey2;
-        inputActions.Piano.Key3.performed -= PressKey3;
-        inputActions.Piano.Key4.performed -= PressKey4;
-        inputActions.Piano.Key5.performed -= PressKey5;
-        inputActions.Piano.Key6.performed -= PressKey6;
-        inputActions.Piano.Key7.performed -= PressKey7;
-        inputActions.Piano.Key8.performed -= PressKey8;
-        inputActions.Piano.Key9.performed -= PressKey9;
-        inputActions.Piano.Key10.performed -= PressKey10;
-        inputActions.Piano.Key11.performed -= PressKey11;
     }
     
     IEnumerator PlayRightSound()
