@@ -39,19 +39,11 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody.freezeRotation = true;
         
         inputActions = new PlayerInput();
-        inputActions.Moving.Enable();
-        inputActions.UI.Enable();
+        //inputActions.Moving.Enable(); Removed because it has to be enabled after start in main menu ist toggled
+        //inputActions.UI.Enable();
         inputActions.RestartGame.Enable();
         transform.position = spawn.position;
         steps = woodSteps;
-    }
-
-    private void Start()
-    {
-        //if (SceneManager.GetActiveScene().name != "Intro")
-        //{
-        //    GetComponent<S_Effects>().OpenEyes();
-        //}
     }
 
     void FixedUpdate()
