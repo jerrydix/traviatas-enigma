@@ -812,6 +812,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 279342121}
+  - component: {fileID: 279342122}
   m_Layer: 0
   m_Name: PeopleAmbienceObject (1)
   m_TagString: Untagged
@@ -834,6 +835,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6688032002827572205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &279342122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279342120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9c8de46d214b9408bebbbe2ee7d489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectAudio:
+    Guid:
+      Data1: -1415117817
+      Data2: 1091564627
+      Data3: 1331739300
+      Data4: 565520980
+    Path: event:/PeopleAmbience
+  SoundOcclusionWidening: 5.5
+  PlayerOcclusionWidening: 5.5
+  OcclusionLayer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &279412538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,8 +1172,8 @@ MonoBehaviour:
       Data3: 1331739300
       Data4: 565520980
     Path: event:/PeopleAmbience
-  SoundOcclusionWidening: 6
-  PlayerOcclusionWidening: 6
+  SoundOcclusionWidening: 5.5
+  PlayerOcclusionWidening: 5.5
   OcclusionLayer:
     serializedVersion: 2
     m_Bits: 1
@@ -7609,6 +7634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1993117737}
+  - component: {fileID: 1993117738}
   m_Layer: 0
   m_Name: PeopleAmbienceObject (2)
   m_TagString: Untagged
@@ -7631,6 +7657,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6688032002827572205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1993117738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993117736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9c8de46d214b9408bebbbe2ee7d489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectAudio:
+    Guid:
+      Data1: -1415117817
+      Data2: 1091564627
+      Data3: 1331739300
+      Data4: 565520980
+    Path: event:/PeopleAmbience
+  SoundOcclusionWidening: 5.5
+  PlayerOcclusionWidening: 5.5
+  OcclusionLayer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &2016360476
 GameObject:
   m_ObjectHideFlags: 0

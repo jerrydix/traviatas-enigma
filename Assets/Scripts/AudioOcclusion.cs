@@ -15,11 +15,10 @@ public class AudioOcclusion : MonoBehaviour
     [Header("Occlusion Options")]
     [SerializeField]
     [Range(0f, 10f)]
-    private float SoundOcclusionWidening = 1f;
+    private float SoundOcclusionWidening = 5.5f;
     [SerializeField]
     [Range(0f, 10f)]
-    private float PlayerOcclusionWidening = 1f;
-    [SerializeField]
+    private float PlayerOcclusionWidening = 5.5f;
     private LayerMask OcclusionLayer;
 
     private bool AudioIsVirtual;
@@ -37,6 +36,8 @@ public class AudioOcclusion : MonoBehaviour
         Audio.release();
         //
 
+        OcclusionLayer = LayerMask.GetMask("Default");
+        
         AudioDes = RuntimeManager.GetEventDescription(SelectAudio);
         AudioDes.getMinMaxDistance(out var _, out MaxDistance);
 

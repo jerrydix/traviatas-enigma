@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{7aa759c2-bc25-4576-ab3b-3a46e06bf6dc}">
 		<property name="name">
-			<value>Motor</value>
+			<value>MotorSound</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{468114df-4203-40c0-ac77-38606df448a4}</destination>
+			<destination>{4a620104-6760-4f05-a716-6cc155194a5a}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{413aaded-1e03-4d58-a5b8-9a8703cc99d7}</destination>
@@ -58,7 +58,7 @@
 			<destination>{d701929b-cad9-447e-9a07-7c8e7fa6c9fc}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{d69fce55-4ca6-4304-92e8-7d39e1077c9f}</destination>
+			<destination>{baa12da5-1e97-40ee-beab-84744d84a18f}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{f3b209f9-5512-4284-8e7f-2fbb22687cfd}" />
