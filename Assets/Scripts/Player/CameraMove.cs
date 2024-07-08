@@ -21,10 +21,6 @@ public class CameraMove : MonoBehaviour
     private void Start()
     {
         inputActions = GameObject.Find("Player").GetComponent<PlayerMovement>().inputActions;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-      
-        _pause = GameObject.Find("UI");
     }
 
     void Update()

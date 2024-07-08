@@ -15,8 +15,7 @@ public class PauseMenu : MonoBehaviour
     void Awake()
     {
        pauseMenu.SetActive(false);
-       inputActions = new PlayerInput();
-       inputActions.UI.Enable();
+       inputActions = GameObject.Find("Player").GetComponent<PlayerMovement>().inputActions;
     }
 
     private void Update()
@@ -57,7 +56,8 @@ public class PauseMenu : MonoBehaviour
     
     public void ExitGame()
     {
-        Debug.Log("to main menu");
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 }

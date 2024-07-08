@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BackroomsMikhail.unity
     guid: 17998e6332468a94d8eb6c54527ac754
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: d572c23442abb0546868008d03e022ce
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 374b932a9c3afc34e8069ddeb1c6cc9d, type: 2}
