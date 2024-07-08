@@ -1192,6 +1192,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7055497189328370680, guid: bb54461838609e04a97230a2150a7837, type: 3}
+      propertyPath: operaLift
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055497189328370680, guid: bb54461838609e04a97230a2150a7837, type: 3}
       propertyPath: teleportPosition.x
       value: 72.432
       objectReference: {fileID: 0}
@@ -1202,6 +1206,30 @@ PrefabInstance:
     - target: {fileID: 7055497189328370680, guid: bb54461838609e04a97230a2150a7837, type: 3}
       propertyPath: teleportPosition.z
       value: -56.355118
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055497189328370680, guid: bb54461838609e04a97230a2150a7837, type: 3}
+      propertyPath: LiftSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055497189328370680, guid: bb54461838609e04a97230a2150a7837, type: 3}
+      propertyPath: LiftSounds.Array.data[3].Path
+      value: event:/OperaEntrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055497189328370680, guid: bb54461838609e04a97230a2150a7837, type: 3}
+      propertyPath: LiftSounds.Array.data[3].Guid.Data1
+      value: -1897395899
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055497189328370680, guid: bb54461838609e04a97230a2150a7837, type: 3}
+      propertyPath: LiftSounds.Array.data[3].Guid.Data2
+      value: 1223943183
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055497189328370680, guid: bb54461838609e04a97230a2150a7837, type: 3}
+      propertyPath: LiftSounds.Array.data[3].Guid.Data3
+      value: 1505316539
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055497189328370680, guid: bb54461838609e04a97230a2150a7837, type: 3}
+      propertyPath: LiftSounds.Array.data[3].Guid.Data4
+      value: 36657232
       objectReference: {fileID: 0}
     - target: {fileID: 7210743221739114373, guid: bb54461838609e04a97230a2150a7837, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28277,7 +28305,7 @@ Transform:
   m_GameObject: {fileID: 1358251974}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 8.29, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28302,6 +28330,13 @@ MonoBehaviour:
       Data3: 9329574
       Data4: 607299048
     Path: event:/OperaSinger
+  orchestra:
+    Guid:
+      Data1: 1473681334
+      Data2: 1204452096
+      Data3: 361206676
+      Data4: -1171857584
+    Path: event:/OperaFinalSpat
 --- !u!1001 &1359621078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43103,7 +43138,7 @@ Transform:
   m_GameObject: {fileID: 2072405858}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -52.58, y: 80.78, z: -16.28}
+  m_LocalPosition: {x: -41.88, y: 80.78, z: -13.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47727,6 +47762,10 @@ PrefabInstance:
       propertyPath: on2
       value: 
       objectReference: {fileID: 2100000, guid: a075699e4e929ee449ec9af95e75e6b5, type: 2}
+    - target: {fileID: 5767753486350095311, guid: 4bd8728ea9cfc0946a5601097c33771f, type: 3}
+      propertyPath: singer
+      value: 
+      objectReference: {fileID: 1358251976}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

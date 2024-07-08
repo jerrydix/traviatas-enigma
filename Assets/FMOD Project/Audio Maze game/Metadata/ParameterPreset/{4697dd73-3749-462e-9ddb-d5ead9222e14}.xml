@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{4697dd73-3749-462e-9ddb-d5ead9222e14}">
+		<property name="name">
+			<value>Ducking</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e2aeec76-f2fd-4de5-85ac-03abf592876f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{6477411b-0e82-4aec-86ef-0b516e00e494}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{6477411b-0e82-4aec-86ef-0b516e00e494}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

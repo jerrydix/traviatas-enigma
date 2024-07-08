@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 
 public class S_MainDoor : MonoBehaviour
@@ -10,6 +11,7 @@ public class S_MainDoor : MonoBehaviour
     public Material on2;
     public Material off;
     private Animator anim;
+    public S_Singer singer;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -52,6 +54,8 @@ public class S_MainDoor : MonoBehaviour
 
     public void OpenDoor()
     {
+        GameManager.Instance.DisableMusic();
+        singer.instance.stop(STOP_MODE.ALLOWFADEOUT);
         anim.Play("Open");
     }
 }

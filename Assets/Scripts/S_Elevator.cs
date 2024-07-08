@@ -34,6 +34,7 @@ public class S_Elevator : MonoBehaviour
     
     [SerializeField] private GameObject insideButtonGO;
     [SerializeField] private GameObject outsideButtonGO;
+    [SerializeField] private bool operaLift;
 
     private void Start()
     {
@@ -174,6 +175,12 @@ public class S_Elevator : MonoBehaviour
         StartCoroutine(setMusicParam());
         yield return new WaitForSeconds(1f);
         StartCoroutine(Open());
+        if(operaLift)
+        {
+            yield return new WaitForSeconds(3.5f);
+            GameManager.Instance.DisableMusic();
+            AudioManager.Instance.PlayOneShotAttached(LiftSounds[3], gameObject);
+        }
     }
 
     IEnumerator setMusicParam()

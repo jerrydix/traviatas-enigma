@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class GameManager : MonoBehaviour
 {
@@ -175,6 +176,11 @@ public class GameManager : MonoBehaviour
         instance.start();
         yield return new WaitForSeconds(10f);
         isSFXPlaying = false;
+    }
+
+    public void DisableMusic()
+    {
+        longInstance.stop(STOP_MODE.ALLOWFADEOUT);
     }
     
     IEnumerator PlayLongSound()
