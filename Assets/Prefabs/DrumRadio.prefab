@@ -498,25 +498,25 @@ MonoBehaviour:
     Path: event:/Drum/DrumDistorted
   radioWrongSound:
     Guid:
-      Data1: -1121586262
-      Data2: 1233244740
-      Data3: 98390147
-      Data4: -1477901387
-    Path: event:/Keys/Key 0
+      Data1: -2040043792
+      Data2: 1322832177
+      Data3: 792321965
+      Data4: -352189367
+    Path: event:/WinLose/DrumLose
   radioRightSound:
     Guid:
-      Data1: 1793390802
-      Data2: 1216790578
-      Data3: 1421818292
-      Data4: 784336229
-    Path: event:/Keys/Key 10
+      Data1: -1660764701
+      Data2: 1237668860
+      Data3: -2116635730
+      Data4: 1031284221
+    Path: event:/WinLose/DrumWin
   radioFinishedSound:
     Guid:
-      Data1: 980754829
-      Data2: 1324931501
-      Data3: -785483082
-      Data4: -1953968295
-    Path: event:/Keys/Key 5
+      Data1: -237807804
+      Data2: 1255466245
+      Data3: 266724743
+      Data4: 1488492006
+    Path: event:/WinLose/DrumWinAll
 --- !u!1 &9069181967570492805
 GameObject:
   m_ObjectHideFlags: 0

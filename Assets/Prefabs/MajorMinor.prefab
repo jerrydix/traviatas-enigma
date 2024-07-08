@@ -2134,25 +2134,25 @@ MonoBehaviour:
       isMajor: 0
   rightSound:
     Guid:
-      Data1: -1121586262
-      Data2: 1233244740
-      Data3: 98390147
-      Data4: -1477901387
-    Path: event:/Keys/Key 0
+      Data1: 1819434138
+      Data2: 1286383728
+      Data3: 404611215
+      Data4: 2084672452
+    Path: event:/WinLose/PatephoneWin
   wrongSound:
     Guid:
-      Data1: 634332667
-      Data2: 1235475743
-      Data3: -2026543472
-      Data4: 85077395
-    Path: event:/Keys/Key 11
+      Data1: -180210884
+      Data2: 1210214319
+      Data3: 827311236
+      Data4: 938389660
+    Path: event:/WinLose/PatephoneLose
   finishedSound:
     Guid:
-      Data1: -1509712813
-      Data2: 1088360653
-      Data3: -355591252
-      Data4: -1215017093
-    Path: event:/Keys/Key 6
+      Data1: 1819434138
+      Data2: 1286383728
+      Data3: 404611215
+      Data4: 2084672452
+    Path: event:/WinLose/PatephoneWin
   soundPosition: {fileID: 879090749047666602}
   positionTurnSpeed: 10
   rotationTurnSpeed: 10
