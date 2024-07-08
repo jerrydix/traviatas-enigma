@@ -188,13 +188,9 @@ public class GameManager : MonoBehaviour
             longInstance.setParameterByName("Crossfade", fade);
             yield return null;
         }
-        yield return new WaitForSeconds(45f);
-        while (fade >= 0)
-        {
-            fade -= Time.deltaTime * 0.5f;
-            longInstance.setParameterByName("Crossfade", fade);
-            yield return null;
-        }
+        yield return new WaitForSeconds(35f);
+        longInstance.setParameterByName("Crossfade", 0);
+        longInstance.start();
         isSFXPlaying = false;
     }
 }

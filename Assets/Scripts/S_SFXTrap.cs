@@ -30,7 +30,7 @@ public class S_SFXTrap : MonoBehaviour
                 {
                     if (rng <= probability)
                     {
-                        GameManager.Instance.PlayLong();
+                        GameManager.Instance.PlayShort();
                         Debug.Log("Short");
 
                     }
