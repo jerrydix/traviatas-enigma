@@ -32,15 +32,20 @@ public class PlayerMovement : MonoBehaviour
    
     void Awake()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
 
         _rigidbody = GetComponent<Rigidbody>();
         _rigidbody.freezeRotation = true;
         
         inputActions = new PlayerInput();
-        //inputActions.Moving.Enable(); Removed because it has to be enabled after start in main menu ist toggled
-        //inputActions.UI.Enable();
+        
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            inputActions.Moving.Enable();
+            inputActions.UI.Enable();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        
         inputActions.RestartGame.Enable();
         transform.position = spawn.position;
         steps = woodSteps;

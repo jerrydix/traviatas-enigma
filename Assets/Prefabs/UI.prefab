@@ -2880,7 +2880,7 @@ GameObject:
   - component: {fileID: 2076467811685335700}
   - component: {fileID: 4310098419834623583}
   m_Layer: 5
-  m_Name: Btn_Game
+  m_Name: MenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2904,7 +2904,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0.00012207031, y: 59.999996}
-  m_SizeDelta: {x: 358.7, y: 110.5}
+  m_SizeDelta: {x: 375.02, y: 110.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7758926375004600997
 CanvasRenderer:
@@ -3486,7 +3486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit Game
+  m_text: Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2de3568aba6c06f4489b701eec2dd51c, type: 2}
   m_sharedMaterial: {fileID: 7325886620417616949, guid: 2de3568aba6c06f4489b701eec2dd51c, type: 2}

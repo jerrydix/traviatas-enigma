@@ -25,9 +25,18 @@ public class MicrophoneSelector : MonoBehaviour
             TMP_Dropdown.OptionData optionData = new TMP_Dropdown.OptionData(mic, null);
             options.Add(optionData);
             microphones.Add(mic);
+            if (AudioManager.Instance.currentMicrophone != null && mic == AudioManager.Instance.currentMicrophone)
+            {
+                var index = microphones.IndexOf(mic);
+                if (index != -1)
+                {
+                    deviceIndex = index;
+                }
+            }
         }
 
         sourceDropdown.options = options;
+        sourceDropdown.value = deviceIndex;
     }
 
     public void ChooseMicrophone(int index)

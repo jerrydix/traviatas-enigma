@@ -17,6 +17,13 @@ public class VolumeControl : MonoBehaviour
       musicVolumeSlider.onValueChanged.AddListener(HandleMusicVolumeChange);
       sfxVolumeSlider.onValueChanged.AddListener(HandleSFXVolumeChange);
       
+      RuntimeManager.GetBus("bus:/").getVolume(out var masterVolume);
+      RuntimeManager.GetBus("bus:/Background Music").getVolume(out var musicVolume);
+      RuntimeManager.GetBus("bus:/SFX").getVolume(out var sfxVolume);
+
+      masterVolumeSlider.value = masterVolume;
+      musicVolumeSlider.value = musicVolume;
+      sfxVolumeSlider.value = sfxVolume;
    }
    
    private void HandleMasterVolumeChange(float volume)
