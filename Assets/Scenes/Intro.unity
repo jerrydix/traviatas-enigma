@@ -856,9 +856,6 @@ MonoBehaviour:
     Path: event:/PeopleAmbience
   SoundOcclusionWidening: 5.5
   PlayerOcclusionWidening: 5.5
-  OcclusionLayer:
-    serializedVersion: 2
-    m_Bits: 1
 --- !u!1 &279412538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,9 +1171,6 @@ MonoBehaviour:
     Path: event:/PeopleAmbience
   SoundOcclusionWidening: 5.5
   PlayerOcclusionWidening: 5.5
-  OcclusionLayer:
-    serializedVersion: 2
-    m_Bits: 1
 --- !u!4 &311665537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7631309640041051735, guid: ac70a83ccd8624743aaf057e1cef7fcf, type: 3}
@@ -7678,9 +7672,6 @@ MonoBehaviour:
     Path: event:/PeopleAmbience
   SoundOcclusionWidening: 5.5
   PlayerOcclusionWidening: 5.5
-  OcclusionLayer:
-    serializedVersion: 2
-    m_Bits: 1
 --- !u!1 &2016360476
 GameObject:
   m_ObjectHideFlags: 0
@@ -11559,7 +11550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3483881628063661246, guid: 3acd5fd88c441f14a9dc5d4917763929, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3483881628063661246, guid: 3acd5fd88c441f14a9dc5d4917763929, type: 3}
       propertyPath: _DitheringScale
@@ -11567,7 +11558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3483881628063661246, guid: 3acd5fd88c441f14a9dc5d4917763929, type: 3}
       propertyPath: _PixelationFactor
-      value: 0.35
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4561359224231719891, guid: 3acd5fd88c441f14a9dc5d4917763929, type: 3}
       propertyPath: orientation

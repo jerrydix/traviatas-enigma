@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using PSXShaderKit;
 using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
@@ -21,6 +22,7 @@ public class MainMenuManager : MonoBehaviour
     private bool inPlay;
     
     private PlayerInput inputActions;
+    private PSXPostProcessEffect effect;
     [SerializeField] GameObject ui;
     
     void Start()
@@ -31,6 +33,7 @@ public class MainMenuManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         inputActions = GameObject.Find("Player").GetComponent<PlayerMovement>().inputActions;
+        effect = GameObject.Find("Main Camera").GetComponent<PSXPostProcessEffect>();
     }
 
     public void PlayButton()
@@ -65,6 +68,7 @@ public class MainMenuManager : MonoBehaviour
         if (inPlay && Vector3.Distance(cam.transform.position, cameraPlayTransform.position) < 0.005f && !isAllowedToMoveCamera)
         {
             isAllowedToMoveCamera = true;
+            effect.enabled = true;
             inputActions.Moving.Enable();
             inputActions.UI.Enable();
             Cursor.visible = false;
