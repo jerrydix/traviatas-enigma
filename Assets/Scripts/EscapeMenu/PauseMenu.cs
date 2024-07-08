@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
     
     public PlayerInput inputActions;
     
-    void Awake()
+    void Start()
     {
        pauseMenu.SetActive(false);
        inputActions = GameObject.Find("Player").GetComponent<PlayerMovement>().inputActions;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using FMOD.Studio;
@@ -57,5 +58,13 @@ public class S_MainDoor : MonoBehaviour
         GameManager.Instance.DisableMusic();
         singer.instance.stop(STOP_MODE.ALLOWFADEOUT);
         anim.Play("Open");
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            OpenDoor();
+        }
     }
 }
