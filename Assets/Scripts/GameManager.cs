@@ -9,7 +9,7 @@ using STOP_MODE = FMOD.Studio.STOP_MODE;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-
+    
     private void Awake()
     {
         if (Instance == null)
@@ -29,10 +29,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private EventReference sounds;
     [SerializeField] private EventReference longSounds;
 
-    [SerializeField] private EventInstance instance;
-    [SerializeField] private EventInstance longInstance;
+    private EventInstance instance;
+    private EventInstance longInstance;
 
-    //todo open smth when this is true
     [HideInInspector] public bool isSFXPlaying;
     [SerializeField] private List<Piano> pianos;
     [HideInInspector] int amountPianosCompleted; //0-3
@@ -53,6 +52,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool singingMiniGameCompleted;
     [SerializeField] private S_MainDoor mainDoor;
 
+    private bool isInDuck;
+    
     public void PlayLong()
     {
         StartCoroutine(PlayLongSound());
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (var clock in clocks)
         {
-            if (clock.clockIsFinished)
+            if (!clock.clockIsFinished)
             {
                 return;
             }
@@ -186,17 +187,71 @@ public class GameManager : MonoBehaviour
     IEnumerator PlayLongSound()
     {
         isSFXPlaying = true;
-        longInstance.start();
         float fade = 0;
         while (fade < 1)
         {
-            fade += Time.deltaTime * 0.5f;
+            fade += Time.deltaTime * 0.1f;
             longInstance.setParameterByName("Crossfade", fade);
             yield return null;
         }
-        yield return new WaitForSeconds(35f);
-        longInstance.setParameterByName("Crossfade", 0);
-        longInstance.start();
+        yield return new WaitForSeconds(20f);
+        while (fade > 0)
+        {
+            fade -= Time.deltaTime * 0.1f;
+            longInstance.setParameterByName("Crossfade", fade);
+            yield return null;
+        }
         isSFXPlaying = false;
+    }
+
+    public void ApplyDucking()
+    {
+        if (!isInDuck)
+        {
+            StartCoroutine(Duck());
+            isInDuck = true;
+        }
+    }
+    
+    public void DisableDucking()
+    {
+        if (isInDuck)
+        {
+            StartCoroutine(UnDuck());
+            isInDuck = false;
+        }
+    }
+    
+    IEnumerator Duck()
+    {
+        float value = 0;
+        Debug.Log(value);
+        while (value < 1)
+        {
+            Debug.Log(value);
+            value += Time.deltaTime * 0.5f;
+            RuntimeManager.StudioSystem.setParameterByName("GlobalDucking", value);
+            yield return null;
+        }
+        Debug.Log(value);
+
+        RuntimeManager.StudioSystem.setParameterByName("GlobalDucking", 1);
+    }
+
+    IEnumerator UnDuck()
+    {
+        float value = 1;
+        while (value > 0)
+        {
+            value -= Time.deltaTime * 0.4f;
+            RuntimeManager.StudioSystem.setParameterByName("GlobalDucking", value);
+            yield return null;
+        }
+        RuntimeManager.StudioSystem.setParameterByName("GlobalDucking", 0);
+    }
+
+    private void OnDestroy()
+    {
+        longInstance.stop(STOP_MODE.IMMEDIATE);
     }
 }

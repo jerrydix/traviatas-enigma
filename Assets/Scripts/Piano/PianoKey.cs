@@ -41,6 +41,9 @@ public class PianoKey : MonoBehaviour
    private void Update()
    {
       
+      pressedPosition = new Vector3(originalPosition.position.x, originalPosition.position.y - yReduction, originalPosition.position.z);
+      pressedRotation = Quaternion.Euler(new Vector3(originalPosition.rotation.eulerAngles.x + rot, originalPosition.rotation.eulerAngles.y, originalPosition.rotation.eulerAngles.z));
+      
       if (isMoving && pressed && Vector3.Distance(transform.position, pressedPosition) < 0.005f)
       {
          pressed = false;

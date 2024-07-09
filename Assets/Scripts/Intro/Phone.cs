@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class Phone : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class Phone : MonoBehaviour
     [SerializeField] private Transform phoneHoldTransform;
     [SerializeField] private float positionTurnSpeed;
     [SerializeField] private float rotationTurnSpeed;
-    [SerializeField] private EventInstance callInstance;
+    private EventInstance callInstance;
 
     [SerializeField] private float transitionDistanceStart;
     [SerializeField] private float transitionDistanceEnd;
@@ -49,29 +50,22 @@ public class Phone : MonoBehaviour
         RuntimeManager.AttachInstanceToGameObject(callInstance, transform);
         player = GameObject.Find("Player");
         
-        //start 5
-        //end 1
-        //configuredDistance = 4
-        //phonePlayerDistance = 2
-        //map configuredDistance to 0-1
-        
         configuredDistance = transitionDistanceStart - transitionDistanceEnd;
         phonePlayerDistance = Vector3.Distance(transform.position, player.transform.position) - transitionDistanceEnd;
         scaledDistance = 1 - ((phonePlayerDistance - transitionDistanceEnd) / configuredDistance);
         
-        StartRing(); //nochekin
+        StartRing();
     }
 
     public void Interact()
     {
         if (isCalling)
         {
-            callInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            callInstance.stop(STOP_MODE.IMMEDIATE);
             AudioManager.Instance.PlayOneShotAttached(phonePickup, gameObject);
             inputActions.Moving.Disable();
             GameObject.Find("Main Camera").GetComponent<Interaction>().inInteraction = true;
             isMoving = true;
-            StartCoroutine(exitScene());
         }
     }
 
@@ -79,14 +73,15 @@ public class Phone : MonoBehaviour
     {
         AudioManager.Instance.PlayOneShotAttached(trans, gameObject);
         yield return new WaitForSeconds(4f);
-        effects.CloseEyes();
-        yield return new WaitForSeconds(5.5f);
+        effects.CloseEyesFromVignette();
+        yield return new WaitForSeconds(5.4f);
+        AudioManager.Instance.shouldNotPlay = true;
+        yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("BackroomsMikhail");
     }
 
     public void StartRing()
     {
-        //todo change first sound to ring sound in gamemanager i guess, instead of below thing
         callInstance.start();
     }
 
@@ -103,7 +98,7 @@ public class Phone : MonoBehaviour
                 isCalling = false;
                 callIsActive = true;
                 isMoving = false;
-                StartCoroutine(waitForCallFinish());
+                StartCoroutine(exitScene());
             }
         }
 
@@ -118,11 +113,6 @@ public class Phone : MonoBehaviour
             phoneHandle.transform.rotation = Quaternion.Lerp(Quaternion.Euler(phoneHandle.transform.rotation.eulerAngles), Quaternion.Euler(phoneDownTransform.rotation.eulerAngles), rotationTurnSpeed * Time.deltaTime);
         }
 
-    }
-
-    IEnumerator waitForCallFinish()
-    {
-        yield return new WaitForSeconds(1);
     }
     
 }

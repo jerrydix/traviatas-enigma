@@ -8,7 +8,7 @@
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{261a6d8f-8aa3-434d-b9cb-87ab120957b6}</destination>
+			<destination>{52ea20a5-555e-490b-91b2-45473631fe33}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{513a6e53-61b4-494f-b122-ef54a51872ba}</destination>
@@ -53,7 +53,7 @@
 			<destination>{92eddd0b-c050-45a3-a076-8b9d677508cd}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{d69fce55-4ca6-4304-92e8-7d39e1077c9f}</destination>
+			<destination>{a86cedde-1484-4918-a98f-67f6c38d3be6}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{35be4aa6-c2e3-4d60-b9ce-60c8c995db52}" />
@@ -76,10 +76,13 @@
 	</object>
 	<object class="SingleSound" id="{e4964502-f5e6-4d9c-b4d9-fabc0cc9f017}">
 		<property name="length">
-			<value>2</value>
+			<value>1.7199999999999998</value>
 		</property>
 		<property name="timelockedOffset">
-			<value>4.5</value>
+			<value>4.779999999999994</value>
+		</property>
+		<property name="volume">
+			<value>-6</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{79cdfb60-176d-4b4a-b673-254b2fc76659}</destination>

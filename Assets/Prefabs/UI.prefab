@@ -836,7 +836,7 @@ GameObject:
   - component: {fileID: 5566697106758070788}
   - component: {fileID: 3501172492947181568}
   m_Layer: 5
-  m_Name: SFX
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1240,7 +1240,7 @@ GameObject:
   - component: {fileID: 2420939979019954922}
   - component: {fileID: 3735512322667938818}
   m_Layer: 5
-  m_Name: MusicSlider
+  m_Name: SFXSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1740,7 +1740,7 @@ GameObject:
   - component: {fileID: 5679258402067047344}
   - component: {fileID: 6160286362438421438}
   m_Layer: 5
-  m_Name: Music
+  m_Name: SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2128,8 +2128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masterVolumeSlider: {fileID: 95580533670547593}
-  musicVolumeSlider: {fileID: 3735512322667938818}
-  sfxVolumeSlider: {fileID: 3718915250046850659}
+  musicVolumeSlider: {fileID: 3718915250046850659}
+  sfxVolumeSlider: {fileID: 3735512322667938818}
 --- !u!1 &3932734797543491747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3246,8 +3246,8 @@ RectTransform:
   m_Children:
   - {fileID: 1873282994649296366}
   - {fileID: 2973986145733960233}
-  - {fileID: 2420939979019954922}
   - {fileID: 7652575443766626547}
+  - {fileID: 2420939979019954922}
   m_Father: {fileID: 5913570328424290404}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
@@ -3341,7 +3341,7 @@ GameObject:
   - component: {fileID: 7652575443766626547}
   - component: {fileID: 3718915250046850659}
   m_Layer: 5
-  m_Name: SfxSlider
+  m_Name: MusicSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

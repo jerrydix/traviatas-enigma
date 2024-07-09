@@ -2138,21 +2138,21 @@ MonoBehaviour:
       Data2: 1286383728
       Data3: 404611215
       Data4: 2084672452
-    Path: event:/WinLose/PatephoneWin
+    Path: event:/MajorMinorEvents/PatephoneWin
   wrongSound:
     Guid:
       Data1: -180210884
       Data2: 1210214319
       Data3: 827311236
       Data4: 938389660
-    Path: event:/WinLose/PatephoneLose
+    Path: event:/MajorMinorEvents/PatephoneLose
   finishedSound:
     Guid:
       Data1: 1819434138
       Data2: 1286383728
       Data3: 404611215
       Data4: 2084672452
-    Path: event:/WinLose/PatephoneWin
+    Path: event:/MajorMinorEvents/PatephoneWin
   soundPosition: {fileID: 879090749047666602}
   positionTurnSpeed: 10
   rotationTurnSpeed: 10

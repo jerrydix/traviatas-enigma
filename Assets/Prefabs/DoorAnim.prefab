@@ -138,6 +138,88 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8973156037386088903}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1956830091297404087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1577360003878639667}
+  - component: {fileID: 2422898318777115559}
+  - component: {fileID: 1996271578963584233}
+  m_Layer: 8
+  m_Name: DoorControllerObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1577360003878639667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956830091297404087}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5662772711478422493}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2422898318777115559
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956830091297404087}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1996271578963584233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956830091297404087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1abf1cbc8e7e8fa4bacc29854a9409d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - Guid:
+      Data1: 786870634
+      Data2: 1185589841
+      Data3: 1451289788
+      Data4: -2038803157
+    Path: event:/Doors/DoorOpen
+  - Guid:
+      Data1: -2132971137
+      Data2: 1086336490
+      Data3: -1087876449
+      Data4: 389505294
+    Path: event:/Doors/DoorClose
+  door: {fileID: 1404959943276390535}
 --- !u!1 &2212478664467139357
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,8 +229,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5662772711478422493}
-  - component: {fileID: 3894242622896748438}
-  - component: {fileID: 3749963094589394119}
   m_Layer: 0
   m_Name: DoorAnim
   m_TagString: Untagged
@@ -171,57 +251,9 @@ Transform:
   m_Children:
   - {fileID: 4874643070880681857}
   - {fileID: 2436804403282256429}
+  - {fileID: 1577360003878639667}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &3894242622896748438
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2212478664467139357}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3749963094589394119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2212478664467139357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1abf1cbc8e7e8fa4bacc29854a9409d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - Guid:
-      Data1: 786870634
-      Data2: 1185589841
-      Data3: 1451289788
-      Data4: -2038803157
-    Path: event:/Doors/DoorOpen
-  - Guid:
-      Data1: -2132971137
-      Data2: 1086336490
-      Data3: -1087876449
-      Data4: 389505294
-    Path: event:/Doors/DoorClose
-  door: {fileID: 1404959943276390535}
 --- !u!1 &2540385504612086252
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,7 +804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2436804403282256429}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

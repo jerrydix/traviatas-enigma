@@ -12,6 +12,17 @@ public class AudioOcclusion : MonoBehaviour
     private StudioListener Listener;
     private PLAYBACK_STATE pb;
 
+    [SerializeField] private bool isSimple;
+    [SerializeField] private bool isGrandpaClock;
+    [SerializeField] private bool isRadioNormal;
+    [SerializeField] private bool isRadioSwitcher;
+    [SerializeField] private GrandpaClock grandpaClock;
+    [SerializeField] private S_Radio radio;
+
+    [SerializeField] private Transform clockTransform;
+    [SerializeField] private Transform radioTransform;
+    private Transform currentTransform;
+
     [Header("Occlusion Options")]
     [SerializeField]
     [Range(0f, 10f)]
@@ -29,12 +40,43 @@ public class AudioOcclusion : MonoBehaviour
 
     private void Start()
     {
-        //todo change accordingly to sound type
-        Audio = RuntimeManager.CreateInstance(SelectAudio);
-        RuntimeManager.AttachInstanceToGameObject(Audio, GetComponent<Transform>(), GetComponent<Rigidbody>());
-        Audio.start();
-        Audio.release();
+        //change accordingly to sound type
+        if (isSimple)
+        {
+            Audio = RuntimeManager.CreateInstance(SelectAudio);
+            RuntimeManager.AttachInstanceToGameObject(Audio, GetComponent<Transform>(), GetComponent<Rigidbody>());
+            Audio.start();
+            Audio.release();
+        } 
+        else if (isGrandpaClock)
+        {
+            Audio = grandpaClock.instance;
+            SelectAudio = grandpaClock.chimeSound;
+        } 
+        else if (isRadioNormal)
+        {
+            Audio = radio.radioInstance;
+            SelectAudio = radio.radioSound;
+        } 
+        else if (isRadioSwitcher)
+        {
+            Audio = radio.switchInstance;
+            SelectAudio = radio.switchSound;
+        }
         //
+        
+        if (isGrandpaClock && !isRadioNormal && !isRadioSwitcher)
+        {
+            currentTransform = clockTransform;
+        }
+        else if (!isGrandpaClock && isRadioNormal || isRadioSwitcher)
+        {
+            currentTransform = radioTransform;
+        }
+        else
+        {
+            currentTransform = transform;
+        }
 
         OcclusionLayer = LayerMask.GetMask("Default");
         
@@ -44,14 +86,26 @@ public class AudioOcclusion : MonoBehaviour
         Listener = FindObjectOfType<StudioListener>();
     }
     
-    private void FixedUpdate()
+    private void Update()
     {
+        if (isGrandpaClock && !isRadioNormal && !isRadioSwitcher)
+        {
+            currentTransform = clockTransform;
+        }
+        else if (!isGrandpaClock && isRadioNormal || isRadioSwitcher)
+        {
+            currentTransform = radioTransform;
+        }
+        else
+        {
+            currentTransform = transform;
+        }
         Audio.isVirtual(out AudioIsVirtual);
         Audio.getPlaybackState(out pb);
-        ListenerDistance = Vector3.Distance(transform.position, Listener.transform.position);
+        ListenerDistance = Vector3.Distance(currentTransform.position, Listener.transform.position);
 
         if (!AudioIsVirtual && pb == PLAYBACK_STATE.PLAYING && ListenerDistance <= MaxDistance)
-            OccludeBetween(transform.position, Listener.transform.position);
+            OccludeBetween(currentTransform.position, Listener.transform.position);
 
         lineCastHitCount = 0f;
     }

@@ -9,17 +9,11 @@ using Random = UnityEngine.Random;
 public class S_Singer : MonoBehaviour
 {
     [SerializeField] private EventReference singer;
-    [SerializeField] private EventReference orchestra;
 
     public EventInstance instance;
     
-    // Start is called before the first frame update
-
     private void Start()
     {
-        instance = RuntimeManager.CreateInstance(orchestra);
-        RuntimeManager.AttachInstanceToGameObject(instance, transform);
-        instance.start();
         StartCoroutine(Sing());
     }
 
@@ -27,7 +21,7 @@ public class S_Singer : MonoBehaviour
     {
         while (true)
         {
-            int rnd = Random.Range(30, 120);
+            int rnd = Random.Range(30, 100);
             Debug.Log(rnd);
             yield return new WaitForSeconds(rnd);
             PlaySound();

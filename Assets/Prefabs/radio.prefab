@@ -60,9 +60,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 77e048ee7c6ab674db28d34e9fa289f4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 77e048ee7c6ab674db28d34e9fa289f4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 77e048ee7c6ab674db28d34e9fa289f4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 77e048ee7c6ab674db28d34e9fa289f4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 77e048ee7c6ab674db28d34e9fa289f4, type: 3}
       propertyPath: m_Name
       value: radio
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 77e048ee7c6ab674db28d34e9fa289f4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513859187771203891, guid: 77e048ee7c6ab674db28d34e9fa289f4, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -74,6 +98,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 77e048ee7c6ab674db28d34e9fa289f4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3670952562409608752}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 77e048ee7c6ab674db28d34e9fa289f4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3854225893523263551}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 77e048ee7c6ab674db28d34e9fa289f4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5879707984316622760}
     - targetCorrespondingSourceObject: {fileID: -8391222552659086748, guid: 77e048ee7c6ab674db28d34e9fa289f4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5831460013860443253}
@@ -141,6 +171,60 @@ MonoBehaviour:
       Data3: -213174135
       Data4: 125464916
     Path: event:/Radio/RadioSwitch
+--- !u!114 &3854225893523263551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2274595573232338000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9c8de46d214b9408bebbbe2ee7d489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectAudio:
+    Guid:
+      Data1: -1897395899
+      Data2: 1223943183
+      Data3: 1505316539
+      Data4: 36657232
+    Path: event:/OperaEntrance
+  isSimple: 0
+  isGrandpaClock: 0
+  isRadioNormal: 1
+  isRadioSwitcher: 0
+  grandpaClock: {fileID: 0}
+  radio: {fileID: 3670952562409608752}
+  SoundOcclusionWidening: 1
+  PlayerOcclusionWidening: 1
+--- !u!114 &5879707984316622760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2274595573232338000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9c8de46d214b9408bebbbe2ee7d489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectAudio:
+    Guid:
+      Data1: -1897395899
+      Data2: 1223943183
+      Data3: 1505316539
+      Data4: 36657232
+    Path: event:/OperaEntrance
+  isSimple: 0
+  isGrandpaClock: 0
+  isRadioNormal: 0
+  isRadioSwitcher: 1
+  grandpaClock: {fileID: 0}
+  radio: {fileID: 3670952562409608752}
+  SoundOcclusionWidening: 1
+  PlayerOcclusionWidening: 1
 --- !u!1001 &3301289835530275686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -215,7 +299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 69e98d311affb254589757400989c930, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 69e98d311affb254589757400989c930, type: 3}
       propertyPath: m_IsActive

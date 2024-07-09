@@ -51,9 +51,11 @@ public class Piano : MonoBehaviour
     {
         if (interactable.objIsActive && !inPianoSequence && playSequence && !pianoMiniGameCompleted)
         {
+            GameManager.Instance.ApplyDucking();
             StartCoroutine(PlaySequence(sequences[currentSequenceIndex]));
         } else if (interactable.objIsActive && !interactable.isMoving && pianoMiniGameCompleted)
         {
+            GameManager.Instance.ApplyDucking();
             inputActions.Piano.Key0.performed += PressKey0;
             inputActions.Piano.Key1.performed += PressKey1;
             inputActions.Piano.Key2.performed += PressKey2;
@@ -71,6 +73,7 @@ public class Piano : MonoBehaviour
         
         if (inputActions.Piano.Cancel.triggered && interactable.objIsActive)
         {
+            GameManager.Instance.DisableDucking();
             interactable.isMoving = true;
             inputActions.Piano.Key0.performed -= PressKey0;
             inputActions.Piano.Key1.performed -= PressKey1;

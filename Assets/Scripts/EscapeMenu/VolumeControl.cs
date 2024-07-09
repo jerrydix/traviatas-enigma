@@ -13,17 +13,20 @@ public class VolumeControl : MonoBehaviour
 
    private void Start()
    {
-      masterVolumeSlider.onValueChanged.AddListener(HandleMasterVolumeChange);
-      musicVolumeSlider.onValueChanged.AddListener(HandleMusicVolumeChange);
-      sfxVolumeSlider.onValueChanged.AddListener(HandleSFXVolumeChange);
+      
+      RuntimeManager.GetBus("bus:/").setVolume(0.75f);
       
       RuntimeManager.GetBus("bus:/").getVolume(out var masterVolume);
-      RuntimeManager.GetBus("bus:/Background Music").getVolume(out var musicVolume);
+      RuntimeManager.GetBus("bus:/Music").getVolume(out var musicVolume);
       RuntimeManager.GetBus("bus:/SFX").getVolume(out var sfxVolume);
 
       masterVolumeSlider.value = masterVolume;
       musicVolumeSlider.value = musicVolume;
       sfxVolumeSlider.value = sfxVolume;
+      
+      masterVolumeSlider.onValueChanged.AddListener(HandleMasterVolumeChange);
+      musicVolumeSlider.onValueChanged.AddListener(HandleMusicVolumeChange);
+      sfxVolumeSlider.onValueChanged.AddListener(HandleSFXVolumeChange);
    }
    
    private void HandleMasterVolumeChange(float volume)
@@ -33,7 +36,7 @@ public class VolumeControl : MonoBehaviour
 
    private void HandleMusicVolumeChange(float volume)
    {
-      RuntimeManager.GetBus("bus:/Background Music").setVolume(volume);
+      RuntimeManager.GetBus("bus:/Music").setVolume(volume);
    }
 
    private void HandleSFXVolumeChange(float volume)

@@ -7,12 +7,6 @@ public class S_Bulb : MonoBehaviour
 {
     public Material mat;
     private Coroutine coroutine;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     private IEnumerator Blink()
     {

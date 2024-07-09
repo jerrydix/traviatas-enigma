@@ -43,6 +43,7 @@ public class Clock : MonoBehaviour
         {
             if (!clockIsFinished)
                 CharacterSelecter(currentCharIndex);
+            GameManager.Instance.ApplyDucking();
             inputActions.Clocks.Digit1.performed += PressKey1;
             inputActions.Clocks.Digit2.performed += PressKey2;
             inputActions.Clocks.Digit3.performed += PressKey3;
@@ -60,6 +61,7 @@ public class Clock : MonoBehaviour
         {
             if (!clockIsFinished)
                 CharacterSelecter(-1);
+            GameManager.Instance.DisableDucking();
             interactable.isMoving = true;
             inputActions.Clocks.Digit1.performed -= PressKey1;
             inputActions.Clocks.Digit2.performed -= PressKey2;

@@ -329,7 +329,10 @@ MonoBehaviour:
   - {fileID: 5006305628498780005}
   - {fileID: 7877245201487965827}
   on: {fileID: 2100000, guid: cf5dede0bddceb0438f75dec12634b2a, type: 2}
+  on1: {fileID: 2100000, guid: 9aed24f50f6335d4e8e062c2f0ebef60, type: 2}
+  on2: {fileID: 2100000, guid: a075699e4e929ee449ec9af95e75e6b5, type: 2}
   off: {fileID: 2100000, guid: d14c5a119eb12b24f9b1711911a05464, type: 2}
+  singer: {fileID: 0}
 --- !u!95 &1832766490352630484
 Animator:
   serializedVersion: 5

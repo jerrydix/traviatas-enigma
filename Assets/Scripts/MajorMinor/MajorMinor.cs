@@ -56,7 +56,9 @@ public class MajorMinor : MonoBehaviour
             return;
         }
         
-        var melody = melodies.Keys.ToArray()[currentMajorMinorIndex];
+        Shuffle(melodyList);
+        
+        var melody = melodyList[currentMajorMinorIndex];
         currentMelody = melody;
         currentIsMajor = melodies[melody];
         currentInstance = RuntimeManager.CreateInstance(currentMelody);
@@ -79,7 +81,7 @@ public class MajorMinor : MonoBehaviour
         playButton.PressButton(positionTurnSpeed);
         if (!majorMinorMiniGameCompleted)
         {
-            currentInstance.set3DAttributes(RuntimeUtils.To3DAttributes(soundPosition.position));
+            currentInstance.set3DAttributes(soundPosition.position.To3DAttributes());
             currentInstance.start();
             isPlaying = true;
         }
@@ -136,7 +138,7 @@ public class MajorMinor : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         AudioManager.Instance.PlayOneShot(rightSound, soundPosition.position);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2.1f);
         currentMajorMinorIndex++;
         if (currentMajorMinorIndex >= melodyList.Count)
         {
@@ -148,7 +150,7 @@ public class MajorMinor : MonoBehaviour
         currentMelody = melody;
         currentIsMajor = melodies[melody];
         currentInstance = RuntimeManager.CreateInstance(currentMelody);
-        currentInstance.set3DAttributes(RuntimeUtils.To3DAttributes(soundPosition.position));
+        currentInstance.set3DAttributes(soundPosition.position.To3DAttributes());
         currentInstance.start();
         isPlaying = true;
     }
@@ -157,7 +159,7 @@ public class MajorMinor : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         AudioManager.Instance.PlayOneShot(wrongSound, soundPosition.position);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.8f);
         currentMajorMinorIndex++;
         if (currentMajorMinorIndex >= melodyList.Count)
         {
@@ -169,7 +171,7 @@ public class MajorMinor : MonoBehaviour
         currentMelody = melody;
         currentIsMajor = melodies[melody];
         currentInstance = RuntimeManager.CreateInstance(currentMelody);
-        currentInstance.set3DAttributes(RuntimeUtils.To3DAttributes(soundPosition.position));
+        currentInstance.set3DAttributes(soundPosition.position.To3DAttributes());
         currentInstance.start();
         isPlaying = true;
     }

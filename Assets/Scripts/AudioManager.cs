@@ -7,6 +7,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
+    [HideInInspector] public bool shouldNotPlay;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         currentMicrophone = null;
+        shouldNotPlay = false;
     }
     
     public void PlayOneShot(EventReference sound, Vector3 worldPos)

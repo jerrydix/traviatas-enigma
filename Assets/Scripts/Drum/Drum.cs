@@ -69,15 +69,18 @@ public class Drum : MonoBehaviour
         if (interactable.objIsActive && !inRhythm && playRhythm && !rhythmMiniGameCompleted)
         {
             Debug.Log("Playing Radio Rhythm");
+            GameManager.Instance.ApplyDucking();
             StartCoroutine(PlayRhythm(rhythms[currentRhythmIndex]));
         } 
         else if (interactable.objIsActive && !interactable.isMoving && rhythmMiniGameCompleted)
         {
+            GameManager.Instance.ApplyDucking();
             inputActions.Drum.Enable();
         }
         
         if (inputActions.Drum.Cancel.triggered && interactable.objIsActive)
         {
+            GameManager.Instance.DisableDucking();
             interactable.isMoving = true;
             inputActions.Drum.Disable();
         }
@@ -132,22 +135,25 @@ public class Drum : MonoBehaviour
     
     private IEnumerator PlayWrongSound()
     {
+        yield return new WaitForSeconds(0.5f);
         drumRadio.PlayWrongSound();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3.1f);
         StartCoroutine(PlayRhythm(rhythms[currentRhythmIndex]));
     }
     
     private IEnumerator PlayRightSound()
     {
+        yield return new WaitForSeconds(0.5f);
         drumRadio.PlayRightSound();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.9f);
         StartCoroutine(PlayRhythm(rhythms[currentRhythmIndex]));
     }
     
     private IEnumerator PlayFinishedSound()
     {
+        yield return new WaitForSeconds(0.5f);
         drumRadio.PlayFinishedSound();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         inputActions.Drum.Enable();
     }
 

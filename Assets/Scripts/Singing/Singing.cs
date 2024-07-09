@@ -9,7 +9,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Singing : MonoBehaviour
 {
-    //todo use selected microphone from settings
     
     [SerializeField] Interactable interactable;
     
@@ -28,6 +27,8 @@ public class Singing : MonoBehaviour
     private int currentIndex;
     private string currentPlayerLyrics;
     [HideInInspector] public bool singingIsFinished;
+    
+    private bool inOrchestra;
     private bool inVerse;
     
     private AudioClip clip;
@@ -55,6 +56,11 @@ public class Singing : MonoBehaviour
 
         if (interactable.objIsActive && !interactable.isMoving)
         {
+            if (!inOrchestra)
+            {
+                inOrchestra = true;
+                operaMusicInstance.start();
+            }
             inputActions.Singing.Enable();
             if (!inVerse)
             {
@@ -63,36 +69,37 @@ public class Singing : MonoBehaviour
                 StartRecording();
             }
         }
-
-        /*if (inputActions.Clocks.Cancel.triggered && interactable.objIsActive)
-        {
-            interactable.isMoving = true;
-            inputActions.Clocks.Disable();
-        }*/
     }
     
     private void CheckVerse()
     {
-        bulb.StandBy();
         if (CompareVerses())
         {
-            AudioManager.Instance.PlayOneShotAttached(correctSound, soundSource);
+            Debug.Log("Correct verse");
+            Debug.Log("Current Index: " + currentIndex);
             currentIndex++;
             if (currentIndex < lyrics.Count)
             {
+                Debug.Log("Next verse");
                 lyricsText.text = lyrics[currentIndex];
                 StartCoroutine(StartVerse());
             }
             else
             {
                 //todo finish logic
+                Debug.Log("Singing is finished");
                 singingIsFinished = true;
                 GameManager.Instance.singingMiniGameCompleted = true;
+                lyricsText.text = "";
+                operaMusicInstance.setParameterByName("inEnd", 1);
             }
         }
         else
         {
-            AudioManager.Instance.PlayOneShotAttached(wrongSound, soundSource);
+            
+            Debug.Log("Incorrect verse");
+            Debug.Log("Current Index: " + currentIndex);
+            AudioManager.Instance.PlayOneShotAttached(correctSound, soundSource);
             StartCoroutine(StartVerse());
         }
     }
@@ -115,7 +122,7 @@ public class Singing : MonoBehaviour
         
         var playerVerseWords = playerVerse.Split(" ");
         var correctVerseWords = correctVerse.Split(" ");
-        
+        Debug.Log("Player Verse Words: " + playerVerseWords.Length);
         if (playerVerseWords.Length == 0)
         {
             return false;
@@ -132,6 +139,7 @@ public class Singing : MonoBehaviour
 
         for (var i = 0; i < playerVerseWords.Length; i++)
         {
+            Debug.Log("Player Word: " + playerVerseWords[i]);
             if (i >= correctVerseWords.Length)
             {
                 break;
@@ -164,7 +172,6 @@ public class Singing : MonoBehaviour
     }
     
     private void StopRecording() {
-        bulb.StandBy();
         var position = Microphone.GetPosition(AudioManager.Instance.currentMicrophone);
         Microphone.End(AudioManager.Instance.currentMicrophone);
         var samples = new float[position * clip.channels];
@@ -176,6 +183,7 @@ public class Singing : MonoBehaviour
 
     private void SendRecording() {
         bulb.StandBy();
+        Debug.Log("Sending recording");
         HuggingFaceAPI.AutomaticSpeechRecognition(bytes, response => {
             currentPlayerLyrics = response;
             CheckVerse();
@@ -183,6 +191,7 @@ public class Singing : MonoBehaviour
             Debug.Log(error);
             StartCoroutine(RetryRecording());
         });
+        Debug.Log("Recording sent");
     }
     
     private IEnumerator RetryRecording()

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class S_RoomSpawner : MonoBehaviour
 {
@@ -11,14 +13,16 @@ public class S_RoomSpawner : MonoBehaviour
 
     [SerializeField] private int roomsAmount;
     [SerializeField] private float offset;
-    [SerializeField] private EventReference introMusic;
-    private EventInstance musicInstance;
+    public EventReference introMusic;
+    public EventInstance musicInstance; 
+    private bool stopped;
     private GameObject player;
     private float limit;
     
     // Start is called before the first frame update
     void Start()
     {
+        stopped = false;
         player = GameObject.FindWithTag("Player").gameObject;
         musicInstance = RuntimeManager.CreateInstance(introMusic);
         limit = roomsAmount * offset / 2;
@@ -74,6 +78,13 @@ public class S_RoomSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (AudioManager.Instance.shouldNotPlay && !stopped)
+        {
+            stopped = true;
+            Debug.Log("Stopped");
+            musicInstance.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+        
         if (player.transform.position.x > limit)
         {
             player.transform.position = new Vector3(-player.transform.position.x + offset, player.transform.position.y, player.transform.position.z);
@@ -98,8 +109,11 @@ public class S_RoomSpawner : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             gameObject.GetComponent<BoxCollider>().enabled = false;
-            musicInstance.start();
-            StartCoroutine(setMusicParam());
+            if (!AudioManager.Instance.shouldNotPlay)
+            {
+                musicInstance.start(); 
+                StartCoroutine(setMusicParam());   
+            }
         }
     }
 
@@ -121,5 +135,7 @@ public class S_RoomSpawner : MonoBehaviour
             musicInstance.setParameterByName("Intro", value);
             yield return new WaitForSeconds(0.8f);
         }
+
+        yield return null;
     }
 }

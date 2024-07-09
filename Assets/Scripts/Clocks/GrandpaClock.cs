@@ -11,13 +11,13 @@ public class GrandpaClock : MonoBehaviour
 {
     [SerializeField] private int hour;
     [SerializeField] private int minute; //not too many
-    [SerializeField] private EventReference chimeSound;
-    private EventInstance instance;
+    public EventReference chimeSound;
+    [HideInInspector] public EventInstance instance;
     
-    private void Start()
+    private void Awake()
     {
         instance = RuntimeManager.CreateInstance(chimeSound);
-        RuntimeManager.AttachInstanceToGameObject(instance, transform);
+        RuntimeManager.AttachInstanceToGameObject(instance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         instance.start();
     }
 

@@ -11,14 +11,14 @@ public class S_Radio : MonoBehaviour
 {
     private bool toogle;
     [SerializeField] private bool staticRadio;
-    [SerializeField] private EventReference radioSound;
-    [SerializeField] private EventReference switchSound;
+    public EventReference radioSound;
+    public EventReference switchSound;
 
-    private EventInstance radioInstance;
-    private EventInstance switchInstance;
+    public EventInstance radioInstance;
+    public EventInstance switchInstance;
 
 
-    private void Start()
+    private void Awake()
     {
         if (staticRadio)
         {
