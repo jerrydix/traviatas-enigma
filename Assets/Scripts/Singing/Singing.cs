@@ -6,6 +6,7 @@ using FMODUnity;
 using HuggingFace.API;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class Singing : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class Singing : MonoBehaviour
     [SerializeField] private int maxIncorrectWords;
     [SerializeField] private int recordingLength;
     [SerializeField] private S_Bulb bulb;
+    
+    [SerializeField] private S_Effects effects;
     
     private int currentIndex;
     private string currentPlayerLyrics;
@@ -50,6 +53,16 @@ public class Singing : MonoBehaviour
     
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            singingIsFinished = true;
+            GameManager.Instance.singingMiniGameCompleted = true;
+            lyricsText.text = "";
+            operaMusicInstance.setParameterByName("inEnd", 1);
+            StartCoroutine(EyeClose());
+        }
+        
         if (recording && Microphone.GetPosition(null) >= clip.samples) {
             StopRecording();
         }
@@ -86,12 +99,12 @@ public class Singing : MonoBehaviour
             }
             else
             {
-                //todo finish logic
                 Debug.Log("Singing is finished");
                 singingIsFinished = true;
                 GameManager.Instance.singingMiniGameCompleted = true;
                 lyricsText.text = "";
                 operaMusicInstance.setParameterByName("inEnd", 1);
+                StartCoroutine(EyeClose());
             }
         }
         else
@@ -102,6 +115,14 @@ public class Singing : MonoBehaviour
             AudioManager.Instance.PlayOneShotAttached(correctSound, soundSource);
             StartCoroutine(StartVerse());
         }
+    }
+
+    private IEnumerator EyeClose()
+    {
+        yield return new WaitForSeconds(3f);
+        effects.CloseEyes();
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("EndGame");
     }
     
     private bool CompareVerses()
@@ -224,4 +245,5 @@ public class Singing : MonoBehaviour
             return memoryStream.ToArray();
         }
     }
+
 }

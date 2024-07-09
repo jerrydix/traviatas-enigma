@@ -56,6 +56,18 @@ public class S_Effects : MonoBehaviour
         {
             OpenEyesBackrooms();
         }
+
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            OpenEyesBackrooms();
+            StartCoroutine(ToMainMenu());
+        }
+    }
+    
+    IEnumerator ToMainMenu()
+    {
+        yield return new WaitForSeconds(10);
+        SceneManager.LoadScene(0);
     }
 
     public void CloseEyes()

@@ -122,6 +122,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &20093195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 20093197}
+  - component: {fileID: 20093196}
+  m_Layer: 0
+  m_Name: PeopleAmbienceObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &20093196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20093195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9c8de46d214b9408bebbbe2ee7d489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectAudio:
+    Guid:
+      Data1: -1415117817
+      Data2: 1091564627
+      Data3: 1331739300
+      Data4: 565520980
+    Path: event:/PeopleAmbience
+  isSimple: 1
+  isGrandpaClock: 0
+  isRadioNormal: 0
+  isRadioSwitcher: 0
+  grandpaClock: {fileID: 0}
+  radio: {fileID: 0}
+  clockTransform: {fileID: 0}
+  radioTransform: {fileID: 0}
+  SoundOcclusionWidening: 5.5
+  PlayerOcclusionWidening: 5.5
+--- !u!4 &20093197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20093195}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.39, y: -1.5100098, z: -0.059999943}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6688032002827572205}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &123139559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -408,7 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: d8f9377257dd46c449fa8f79adc844d3, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 3c24e303547b89e4ea37cab418d2b389, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 1
@@ -428,108 +489,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &279342120
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 279342121}
-  - component: {fileID: 279342122}
-  m_Layer: 0
-  m_Name: PeopleAmbienceObject (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &279342121
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 279342120}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.39, y: -1.51, z: -0.06}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6688032002827572205}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &279342122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 279342120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d8327f524aa6cb4ba5eeafd5b4ddce6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ambienceSound:
-    Guid:
-      Data1: -1415117817
-      Data2: 1091564627
-      Data3: 1331739300
-      Data4: 565520980
-    Path: event:/PeopleAmbience
---- !u!1 &298934187
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 298934188}
-  - component: {fileID: 298934189}
-  m_Layer: 0
-  m_Name: PeopleAmbienceObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &298934188
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 298934187}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.98, z: 8.89}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6688032002827572205}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &298934189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 298934187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d8327f524aa6cb4ba5eeafd5b4ddce6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ambienceSound:
-    Guid:
-      Data1: -1415117817
-      Data2: 1091564627
-      Data3: 1331739300
-      Data4: 565520980
-    Path: event:/PeopleAmbience
 --- !u!1001 &362774576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -666,6 +625,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2319998565452429307, guid: 282bed9b167e0cc40a06cd51a418c3f9, type: 3}
   m_PrefabInstance: {fileID: 6298420934333826431}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &678731889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 678731891}
+  - component: {fileID: 678731890}
+  m_Layer: 0
+  m_Name: PeopleAmbienceObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &678731890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678731889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9c8de46d214b9408bebbbe2ee7d489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectAudio:
+    Guid:
+      Data1: -1415117817
+      Data2: 1091564627
+      Data3: 1331739300
+      Data4: 565520980
+    Path: event:/PeopleAmbience
+  isSimple: 1
+  isGrandpaClock: 0
+  isRadioNormal: 0
+  isRadioSwitcher: 0
+  grandpaClock: {fileID: 0}
+  radio: {fileID: 0}
+  clockTransform: {fileID: 0}
+  radioTransform: {fileID: 0}
+  SoundOcclusionWidening: 5.5
+  PlayerOcclusionWidening: 5.5
+--- !u!4 &678731891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678731889}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.980011, z: 8.889999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6688032002827572205}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &835814392 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2154343914014492465, guid: 3acd5fd88c441f14a9dc5d4917763929, type: 3}
@@ -882,6 +902,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3905942753275143a3886f275532ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1410363888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1410363890}
+  - component: {fileID: 1410363889}
+  m_Layer: 0
+  m_Name: PeopleAmbienceObject (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1410363889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410363888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9c8de46d214b9408bebbbe2ee7d489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectAudio:
+    Guid:
+      Data1: -1415117817
+      Data2: 1091564627
+      Data3: 1331739300
+      Data4: 565520980
+    Path: event:/PeopleAmbience
+  isSimple: 1
+  isGrandpaClock: 0
+  isRadioNormal: 0
+  isRadioSwitcher: 0
+  grandpaClock: {fileID: 0}
+  radio: {fileID: 0}
+  clockTransform: {fileID: 0}
+  radioTransform: {fileID: 0}
+  SoundOcclusionWidening: 5.5
+  PlayerOcclusionWidening: 5.5
+--- !u!4 &1410363890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410363888}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.32, y: -1.5100098, z: -0.059999943}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6688032002827572205}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1420427791 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8060904066537330888, guid: 3acd5fd88c441f14a9dc5d4917763929, type: 3}
@@ -1109,57 +1190,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1993117736
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1993117737}
-  - component: {fileID: 1993117738}
-  m_Layer: 0
-  m_Name: PeopleAmbienceObject (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1993117737
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1993117736}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.32, y: -1.51, z: -0.06}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6688032002827572205}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1993117738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1993117736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d8327f524aa6cb4ba5eeafd5b4ddce6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ambienceSound:
-    Guid:
-      Data1: -1415117817
-      Data2: 1091564627
-      Data3: 1331739300
-      Data4: 565520980
-    Path: event:/PeopleAmbience
 --- !u!1 &2072405858
 GameObject:
   m_ObjectHideFlags: 0
@@ -3129,6 +3159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23207481ece03c64da5f1772d2629d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldNotPlay: 0
   currentMicrophone: 
 --- !u!23 &5415651819137952839
 MeshRenderer:
@@ -3891,9 +3922,9 @@ Transform:
   - {fileID: 2863213754972210423}
   - {fileID: 9195173759416790680}
   - {fileID: 1848808457932618389}
-  - {fileID: 298934188}
-  - {fileID: 279342121}
-  - {fileID: 1993117737}
+  - {fileID: 1410363890}
+  - {fileID: 678731891}
+  - {fileID: 20093197}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6689391562293939117
