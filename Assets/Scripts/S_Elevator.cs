@@ -144,6 +144,13 @@ public class S_Elevator : MonoBehaviour
         yield return new WaitForSeconds(2);
         isMoving = false;
         isClosed = false;
+        if(operaLift)
+        {
+            yield return new WaitForSeconds(0.4f);
+            GameManager.Instance.DisableMusic();
+            AudioManager.Instance.PlayOneShotAttached(LiftSounds[3], gameObject);
+        }
+        
     }
 
     IEnumerator Blink()
@@ -175,12 +182,6 @@ public class S_Elevator : MonoBehaviour
         StartCoroutine(setMusicParam());
         yield return new WaitForSeconds(1f);
         StartCoroutine(Open());
-        if(operaLift)
-        {
-            yield return new WaitForSeconds(3.5f);
-            GameManager.Instance.DisableMusic();
-            AudioManager.Instance.PlayOneShotAttached(LiftSounds[3], gameObject);
-        }
     }
 
     IEnumerator setMusicParam()

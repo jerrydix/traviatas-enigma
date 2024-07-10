@@ -585,13 +585,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2756111046068515080}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.5, z: 0, w: 0.8660254}
+  m_LocalRotation: {x: 0, y: -0.9945584, z: 0, w: 0.10418141}
   m_LocalPosition: {x: -0.144, y: 1.84, z: 0.384}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 144393932363321402}
-  m_LocalEulerAnglesHint: {x: 0, y: -60, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -168.04, z: 0}
 --- !u!1 &3032546512761826793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,11 +1054,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1285186289
+      Data2: 1181876574
+      Data3: 1269959084
+      Data4: -866019652
+    Path: event:/Lift/Button
   pressedTransform: {fileID: 4840004448001217206}
   originalPosition: {fileID: 0}
 --- !u!1 &4689157840175131471
@@ -1160,11 +1160,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1285186289
+      Data2: 1181876574
+      Data3: 1269959084
+      Data4: -866019652
+    Path: event:/Lift/Button
   pressedTransform: {fileID: 7157135801023338036}
   originalPosition: {fileID: 0}
 --- !u!1 &4857831520522862922
@@ -1369,11 +1369,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1285186289
+      Data2: 1181876574
+      Data3: 1269959084
+      Data4: -866019652
+    Path: event:/Lift/Button
   pressedTransform: {fileID: 2157557666164413483}
   originalPosition: {fileID: 0}
 --- !u!1 &5094136370532008142

@@ -62,6 +62,7 @@ public class MajorMinor : MonoBehaviour
         currentMelody = melody;
         currentIsMajor = melodies[melody];
         currentInstance = RuntimeManager.CreateInstance(currentMelody);
+        currentInstance.set3DAttributes(soundPosition.To3DAttributes());
         
     }
     
@@ -81,7 +82,7 @@ public class MajorMinor : MonoBehaviour
         playButton.PressButton(positionTurnSpeed);
         if (!majorMinorMiniGameCompleted)
         {
-            currentInstance.set3DAttributes(soundPosition.position.To3DAttributes());
+            currentInstance.set3DAttributes(soundPosition.To3DAttributes());
             currentInstance.start();
             isPlaying = true;
         }
@@ -150,7 +151,7 @@ public class MajorMinor : MonoBehaviour
         currentMelody = melody;
         currentIsMajor = melodies[melody];
         currentInstance = RuntimeManager.CreateInstance(currentMelody);
-        currentInstance.set3DAttributes(soundPosition.position.To3DAttributes());
+        currentInstance.set3DAttributes(soundPosition.To3DAttributes());
         currentInstance.start();
         isPlaying = true;
     }
@@ -171,7 +172,7 @@ public class MajorMinor : MonoBehaviour
         currentMelody = melody;
         currentIsMajor = melodies[melody];
         currentInstance = RuntimeManager.CreateInstance(currentMelody);
-        currentInstance.set3DAttributes(soundPosition.position.To3DAttributes());
+        currentInstance.set3DAttributes(soundPosition.To3DAttributes());
         currentInstance.start();
         isPlaying = true;
     }

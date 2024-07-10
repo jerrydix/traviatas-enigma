@@ -119,10 +119,11 @@ public class Singing : MonoBehaviour
 
     private IEnumerator EyeClose()
     {
-        yield return new WaitForSeconds(3f);
-        effects.CloseEyes();
+        Debug.Log("test");
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene("EndGame");
+        effects.CloseEyes();
+        yield return new WaitForSeconds(12f);
+        SceneManager.LoadScene("Intro");
     }
     
     private bool CompareVerses()

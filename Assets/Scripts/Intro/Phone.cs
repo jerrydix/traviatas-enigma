@@ -74,7 +74,7 @@ public class Phone : MonoBehaviour
         AudioManager.Instance.PlayOneShotAttached(trans, gameObject);
         yield return new WaitForSeconds(4f);
         effects.CloseEyesFromVignette();
-        yield return new WaitForSeconds(5.4f);
+        yield return new WaitForSeconds(6.4f);
         AudioManager.Instance.shouldNotPlay = true;
         yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("BackroomsMikhail");
