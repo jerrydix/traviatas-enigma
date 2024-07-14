@@ -1489,45 +1489,6 @@
             ]
         },
         {
-            "name": "Singing",
-            "id": "236b8d27-ca45-4340-931c-5a6639453a2a",
-            "actions": [
-                {
-                    "name": "Cancel",
-                    "type": "Button",
-                    "id": "ca5f0735-8407-422b-ba0c-d72565098547",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "59505083-cd5a-4c7a-8de4-de3a434f0d76",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Cancel",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c1fdc8c7-601f-401b-b04b-c4e14f1d727d",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Cancel",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
             "name": "Computer",
             "id": "eae35682-f1c3-452e-b569-c57f3563649e",
             "actions": [

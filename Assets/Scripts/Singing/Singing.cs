@@ -74,7 +74,7 @@ public class Singing : MonoBehaviour
                 inOrchestra = true;
                 operaMusicInstance.start();
             }
-            inputActions.Singing.Enable();
+            inputActions.Moving.Disable();
             if (!inVerse)
             {
                 inVerse = true;
